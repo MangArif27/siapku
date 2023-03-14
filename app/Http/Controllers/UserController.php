@@ -96,7 +96,7 @@ class UserController extends Controller
       $data->scan_ktp = $nama_ktp;
       // Proses Save
       $data->save();
-      DB::table('sub_menu')->insert([
+      /*DB::table('sub_menu')->insert([
         'no_identitas' => $request->nik,
         'user' => 2,
         'about' => 2,
@@ -126,7 +126,7 @@ class UserController extends Controller
         'gaji_tunkin' => 2,
         'pengaturan' => 2,
         'pengamanan' => 2,
-      ]);
+      ]);*/
       return redirect('/login')->with('alert', 'Kamu berhasil Register');
     }
   }

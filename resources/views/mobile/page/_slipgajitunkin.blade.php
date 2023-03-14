@@ -1,7 +1,6 @@
 @extends('mobile.index')
 @section('konten')
 <div class="page-content">
-
     @foreach($gaji as $p)
     @foreach($tunkin as $t)
     @if($t->kode == $p->kode)
@@ -27,10 +26,10 @@
         </div>
         <div class="card-overlay bg-black opacity-75"></div>
     </div>
+    @endif
+    @endforeach
+    @endforeach
 </div>
-@endif
-@endforeach
-@endforeach
 @foreach($gaji as $p)
 @foreach($tunkin as $t)
 @if($t->kode == $p->kode)

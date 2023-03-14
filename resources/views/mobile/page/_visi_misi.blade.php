@@ -8,7 +8,7 @@
             <h1>Visi Misi </h1>
             <p>
                 @foreach($informasi as $info)
-                @if($info->id=="13")
+                @if($info->informasi=="Visi Misi")
                 {!! $info->isi_informasi !!}
                 @endif
                 @endforeach

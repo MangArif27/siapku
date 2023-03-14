@@ -100,6 +100,9 @@ Route::get('Daftar-Barang', 'InventoriController@daftarbarang');
 Route::post('Daftar-Barang', 'InventoriController@inputdatabarang')->name('post.data.barang');
 Route::post('Update-Daftar-Barang', 'InventoriController@updatedatabarang')->name('update.data.barang');
 Route::get('Print-Code-Barang/{id}', 'InventoriController@cetakbarang');
+Route::get('Daftar-Ruangan', 'InventoriController@daftarruangan');
+Route::post('Daftar-Ruangan', 'InventoriController@inputdataruangan')->name('post.data.ruangan');
+Route::get('Print-Code-Barang/Ruangan/{id}', 'InventoriController@cetakbarangruangan');
 /*Route Login/Logout
 */
 Route::get('/login', 'UserController@login');

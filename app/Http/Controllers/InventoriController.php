@@ -40,7 +40,8 @@ class InventoriController extends Controller
                         'tahun_perolehan' => $request->tahun,
                         'no_urut' => $x,
                         'penguasaan' => $request->pengusaan,
-                        'ruangan' => "Ruangan Umum",
+                        'keterangan' => "Rutan Kelas I Depok",
+                        'ruangan' => "1",
                     ]);
                 }
                 DB::table('kategori')->insert([
@@ -69,6 +70,7 @@ class InventoriController extends Controller
                     'tahun_perolehan' => $request->tahun,
                     'no_urut' => $x,
                     'penguasaan' => $request->pengusaan,
+                    'keterangan' => "Rutan Kelas I Depok",
                     'ruangan' => "1",
                 ]);
             }
@@ -88,6 +90,32 @@ class InventoriController extends Controller
     public function cetakbarang($id)
     {
         $daftar_barang = DB::table('daftar_barang')->where('id', $id)->get();
-        return view('page._cetak_barcode_full', ['daftar_barang' => $daftar_barang]);
+        return view('page._cetak_barcode_barang', ['daftar_barang' => $daftar_barang]);
+    }
+    public function daftarruangan()
+    {
+        $daftar_ruangan = DB::table('daftar_ruangan')->get();
+        $penempatan_barang = DB::table('penempatan_barang')->get();
+        return view('page._daftar_ruangan', ['daftar_ruangan' => $daftar_ruangan, 'penempatan_barang' => $penempatan_barang]);
+    }
+    function inputdataruangan(Request $request)
+    {
+        $cek = DB::table('daftar_ruangan')->first();
+        if ($cek->kode_ruangan == $request->kode_ruangan) {
+            Session::flash('sukses', 'Maaf Ruangan Yang Anda Input Sudah Ada !');
+            return redirect('Daftar-Ruangan');
+        } else {
+            DB::table('daftar_ruangan')->insert([
+                'nama_ruangan' => $request->nama_ruangan,
+                'kode_ruangan' => $request->kode_ruangan,
+            ]);
+            Session::flash('sukses', 'Selamat Anda Berhasil Input Ruangan !');
+            return redirect('Daftar-Ruangan');
+        }
+    }
+    public function cetakbarangruangan($id)
+    {
+        $daftar_barang = DB::table('daftar_ruangan')->where('id', $id)->get();
+        return view('page._cetak_barcode_ruangan', ['daftar_barang' => $daftar_barang]);
     }
 }

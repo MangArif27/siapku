@@ -411,7 +411,7 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      DB::table('informasi')->where('informasi', "Visi Misi Lapas Kelas IIB Ciamis")->update([
+      DB::table('informasi')->where('informasi', "Visi Misi")->update([
         'isi_informasi' => $request->konten,
       ]);
       return redirect('/Visi-Misi');
@@ -446,7 +446,7 @@ class AdminController extends Controller
   {
     // Proses Uplode Image
     $slide = $request->file('slide');
-    $nama_slide = time() . "_" . $slide->getClientOriginalName();
+    $nama_slide = time() . "_" . $slide->getClientOriginalExtension();
     $uplode_slide = public_path('image/Slide');
     $img = Image::make($slide->path());
     $img->resize(2300, 1000)->save($uplode_slide . '/' . $nama_slide);

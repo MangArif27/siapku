@@ -41,9 +41,7 @@ class MobileController extends Controller
     $tanggall = date('Y-m-d', strtotime('+1 days'));
     $tanggal = date('Y-m-d');
     $slide = DB::table('slide')->get();
-    $galery = DB::table('galery')->get();
-    $kepribadian = DB::table('kepribadian')->get();
-    return view('mobile.page._home', ['slide' => $slide, 'galery' => $galery, 'kepribadian' => $kepribadian]);
+    return view('mobile.page._home', ['slide' => $slide]);
   }
   //Proses User Login Logout and Buat Akun
   public function login()
