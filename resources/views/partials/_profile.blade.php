@@ -7,5 +7,3 @@
     <h2>{{Session::get('nama')}}</h2>
   </div>
 </div>
-<div class="navbar nav_title" style="border: 0;">
-</div>

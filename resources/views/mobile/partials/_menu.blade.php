@@ -21,7 +21,7 @@
                 <span class="font-10">Tap to View</span>
             </a>
         </div>
-        <!-- <div class="col-4 ps-2">
+        <div class="col-4 ps-2">
             <a href="/Apk/layanan-kunjungan" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-users color-magenta-light fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Layanan Kunjungan</h6>
@@ -48,7 +48,7 @@
                 <h6 class="mb-0">Layanan Pengamanan</h6>
                 <span class="font-10">Tap to View</span>
             </a>
-        </div> -->
+        </div>
         <div class="col-4 pe-2">
             <a href="/Apk/LayananGajiTunkin/{{Session::get('nik')}}" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-money-bill-alt color-green-dark fa-3x mb-1 pb-2"></i>

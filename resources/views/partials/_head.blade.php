@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="{{ asset('assets/images/Logo_Apk.png') }}" type="image/ico" />
 
-    <title>SIAPKU</title>
+    <title>SILAJU</title>
 
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -20,7 +20,8 @@
     <!-- Datatables -->
     <link href="{{ asset('assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
     <!-- bootstrap-progressbar -->
-    <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css') }}"
+        rel="stylesheet">
     <!-- JQVMap -->
     <link href="{{ asset('assets/vendors/jqvmap/dist/jqvmap.min.css') }}" rel="stylesheet" />
     <!-- bootstrap-daterangepicker -->
@@ -28,7 +29,8 @@
     <!-- Select2 -->
     <link href="{{ asset('assets/vendors/select2/dist/css/select2.min.css') }}" rel="stylesheet">
     <!-- bootstrap-datetimepicker -->
-    <link href="{{ asset('assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/vendors/bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.css') }}"
+        rel="stylesheet">
     <!-- Switchery -->
     <link href="{{ asset('assets/vendors/switchery/dist/switchery.min.css') }}" rel="stylesheet">
     <!-- starrr -->

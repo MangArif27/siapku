@@ -385,17 +385,17 @@ class AdminController extends Controller
       return redirect('/Informasi-Karis');
     }
   }
-  public function informasipensiun()
+  public function informasipengamanan()
   {
     $informasi = DB::table('informasi')->get();
-    return view('/page/_informasi_pensiun', ['informasi' => $informasi]);
+    return view('/page/_informasi_pengamanan', ['informasi' => $informasi]);
   }
-  public function postinformasipensiun(Request $request)
+  public function postinformasipengamanan(Request $request)
   {
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      DB::table('informasi')->where('informasi', "Layanan Pensiun Pegawai")->update([
+      DB::table('informasi')->where('informasi', "Layanan Laporan Pengaman")->update([
         'isi_informasi' => $request->konten,
       ]);
       return redirect('/Informasi-Pensiun');
