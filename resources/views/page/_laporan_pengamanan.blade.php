@@ -16,7 +16,7 @@
 
                     <center>
 
-                        <h2> Laporan Pengamanan Lapas Kelas IIA Karawang</h2>
+                        <h2> Laporan Pengamanan Rutan Kelas I Depok</h2>
 
                     </center>
 
@@ -24,8 +24,7 @@
 
                     <div class="clearfix"></div>
 
-                    <a href="Download-Laporan-Pos-Pengamanan"><button type="button" class="btn btn-primary "><i
-                                class="fa fa-file-excel-o"></i> Export
+                    <a href="Download-Laporan-Pos-Pengamanan"><button type="button" class="btn btn-primary "><i class="fa fa-file-excel-o"></i> Export
                             Excel</button></a>
 
                 </div>

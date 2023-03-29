@@ -18,7 +18,7 @@
 
                     <center>
 
-                        <h2> Daftar Pos Chekin Pengamanan Lapas Kelas IIA Karawang</h2>
+                        <h2> Daftar Pos Chekin Pengamanan Rutan Kelas I Depok</h2>
 
                     </center>
 
@@ -26,8 +26,7 @@
 
                     <div class="clearfix"></div>
 
-                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss"
-                        class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
+                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss" class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
 
                 </div>
 
@@ -63,21 +62,17 @@
 
                                 <th>{{ $no }}</th>
 
-                                <th><img class="float-right" style="background-color:rgb(255,255,255); padding: 3px;"
-                                        src="
+                                <th><img class="float-right" style="background-color:rgb(255,255,255); padding: 3px;" src="
 
-                                        data:image/png;base64,{{DNS2D::getBarcodePNG($pam->encrypt_pos, 'qrcode')}}"
-                                        height="80"> </th>
+                                        data:image/png;base64,{{DNS2D::getBarcodePNG($pam->encrypt_pos, 'qrcode')}}" height="80"> </th>
 
                                 <th>{{$pam->nama_pos}}</th>
 
-                                <th><a href="delete/Pos-Pengamanan/{{ $pam->id }}"
-                                        class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
+                                <th><a href="delete/Pos-Pengamanan/{{ $pam->id }}" class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
 
                                     <a style="padding: 3px;" href="
 
-                                        data:image/png;base64,{{DNS2D::getBarcodePNG($pam->encrypt_pos, 'qrcode')}}"
-                                        download class="btn btn-info btn-xs btn-warning"><i class="fa fa-download"></i>
+                                        data:image/png;base64,{{DNS2D::getBarcodePNG($pam->encrypt_pos, 'qrcode')}}" download class="btn btn-info btn-xs btn-warning"><i class="fa fa-download"></i>
 
                                         Download QrCode</a>
 
@@ -111,14 +106,13 @@
 
                         <div class="modal-header">
 
-                            <h4 class="modal-title" id="myModalLabel">Pos Check Pengamanan Lapas Kelas IIA Karawang</h4>
+                            <h4 class="modal-title" id="myModalLabel">Pos Check Pengamanan Rutan Kelas I Depok</h4>
 
                         </div>
 
                         <div class="modal-body">
 
-                            <form class="form-horizontal form-label-left" action="{{route('post.check.pam')}}"
-                                method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal form-label-left" action="{{route('post.check.pam')}}" method="POST" enctype="multipart/form-data">
 
                                 {{ csrf_field() }}
 
@@ -136,8 +130,7 @@
 
                                 <div class="modal-footer">
 
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i
-                                            class="fa fa-remove"></i> Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
 
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
 

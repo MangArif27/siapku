@@ -27,8 +27,8 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Histori Pendaftaran Kunjungan Lapas Kelas IIA Karawang</h2>
-                    <div class="clearfix"></div>
+                    <h2>Histori Pendaftaran Kunjungan Rutan Kelas I Depok/h2>
+                        <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     @if(Session::get('status')=="USER")
@@ -66,12 +66,9 @@
 
                                 <td>{{ $kunjungan->status_keluarga }}</td>
 
-                                <td><button type="button" class="btn btn-xs btn-success" data-toggle="modal"
-                                        data-target=".bs-example-modal-lg{{ $kunjungan->kode_booking }}"><i
-                                            class="fa fa-eye"></i> {{ $kunjungan->status }}</button></td>
+                                <td><button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target=".bs-example-modal-lg{{ $kunjungan->kode_booking }}"><i class="fa fa-eye"></i> {{ $kunjungan->status }}</button></td>
 
-                                <div class="modal fade bs-example-modal-lg{{ $kunjungan->kode_booking }}" tabindex="-1"
-                                    role="dialog" aria-hidden="true">
+                                <div class="modal fade bs-example-modal-lg{{ $kunjungan->kode_booking }}" tabindex="-1" role="dialog" aria-hidden="true">
 
                                     <div class="modal-dialog">
 
@@ -88,9 +85,7 @@
 
                                             <div class="modal-body">
 
-                                                <form class="form-horizontal form-label-left"
-                                                    action="{{ route('post.counter.admin') }}" method="POST"
-                                                    enctype="multipart/form-data">
+                                                <form class="form-horizontal form-label-left" action="{{ route('post.counter.admin') }}" method="POST" enctype="multipart/form-data">
 
                                                     {{ csrf_field() }}
 
@@ -100,13 +95,11 @@
 
                                                     </center>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nama" name="nama" class="form-control"
-                                                            value="{{ $wbp->nama }}" disabled>
+                                                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $wbp->nama }}" disabled>
 
                                                     </div>
 
@@ -114,13 +107,11 @@
 
                                                     </br>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="kejahatan" name="kejahatan"
-                                                            class="form-control" value="{{ $wbp->kejahatan }}" disabled>
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" value="{{ $wbp->kejahatan }}" disabled>
 
                                                     </div>
 
@@ -134,8 +125,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <select name="status_wbp" id="status_wbp" class="form-control"
-                                                            disabled>
+                                                        <select name="status_wbp" id="status_wbp" class="form-control" disabled>
 
                                                             @if($wbp->status_wbp=='TAHANAN')
 
@@ -199,13 +189,11 @@
 
                                                     </br>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Alasan</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Alasan</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="alasan" name="alasan" maxlength="50"
-                                                            class="form-control" value="{{ $kunjungan->alasan }}">
+                                                        <input type="text" id="alasan" name="alasan" maxlength="50" class="form-control" value="{{ $kunjungan->alasan }}">
 
                                                     </div>
 
@@ -219,14 +207,11 @@
 
                                                     </center>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nama_pengunjung" name="nama_pengunjung"
-                                                            class="form-control" value="{{ Session::get('nama') }}"
-                                                            disabled>
+                                                        <input type="text" id="nama_pengunjung" name="nama_pengunjung" class="form-control" value="{{ Session::get('nama') }}" disabled>
 
                                                     </div>
 
@@ -240,9 +225,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="jenis_kelamin" name="jenis_kelamin"
-                                                            class="form-control"
-                                                            value="{{ Session::get('jenis_kelamin') }}" disabled>
+                                                        <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="{{ Session::get('jenis_kelamin') }}" disabled>
 
                                                     </div>
 
@@ -256,9 +239,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="hubungan" name="hubungan"
-                                                            class="form-control"
-                                                            value="{{ $kunjungan->status_keluarga }}" disabled>
+                                                        <input type="text" id="hubungan" name="hubungan" class="form-control" value="{{ $kunjungan->status_keluarga }}" disabled>
 
                                                     </div>
 
@@ -271,17 +252,14 @@
                                                         Kunjungan</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" id="tanggal" name="tanggal"
-                                                            class="form-control"
-                                                            value="{{ $kunjungan->tanggal_kunjungan }}" disabled>
+                                                        <input type="text" id="tanggal" name="tanggal" class="form-control" value="{{ $kunjungan->tanggal_kunjungan }}" disabled>
                                                     </div>
                                                     </br>
                                                     </br>
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Kode
                                                         Booking</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <label
-                                                            class="control-label col-md-3 col-sm-3 col-xs-12">{{ $kunjungan->kode_booking }}</label>
+                                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">{{ $kunjungan->kode_booking }}</label>
                                                         </br>
 
                                                     </div>
@@ -292,8 +270,7 @@
 
                                             <div class="modal-footer">
 
-                                                <button type="button" class="btn btn-default"
-                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                                             </div>
 
@@ -372,12 +349,9 @@
 
                                 <td>{{ $kunjungan->kode_booking }}</td>
 
-                                <td><button type="button" class="btn btn-xs btn-success" data-toggle="modal"
-                                        data-target=".bs-example-modal-lg{{ $kunjungan->kode_booking }}"><i
-                                            class="fa fa-eye"></i> {{ $kunjungan->status }}</button></td>
+                                <td><button type="button" class="btn btn-xs btn-success" data-toggle="modal" data-target=".bs-example-modal-lg{{ $kunjungan->kode_booking }}"><i class="fa fa-eye"></i> {{ $kunjungan->status }}</button></td>
 
-                                <div class="modal fade bs-example-modal-lg{{ $kunjungan->kode_booking }}" tabindex="-1"
-                                    role="dialog" aria-hidden="true">
+                                <div class="modal fade bs-example-modal-lg{{ $kunjungan->kode_booking }}" tabindex="-1" role="dialog" aria-hidden="true">
 
                                     <div class="modal-dialog">
 
@@ -394,9 +368,7 @@
 
                                             <div class="modal-body">
 
-                                                <form class="form-horizontal form-label-left"
-                                                    action="{{ route('post.counter.admin') }}" method="POST"
-                                                    enctype="multipart/form-data">
+                                                <form class="form-horizontal form-label-left" action="{{ route('post.counter.admin') }}" method="POST" enctype="multipart/form-data">
 
                                                     {{ csrf_field() }}
 
@@ -406,13 +378,11 @@
 
                                                     </center>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nama" name="nama" class="form-control"
-                                                            value="{{ $wbp->nama }}" disabled>
+                                                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $wbp->nama }}" disabled>
 
                                                     </div>
 
@@ -420,13 +390,11 @@
 
                                                     </br>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="kejahatan" name="kejahatan"
-                                                            class="form-control" value="{{ $wbp->kejahatan }}" disabled>
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" value="{{ $wbp->kejahatan }}" disabled>
 
                                                     </div>
 
@@ -440,8 +408,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <select name="status_wbp" id="status_wbp" class="form-control"
-                                                            disabled>
+                                                        <select name="status_wbp" id="status_wbp" class="form-control" disabled>
 
                                                             @if($wbp->status_wbp=='TAHANAN')
 
@@ -505,13 +472,11 @@
 
                                                     </br>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Alasan</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Alasan</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="alasan" name="alasan" maxlength="50"
-                                                            class="form-control" value="{{ $kunjungan->alasan }}">
+                                                        <input type="text" id="alasan" name="alasan" maxlength="50" class="form-control" value="{{ $kunjungan->alasan }}">
 
                                                     </div>
 
@@ -525,13 +490,11 @@
 
                                                     </center>
 
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nama_pengunjung" name="nama_pengunjung"
-                                                            class="form-control" value="{{ $users->nama }}" disabled>
+                                                        <input type="text" id="nama_pengunjung" name="nama_pengunjung" class="form-control" value="{{ $users->nama }}" disabled>
 
                                                     </div>
 
@@ -545,9 +508,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="jenis_kelamin" name="jenis_kelamin"
-                                                            class="form-control" value="{{ $users->jenis_kelamin }}"
-                                                            disabled>
+                                                        <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="{{ $users->jenis_kelamin }}" disabled>
 
                                                     </div>
 
@@ -561,8 +522,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="no_hp" name="no_hp" class="form-control"
-                                                            value="{{ Session::get('no_hp') }}" disabled>
+                                                        <input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ Session::get('no_hp') }}" disabled>
 
                                                     </div>
 
@@ -576,9 +536,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="hubungan" name="hubungan"
-                                                            class="form-control"
-                                                            value="{{ $kunjungan->status_keluarga }}" disabled>
+                                                        <input type="text" id="hubungan" name="hubungan" class="form-control" value="{{ $kunjungan->status_keluarga }}" disabled>
 
                                                     </div>
 
@@ -592,9 +550,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="hubungan" name="hubungan"
-                                                            class="form-control" value="{{ $kunjungan->keperluan }}"
-                                                            disabled>
+                                                        <input type="text" id="hubungan" name="hubungan" class="form-control" value="{{ $kunjungan->keperluan }}" disabled>
 
                                                     </div>
 
@@ -608,9 +564,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="tanggal" name="tanggal"
-                                                            class="form-control"
-                                                            value="{{ $kunjungan->tanggal_kunjungan }}" disabled>
+                                                        <input type="text" id="tanggal" name="tanggal" class="form-control" value="{{ $kunjungan->tanggal_kunjungan }}" disabled>
 
                                                     </div>
 
@@ -624,8 +578,7 @@
 
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="kode" name="kode" class="form-control"
-                                                            value="{{ $kunjungan->kode_booking }}" readonly>
+                                                        <input type="text" id="kode" name="kode" class="form-control" value="{{ $kunjungan->kode_booking }}" readonly>
 
                                                         </br>
 
@@ -656,9 +609,7 @@
                                                     @endif
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nik_pengikut" name="nik_pengikut[]"
-                                                            class="form-control" value="{{ $pengikut->nik_pengikut }}"
-                                                            disabled>
+                                                        <input type="text" id="nik_pengikut" name="nik_pengikut[]" class="form-control" value="{{ $pengikut->nik_pengikut }}" disabled>
 
                                                     </div>
 
@@ -674,8 +625,7 @@
                                                     @endif
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                        <input type="text" id="nama_pengikut[]" name="jnama_pengikut[]"
-                                                            class="form-control" value="{{ $pengikut->nama}}" disabled>
+                                                        <input type="text" id="nama_pengikut[]" name="jnama_pengikut[]" class="form-control" value="{{ $pengikut->nama}}" disabled>
 
                                                     </div>
                                                     </br>
@@ -685,9 +635,7 @@
 
                                                     @else
 
-                                                    <embed type="application/pdf"
-                                                        src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}"
-                                                        width="570" height="500"></embed>
+                                                    <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="500"></embed>
 
                                                     </br>
                                                     </br>
@@ -696,8 +644,7 @@
 
                                                     <div class="modal-footer">
 
-                                                        <button type="button" class="btn btn-default"
-                                                            data-dismiss="modal">Close</button>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                         @if($kunjungan->status !="DIIJINKAN")
                                                         <button type="submit" class="btn btn-primary">Update</button>
                                                         @else
@@ -789,12 +736,9 @@
 
                             <td>{{ $tamu->kode_booking }}</td>
 
-                            <td><button type="button" class="btn btn-xs {{ $tamu->button }}" data-toggle="modal"
-                                    data-target=".bs-example-modal-lg{{ $tamu->kode_booking }}"><i
-                                        class="fa fa-eye"></i> {{ $tamu->status }}</button></td>
+                            <td><button type="button" class="btn btn-xs {{ $tamu->button }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $tamu->kode_booking }}"><i class="fa fa-eye"></i> {{ $tamu->status }}</button></td>
 
-                            <div class="modal fade bs-example-modal-lg{{ $tamu->kode_booking }}" tabindex="-1"
-                                role="dialog" aria-hidden="true">
+                            <div class="modal fade bs-example-modal-lg{{ $tamu->kode_booking }}" tabindex="-1" role="dialog" aria-hidden="true">
 
                                 <div class="modal-dialog">
 
@@ -808,9 +752,7 @@
 
                                         <div class="modal-body">
 
-                                            <form class="form-horizontal form-label-left"
-                                                action="{{ route('post.tamu.dinas') }}" method="POST"
-                                                enctype="multipart/form-data">
+                                            <form class="form-horizontal form-label-left" action="{{ route('post.tamu.dinas') }}" method="POST" enctype="multipart/form-data">
 
                                                 {{ csrf_field() }}
 
@@ -818,8 +760,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="nama_pengunjung" name="nama_pengunjung"
-                                                        class="form-control" value="{{ $users->nama }}" disabled>
+                                                    <input type="text" id="nama_pengunjung" name="nama_pengunjung" class="form-control" value="{{ $users->nama }}" disabled>
 
                                                 </div>
 
@@ -833,9 +774,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="jenis_kelamin" name="jenis_kelamin"
-                                                        class="form-control" value="{{ $users->jenis_kelamin }}"
-                                                        disabled>
+                                                    <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="{{ $users->jenis_kelamin }}" disabled>
 
                                                 </div>
 
@@ -849,8 +788,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="no_hp" name="no_hp" class="form-control"
-                                                        value="{{ Session::get('no_hp') }}" disabled>
+                                                    <input type="text" id="no_hp" name="no_hp" class="form-control" value="{{ Session::get('no_hp') }}" disabled>
 
                                                 </div>
 
@@ -864,8 +802,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="hubungan" name="keperluan"
-                                                        class="form-control" value="{{ $tamu->keperluan }}" disabled>
+                                                    <input type="text" id="hubungan" name="keperluan" class="form-control" value="{{ $tamu->keperluan }}" disabled>
 
                                                 </div>
 
@@ -879,8 +816,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="tanggal" name="tanggal" class="form-control"
-                                                        value="{{ $tamu->tanggal }}" disabled>
+                                                    <input type="text" id="tanggal" name="tanggal" class="form-control" value="{{ $tamu->tanggal }}" disabled>
 
                                                 </div>
 
@@ -934,8 +870,7 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="kode" name="kode" class="form-control"
-                                                        value="{{ $tamu->kode_booking }}" readonly>
+                                                    <input type="text" id="kode" name="kode" class="form-control" value="{{ $tamu->kode_booking }}" readonly>
 
                                                     </br>
 
@@ -945,16 +880,13 @@
 
                                                 <div class="col-md-9 col-sm-9 col-xs-12">
 
-                                                    <input type="text" id="kode" name="alasan" maxlength="50"
-                                                        class="form-control" value="{{ $tamu->alasan }}">
+                                                    <input type="text" id="kode" name="alasan" maxlength="50" class="form-control" value="{{ $tamu->alasan }}">
 
                                                     </br>
 
                                                 </div>
 
-                                                <embed type="application/pdf"
-                                                    src="{{url('/backup_restore/restore/surat/'.$tamu->surat)}}"
-                                                    width="570" height="500"></embed>
+                                                <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$tamu->surat)}}" width="570" height="500"></embed>
 
                                                 </br>
 
@@ -962,8 +894,7 @@
 
                                         <div class="modal-footer">
 
-                                            <button type="button" class="btn btn-default"
-                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                                             <button type="submit" class="btn btn-primary">Selesai</button>
 

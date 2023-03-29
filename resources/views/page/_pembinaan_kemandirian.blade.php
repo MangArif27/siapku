@@ -8,12 +8,11 @@
             <div class="x_panel">
                 <div class="x_title">
                     <center>
-                        <h2> Toko Lapas Kelas IIA Karawang</h2>
+                        <h2> Toko Rutan Kelas I Depok</h2>
                     </center>
 
                     <div class="clearfix"></div>
-                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss"
-                        class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
+                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss" class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
                 </div>
                 <div class="x_content">
                     <table id="datatable" class="table table-striped table-bordered">
@@ -27,7 +26,7 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <?php $no = 1;?>
+                        <?php $no = 1; ?>
                         @foreach($galery as $galery)
                         <tbody>
                             <tr>
@@ -36,8 +35,7 @@
                                 <th>{{$galery->nama_barang}}</th>
                                 <th>{{$galery->link}}</th>
                                 <th>Rp. {{number_format($galery->harga,2,".",",")}}</th>
-                                <th><a href="delete/Pembinaan-Kemandirian/{{ $galery->id}}"
-                                        class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
+                                <th><a href="delete/Pembinaan-Kemandirian/{{ $galery->id}}" class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
                                 </th>
                             </tr>
                         </tbody>
@@ -53,12 +51,10 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Input Hasil Karya Warga Binaan Lapas Kelas IIA
-                                Karawang</h4>
+                            <h4 class="modal-title" id="myModalLabel">Input Hasil Karya Warga Binaan Rutan Kelas I Depok</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal form-label-left" action="{{route('post.kemandirian')}}"
-                                method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal form-label-left" action="{{route('post.kemandirian')}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -85,8 +81,7 @@
                                 </br>
                                 </br>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i
-                                            class="fa fa-remove"></i> Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
                                         Simpan</button>
                                 </div>

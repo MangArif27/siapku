@@ -7,30 +7,28 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Formulir Kunjungan Lapas Kelas IIA Karawang</h2>
+                    <h2>Formulir Kunjungan Rutan Kelas I Depok</h2>
                     <div class="clearfix"></div>
                 </div>
-                <?php $no = 0;$tanggal=date('Y-m-d');?>
+                <?php $no = 0;
+                $tanggal = date('Y-m-d'); ?>
                 @foreach($data_wbp as $p)
-                <?php $no++ ;?>
-                <form id="daftar" class="form-horizontal form-label-left" action="{{ route('post.daftar.kunjungan') }}"
-                    method="POST" enctype="multipart/form-data">
+                <?php $no++; ?>
+                <form id="daftar" class="form-horizontal form-label-left" action="{{ route('post.daftar.kunjungan') }}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     <center>
                         <h4>===== Data Warga Binaan Pemasyarakatan =====</h4>
                     </center>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="number" id="no_induk_wbp" name="no_induk_wbp" class="form-control"
-                            value="{{ $p->no_induk }}" readonly>
+                        <input type="number" id="no_induk_wbp" name="no_induk_wbp" class="form-control" value="{{ $p->no_induk }}" readonly>
                         <input type="text" id="nama" name="nama" class="form-control" value="{{ $p->nama }}" disabled>
                     </div>
                     </br>
                     </br>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" id="kejahatan" name="kejahatan" class="form-control"
-                            value="{{ $p->kejahatan }}" disabled>
+                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" value="{{ $p->kejahatan }}" disabled>
                     </div>
                     </br>
                     </br>
@@ -53,24 +51,20 @@
                     @if($user->nik==Session::get('nik'))
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="number" id="nik_pengunjung" name="nik_pengunjung" class="form-control"
-                            value="{{ $user->nik }}" readonly>
-                        <input type="text" id="nama_pengunjung" name="nama_pengunjung" class="form-control"
-                            value="{{ $user->nama }}" disabled>
+                        <input type="number" id="nik_pengunjung" name="nik_pengunjung" class="form-control" value="{{ $user->nik }}" readonly>
+                        <input type="text" id="nama_pengunjung" name="nama_pengunjung" class="form-control" value="{{ $user->nama }}" disabled>
                     </div>
                     </br>
                     </br>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control"
-                            value="{{ $user->jenis_kelamin }}" disabled>
+                        <input type="text" id="jenis_kelamin" name="jenis_kelamin" class="form-control" value="{{ $user->jenis_kelamin }}" disabled>
                     </div>
                     </br>
                     </br>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Tanggal </label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="date" id="tanggal" name="tanggal" class="form-control" min="{{ $tanggal }}"
-                            format="YYYY-mm-dd" required>
+                        <input type="date" id="tanggal" name="tanggal" class="form-control" min="{{ $tanggal }}" format="YYYY-mm-dd" required>
                     </div>
                     </br>
                     </br>
@@ -128,8 +122,7 @@
                         </div>
                     </div>
                 </form>
-                <center><button type="submit" data-toggle="modal" data-target=".bs-example-modal-lg"
-                        class="btn btn-round btn-success"><i class="fa fa-save"></i> Simpan</button>
+                <center><button type="submit" data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-round btn-success"><i class="fa fa-save"></i> Simpan</button>
             </div>
         </div>
     </div>

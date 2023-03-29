@@ -6,7 +6,7 @@
     <div class="boxed-text-xl mt-4">
         <h1 class="mb-3"><i class="fa fa-bullhorn color-red2-dark fa-3x"></i></h1>
         <h2 class="font-700 mb-n1">Notifikasi !</h2>
-        <p class="color-highlight">Sisten Informasi Lapas Karawang</p>
+        <p class="color-highlight">Sistem Informasi Rutan Kelas I Depok Cilodong</p>
         <p>
             {{Session::get('alert')}}
         </p>
@@ -40,7 +40,7 @@
         <div class="card card-style ">
             <div class="content mb-0">
                 <h3>{{$ku->keperluan}}</h3>
-                <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Lapas Karawangan</p>
+                <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Depok Cilodong</p>
                 <div class="card-top text-end ">
                     <div class="me-3 color-white">
                         <a href="#" class="btn text-uppercase font-400 bg-highlight rounded-sm mt-4 shadow-xl btn-m ">Status
@@ -57,7 +57,7 @@
                     </a>
                     <a href="#">
                         <i class="fa fa-map-marker-alt color-red2-dark"></i>
-                        <span class="font-10">Lokasi : Lapas Kelas IIA Karawang</span>
+                        <span class="font-10">Lokasi : Rutan Kelas I Depok</span>
                         <strong>Tempat : Ruang Kunjungan</strong>
                     </a>
                     <a href="#">
@@ -87,7 +87,7 @@
                     </a>
                     <a href="#">
                         <i class="fa fa-map-marker-alt color-red2-dark"></i>
-                        <span class="font-10">Lokasi : Lapas Kelas IIA Karawang</span>
+                        <span class="font-10">Lokasi : Rutan Kelas I Depok</span>
                         <strong>Tempat : Ruang Kunjungan</strong>
                     </a>
                     <a href="#">

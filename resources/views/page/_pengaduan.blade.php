@@ -7,13 +7,13 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Formulir Pengaduan Lapas Kelas IIA Karawang</h2>
+                    <h2>Formulir Pengaduan Rutan Kelas I Depok</h2>
                     <div class="clearfix"></div>
                 </div>
-                <?php $no = 0;$tanggal=date('Y-m-d');?>
-                <?php $no++ ;?>
-                <form id="daftar" class="form-horizontal form-label-left" action="/pengaduan/update" method="POST"
-                    enctype="multipart/form-data">
+                <?php $no = 0;
+                $tanggal = date('Y-m-d'); ?>
+                <?php $no++; ?>
+                <form id="daftar" class="form-horizontal form-label-left" action="/pengaduan/update" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
                     @foreach($users as $user)
                     @if($user->nik==Session::get('nik'))
@@ -28,15 +28,13 @@
                     </br>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $user->nama }}"
-                            disabled>
+                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $user->nama }}" disabled>
                     </div>
                     </br>
                     </br>
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <textarea id="alamat" name="alamat" class="form-control" placeholder=""
-                            disabled>{{ $user->alamat }}</textarea>
+                        <textarea id="alamat" name="alamat" class="form-control" placeholder="" disabled>{{ $user->alamat }}</textarea>
                     </div>
                     </br>
                     </br>
@@ -68,16 +66,13 @@
                     </div>
                     </br>
                     </br>
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti Pertama <span
-                            class="required">*</span></label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti Pertama <span class="required">*</span></label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
-                        <input type="file" id="bukti" name="bukti_pertama" required="required"
-                            class="form-control col-md-7 col-xs-12">
+                        <input type="file" id="bukti" name="bukti_pertama" required="required" class="form-control col-md-7 col-xs-12">
                     </div>
                     </br>
                     </br>
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti Kedua <span
-                            class="required">*</span></label>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Bukti Kedua <span class="required">*</span></label>
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <input type="file" id="bukti" name="bukti_kedua" class="form-control col-md-7 col-xs-12">
                     </div>
@@ -115,8 +110,7 @@
                         </div>
                     </div>
                 </form>
-                <center><button type="submit" data-toggle="modal" data-target=".bs-example-modal-lg"
-                        class="btn btn-round btn-success"><i class="fa fa-save"></i> Simpan</button>
+                <center><button type="submit" data-toggle="modal" data-target=".bs-example-modal-lg" class="btn btn-round btn-success"><i class="fa fa-save"></i> Simpan</button>
             </div>
         </div>
     </div>

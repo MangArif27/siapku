@@ -1,5 +1,5 @@
 <div class="menu-title">
-    <p class="color-highlight font-600">Choose your Favorite</p>
+    <p class="color-highlight font-600">Pilih Warna Favorit</p>
     <h1>Highlight</h1>
     <a href="#" class="close-menu"><i class="fa fa-times-circle"></i></a>
 </div>
@@ -57,5 +57,4 @@
     </div>
 </div>
 <div class="divider divider-margins mt-2"></div>
-<a href="#"
-    class="close-menu btn btn-margins btn-m font-13 rounded-s shadow-xl btn-full gradient-highlight border-0 font-700 text-uppercase">Awesome</a>
+<a href="#" class="close-menu btn btn-margins btn-m font-13 rounded-s shadow-xl btn-full gradient-highlight border-0 font-700 text-uppercase">Awesome</a>

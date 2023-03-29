@@ -4,7 +4,7 @@
     <div data-card-height="cover-full" class="card mb-0" style="background-image:url(images/pictures/ImageLogin.jpg)">
         <div class="card-center">
             <div class="text-center">
-                <p class="font-600 color-highlight mb-1 font-16">Let's Get Started</p>
+                <p class="font-600 color-highlight mb-1 font-16"></p>
                 <h1 class="font-40 color-white">Sign In</h1>
             </div>
             <div class="content px-4">
@@ -31,10 +31,10 @@
 
                 <div class="row pt-3 mb-3">
                     <div class="col-6 text-start font-11">
-                        <a class="color-white opacity-50" href="page-system-forgot-2.html">Forgot Password?</a>
+                        <a class="color-white opacity-50" href="page-system-forgot-2.html">Lupa Password</a>
                     </div>
                     <div class="col-6 text-end font-11">
-                        <a class="color-white opacity-50" href="page-system-signup-2.html">Create Account</a>
+                        <a class="color-white opacity-50" href="page-system-signup-2.html">Buat Akun</a>
                     </div>
                 </div>
 

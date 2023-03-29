@@ -13,8 +13,7 @@
                     <div class="col-md-55 col-sm-3">
                         <div class="thumbnail">
                             <div class="image view view-first">
-                                <img style="width: 100%; display: block;" src="{{ url('image/Galery/'.$galery->file) }}"
-                                    alt="{{$galery->nama_barang}}" />
+                                <img style="width: 100%; display: block;" src="{{ url('image/Galery/'.$galery->file) }}" alt="{{$galery->nama_barang}}" />
                                 <div class="mask">
                                     <p>{{$galery->nama_barang}}</p>
                                     <div class="tools tools-bottom">
@@ -24,7 +23,8 @@
                             </div>
                             <div class="caption">
                                 <p>{{$galery->nama_barang}} / Rp. Rp.
-                                    {{number_format($galery->harga,2,".",",")}} :</p>
+                                    {{number_format($galery->harga,2,".",",")}} :
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
         </div>
         <div class=" x_panel">
             <div class="x_title">
-                <h2>Kegiatan Warga Binaan Pemasyarakatan Lapas Kelas IIA Karawang</h2>
+                <h2>Kegiatan Warga Binaan Pemasyarakatan {{$data_apk->nama_upt}}</h2>
                 <div class="clearfix"></div>
             </div>
             <div class="x_content">
@@ -43,9 +43,7 @@
                     <div class="col-md-55 col-sm-3">
                         <div class="thumbnail">
                             <div class="image view view-first">
-                                <a href="{{$kepribadian->link}}"><img style="width: 100%; display: block;"
-                                        src="{{ url('image/Galery/'.$kepribadian->image) }}"
-                                        alt="{{$kepribadian->nama_kegiatan}}" />
+                                <a href="{{$kepribadian->link}}"><img style="width: 100%; display: block;" src="{{ url('image/Galery/'.$kepribadian->image) }}" alt="{{$kepribadian->nama_kegiatan}}" />
                                     <div class="mask">
                                         <p>{{$kepribadian->nama_kegiatan}}</p>
                                         <div class="tools tools-bottom">

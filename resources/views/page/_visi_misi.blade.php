@@ -5,15 +5,14 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
             <div class="x_title">
-                <h2>Visi Misi Lapas Kelas IIA Karawang</h2>
+                <h2>Visi Misi Rutan Kelas I Depok</h2>
                 <div class="clearfix"></div>
             </div>
             <form action="{{ route('post.visi_misi') }}" method="POST">
                 {{ csrf_field() }}
                 @foreach($informasi as $info)
                 @if($info->informasi=='Visi Misi')
-                <textarea id="konten" class="form-control" name="konten" rows="10"
-                    cols="50">{{ $info->isi_informasi }}</textarea>
+                <textarea id="konten" class="form-control" name="konten" rows="10" cols="50">{{ $info->isi_informasi }}</textarea>
                 @endif
                 @endforeach
                 <br />
@@ -54,8 +53,7 @@
                 <div class="x_title">
                     <h2> Visi Misi</h2>
                     <ul class="nav navbar-right panel_toolbox">
-                        <a href="login"><button type="button" class="btn btn-round btn-success"><i
-                                    class="fa fa-sign-in"></i> Login</button></a>
+                        <a href="login"><button type="button" class="btn btn-round btn-success"><i class="fa fa-sign-in"></i> Login</button></a>
                     </ul>
                     <div class="clearfix"></div>
                 </div>

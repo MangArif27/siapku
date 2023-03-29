@@ -8,7 +8,7 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>Data Warga Binaan Pemasyarakatan</h2>
+                    <h2>Data Warga Binaan Pemasyarakatan </h2>
                     <div class="clearfix">{{-- notifikasi form validasi --}}
                         @if ($errors->has('file'))
                         <span class="invalid-feedback" role="alert">
@@ -25,8 +25,7 @@
                         @endif
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal"><i
-                        class="fa fa-upload"></i> Upload</button></span>
+                <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal"><i class="fa fa-upload"></i> Upload</button></span>
                 <div class="x_content">
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
@@ -39,19 +38,17 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 0;?>
+                            <?php $no = 0; ?>
                             @foreach($data_wbp as $p)
-                            <?php $no++ ;?>
+                            <?php $no++; ?>
                             <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $p->nama }}</td>
                                 <td>{{ $p->kamar }}</td>
                                 <td>{{ $p->kejahatan }}</td>
-                                <td><button type="button" class="btn btn-xs {{ $p->button }}" data-toggle="modal"
-                                        data-target=".bs-example-modal-lg{{ $p->no_induk }}"><i class="fa fa-edit"></i>
+                                <td><button type="button" class="btn btn-xs {{ $p->button }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->no_induk }}"><i class="fa fa-edit"></i>
                                         {{ $p->status }}</button></td>
-                                <div class="modal fade bs-example-modal-lg{{ $p->no_induk }}" tabindex="-1"
-                                    role="dialog" aria-hidden="true">
+                                <div class="modal fade bs-example-modal-lg{{ $p->no_induk }}" tabindex="-1" role="dialog" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -59,39 +56,31 @@
                                                     Pemasyarakatan : {{ $p->nama }}</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form class="form-horizontal form-label-left"
-                                                    action="{{ route('post.update.wbp') }}" method="POST"
-                                                    enctype="multipart/form-data">
+                                                <form class="form-horizontal form-label-left" action="{{ route('post.update.wbp') }}" method="POST" enctype="multipart/form-data">
                                                     {{ csrf_field() }}
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">No
                                                         Induk</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" class="form-control" id="no_induk"
-                                                            name="no_induk" readonly value="{{ $p->no_induk }}">
+                                                        <input type="text" class="form-control" id="no_induk" name="no_induk" readonly value="{{ $p->no_induk }}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" id="nama" name="nama" class="form-control"
-                                                            value="{{ $p->nama }}">
+                                                        <input type="text" id="nama" name="nama" class="form-control" value="{{ $p->nama }}">
                                                     </div>
                                                     </br>
                                                     </br>
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Blok &
                                                         Kamar </label>
                                                     <div class="col-md-3 col-sm-3 col-xs-12">
-                                                        <input type="text" id="kamar" name="kamar" class="form-control"
-                                                            value="{{ $p->kamar }}">
+                                                        <input type="text" id="kamar" name="kamar" class="form-control" value="{{ $p->kamar }}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label
-                                                        class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Kejahatan</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" id="kejahatan" name="kejahatan"
-                                                            class="form-control" value="{{ $p->kejahatan }}">
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" value="{{ $p->kejahatan }}">
                                                     </div>
                                                     </br>
                                                     </br>
@@ -135,8 +124,7 @@
                                                     </br>
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-default"
-                                                    data-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                             </div>
                                             </form>
@@ -171,16 +159,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 0;?>
+                            <?php $no = 0; ?>
                             @foreach($data_wbp as $p)
-                            <?php $no++ ;?>
+                            <?php $no++; ?>
                             <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $p->nama }}</td>
                                 <td>{{ $p->blok }} {{ $p->kamar }}</td>
                                 <td>{{ $p->kejahatan }}</td>
-                                <td><a href="pendaftaran/{{ $p->no_induk }}"><button
-                                            class="btn btn-info btn-xs {{ $p->button }}"><i class="fa fa-edit"></i>
+                                <td><a href="pendaftaran/{{ $p->no_induk }}"><button class="btn btn-info btn-xs {{ $p->button }}"><i class="fa fa-edit"></i>
                                             {{ $p->status_wbp }}</button></a>
                                 </td>
                             </tr>
@@ -211,17 +198,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php $no = 0;?>
+                            <?php $no = 0; ?>
                             @foreach($data_wbp as $p)
-                            <?php $no++ ;?>
+                            <?php $no++; ?>
                             <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $p->nama }}</td>
                                 <td>{{ $p->blok }} {{ $p->kamar }}</td>
                                 <td>{{ $p->kejahatan }}</td>
-                                <td><button type="button" class="btn btn-info btn-xs {{ $p->button }}"
-                                        data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->no_induk }}"><i
-                                            class="fa fa-edit"></i> {{ $p->status_wbp }}</button>
+                                <td><button type="button" class="btn btn-info btn-xs {{ $p->button }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->no_induk }}"><i class="fa fa-edit"></i> {{ $p->status_wbp }}</button>
                                 </td>
                             </tr>
                             @endforeach
@@ -238,8 +223,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">×</span></button>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
                 <h4 class="modal-title" id="myModalLabel">Import Data WBP</h4>
             </div>
             <div class="modal-body">

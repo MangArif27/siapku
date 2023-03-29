@@ -30,7 +30,7 @@ header("Refresh:5; $url");
 
 
 
-    <title>SILAJU</title>
+    <title>SI Ratu Cilok</title>
 
     <style type="text/css">
         body {
@@ -301,48 +301,22 @@ header("Refresh:5; $url");
 
                     </td>
 
-                    <td align="center">
-
-                        <b>KEMENTERIAN HUKUM DAN HAK ASASI MANUSIA RI</b>
-
+                    <td style="font-size: 6pt;">
+                        <center>
+                            <p>KEMENTERIAN HUKUM DAN HAM REPUBLIK INDONESIA</p>
+                            <p>KANTOR WILAYAH JAWA BARAT</p>
+                            <b>RUMAH TAHANAN NEGARA KELAS I DEPOK</b>
+                        </center>
                     </td>
-
                 </tr>
-
                 <tr>
-
-                    <td align="center">
-
-                        <b>KANTOR WILAYAH JAWA BARAT</b>
-
+                    <td style="font-size: 4pt;">
+                        <center>
+                            <p>Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok, Jawa Barat</p>
+                            <p>Telp:- Web:http://rutandepok.kemenkumham.go.id</p>
+                        </center>
                     </td>
-
                 </tr>
-
-                <tr>
-
-                    <td align="center">
-
-                        <b>LEMBAGA PEMASYARAKATAN KELAS IIA KARAWANG</b>
-
-                    </td>
-
-                </tr>
-
-                <tr>
-
-                    <td align="center" style="border-bottom:thick">
-
-                        <b>
-
-                            Jl. Surotokunto No.km 6, Kondangjaya, Kec. Karawang Tim., Karawang, Jawa Barat 41371
-
-                        </b>
-
-                    </td>
-
-                </tr>
-
             </table>
 
             @foreach($kunjungan as $ticket)

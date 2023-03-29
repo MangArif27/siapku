@@ -1,181 +1,181 @@
 <?php
-$url="counter_pegawai";
+$url = "counter_pegawai";
 header("Refresh:5; $url");
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Si-Klipas</title>
+    <title>Si Ratu Cilok</title>
     <style>
-    {
-        margin: 0;
-        padding: 0;
-        font-family: arial;
-        font-size: 6pt;
-        color: #000;
-    }
+        {
+            margin: 0;
+            padding: 0;
+            font-family: arial;
+            font-size: 6pt;
+            color: #000;
+        }
 
-    body {
-        width: 100%;
-        font-family: arial;
-        font-size: 6pt;
-        margin: 0;
-        padding: 0;
-    }
+        body {
+            width: 100%;
+            font-family: arial;
+            font-size: 6pt;
+            margin: 0;
+            padding: 0;
+        }
 
-    p {
-        margin: 0;
-        padding: 0;
-        margin-left: 0px;
-    }
+        p {
+            margin: 0;
+            padding: 0;
+            margin-left: 0px;
+        }
 
-    #wrapper {
-        width: 44mm;
-        margin: 0 0mm;
-    }
+        #wrapper {
+            width: 44mm;
+            margin: 0 0mm;
+        }
 
-    #main {
-        float: left;
-        width: 0mm;
-        background: #ffffff;
-        padding: 0mm;
-    }
+        #main {
+            float: left;
+            width: 0mm;
+            background: #ffffff;
+            padding: 0mm;
+        }
 
-    #sidebar {
-        float: right;
-        width: 0mm;
-        background: #ffffff;
-        padding: 0mm;
-    }
+        #sidebar {
+            float: right;
+            width: 0mm;
+            background: #ffffff;
+            padding: 0mm;
+        }
 
-    .page {
-        height: 100mm;
-        width: 80mm;
-        page-break-after: always;
-    }
+        .page {
+            height: 100mm;
+            width: 80mm;
+            page-break-after: always;
+        }
 
-    table {
-        /** border-left: 1px solid #fff;
+        table {
+            /** border-left: 1px solid #fff;
             border-top: 1px solid #fff; **/
-        font-family: arial;
-        border-spacing: 0;
-        border-collapse: collapse;
+            font-family: arial;
+            border-spacing: 0;
+            border-collapse: collapse;
 
-    }
+        }
 
-    table td {
-        /**border-right: 1px solid #fff;
+        table td {
+            /**border-right: 1px solid #fff;
             border-bottom: 1px solid #fff;**/
-        padding: 2mm;
+            padding: 2mm;
 
-    }
+        }
 
-    table.heading {
-        height: 0mm;
-        margin-bottom: 1px;
-    }
+        table.heading {
+            height: 0mm;
+            margin-bottom: 1px;
+        }
 
-    h1.heading {
-        font-size: 6pt;
-        color: #000;
-        font-weight: normal;
-        font-style: italic;
+        h1.heading {
+            font-size: 6pt;
+            color: #000;
+            font-weight: normal;
+            font-style: italic;
 
 
-    }
+        }
 
-    h2.heading {
-        font-size: 6pt;
-        color: #000;
-        font-weight: normal;
-    }
+        h2.heading {
+            font-size: 6pt;
+            color: #000;
+            font-weight: normal;
+        }
 
-    hr {
-        color: #ccc;
-        background: #ccc;
-    }
+        hr {
+            color: #ccc;
+            background: #ccc;
+        }
 
-    #invoice_body {
-        height: auto;
-    }
+        #invoice_body {
+            height: auto;
+        }
 
-    #invoice_body,
-    #invoice_total {
-        width: 100%;
-    }
+        #invoice_body,
+        #invoice_total {
+            width: 100%;
+        }
 
-    #invoice_body table,
-    #invoice_total table {
-        width: 100%;
-        /** border-left: 1px solid #ccc;
+        #invoice_body table,
+        #invoice_total table {
+            width: 100%;
+            /** border-left: 1px solid #ccc;
             border-top: 1px solid #ccc; **/
 
-        border-spacing: 0;
-        border-collapse: collapse;
+            border-spacing: 0;
+            border-collapse: collapse;
 
-        margin-top: 0mm;
-    }
+            margin-top: 0mm;
+        }
 
-    #invoice_body table td,
-    #invoice_total table td {
-        font-size: 8pt;
-        /** border-right: 1px solid black;
+        #invoice_body table td,
+        #invoice_total table td {
+            font-size: 8pt;
+            /** border-right: 1px solid black;
             border-bottom: 1px solid black;**/
-        padding: 0 0;
-        font-weight: normal;
-    }
+            padding: 0 0;
+            font-weight: normal;
+        }
 
-    #invoice_head table td {
-        text-align: left;
-        font-size: 8pt;
-        /** border-right: 1px solid black;
+        #invoice_head table td {
+            text-align: left;
+            font-size: 8pt;
+            /** border-right: 1px solid black;
             border-bottom: 1px solid black;**/
-        padding: 0 0;
-        font-weight: normal;
-    }
+            padding: 0 0;
+            font-weight: normal;
+        }
 
-    #invoice_body table td.mono,
-    #invoice_total table td.mono {
-        text-align: right;
-        padding-right: 0mm;
-        font-size: 6pt;
-        border: 1px solid white;
-        font-weight: normal;
-    }
+        #invoice_body table td.mono,
+        #invoice_total table td.mono {
+            text-align: right;
+            padding-right: 0mm;
+            font-size: 6pt;
+            border: 1px solid white;
+            font-weight: normal;
+        }
 
-    #footer {
-        width: 44mm;
-        margin: 0 2mm;
-        padding-bottom: 1mm;
-    }
+        #footer {
+            width: 44mm;
+            margin: 0 2mm;
+            padding-bottom: 1mm;
+        }
 
-    #footer table {
-        width: 100%;
-        /** border-left: 1px solid #ccc;
+        #footer table {
+            width: 100%;
+            /** border-left: 1px solid #ccc;
             border-top: 1px solid #ccc; **/
 
-        background: #eee;
+            background: #eee;
 
-        border-spacing: 0;
-        border-collapse: collapse;
-    }
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
 
-    #footer table td {
-        width: 25%;
-        text-align: center;
-        font-size: 8pt;
-        /** border-right: 1px solid #ccc;
+        #footer table td {
+            width: 25%;
+            text-align: center;
+            font-size: 8pt;
+            /** border-right: 1px solid #ccc;
             border-bottom: 1px solid #ccc;**/
-    }
+        }
     </style>
     <script language="Javascript1.2">
-    <!--
-    function printpage() {
-        window.print();
-    }
-    //
-    -->
+        <!--
+        function printpage() {
+            window.print();
+        }
+        //
+        -->
     </script>
 </head>
 
@@ -188,22 +188,21 @@ header("Refresh:5; $url");
             <table style="width:170%; border-spacing:0;">
                 <tr>
                     <td rowspan="4">
-                        <img class="img-responsive avatar-view" src="{{ public_path('assets/images/logo_fix.png') }}"
-                            width="40px">
+                        <img class="img-responsive avatar-view" src="{{ public_path('assets/images/logo_fix.png') }}" width="40px">
                     </td>
                     <td style="font-size: 6pt;">
                         <center>
                             <p>KEMENTERIAN HUKUM DAN HAM REPUBLIK INDONESIA</p>
                             <p>KANTOR WILAYAH JAWA BARAT</p>
-                            <b>LEMBAGA PEMASYARAKATAN KELAS IIA KARAWANG</b>
+                            <b>RUMAH TAHANAN NEGARA KELAS I DEPOK</b>
                         </center>
                     </td>
                 </tr>
                 <tr>
                     <td style="font-size: 4pt;">
                         <center>
-                            <p>Jl. Surotokunto No.km 6, Kondangjaya, Kec. Karawang Tim., Karawang, Jawa Barat 41371</p>
-                            <p>Telp:- Web:http://lapaskarawang.kemenkumham.go.id</p>
+                            <p>Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok, Jawa Barat</p>
+                            <p>Telp:- Web:http://rutandepok.kemenkumham.go.id</p>
                         </center>
                     </td>
                 </tr>
@@ -371,8 +370,7 @@ header("Refresh:5; $url");
             </table>
             <table style="width:164%; border-spacing:0;" border="0">
                 <tr>
-                    <td>*Catatan : Data slip gaji dan tunjangan kinerja ini diinput oleh Bendahara Lapas Kelas IIA
-                        Karawang </td>
+                    <td>*Catatan : Data slip gaji dan tunjangan kinerja ini diinput oleh Bendahara Rutan Kelas I Depok </td>
                 </tr>
                 <tr>
                     </br>
@@ -388,9 +386,9 @@ header("Refresh:5; $url");
     @endforeach
 </body>
 <script>
-window.onload = function() {
-    window.print();
-}
+    window.onload = function() {
+        window.print();
+    }
 </script>
 
 </html>

@@ -8,12 +8,11 @@
             <div class="x_panel">
                 <div class="x_title">
                     <center>
-                        <h2> Berita Lapas Kelas IIA Karawang</h2>
+                        <h2> Berita Rutan Kelas I Depok</h2>
                     </center>
 
                     <div class="clearfix"></div>
-                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss"
-                        class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
+                    <button type="button" data-toggle="modal" data-target=".bs-example-modal-lg-ss" class="btn btn-primary "><i class="fa fa-upload"></i> Tambah</button></span>
                 </div>
                 <div class="x_content">
                     <table id="datatable" class="table table-striped table-bordered">
@@ -27,9 +26,9 @@
                                 <th>Aksi</th>
                             </tr>
                         </thead>
-                        <?php $no = 0;?>
+                        <?php $no = 0; ?>
                         @foreach($kepribadian as $kepribadian)
-                        <?php $no++ ;?>
+                        <?php $no++; ?>
                         <tbody>
                             <tr>
                                 <th>{{ $no }}</th>
@@ -37,8 +36,7 @@
                                 <th>{{$kepribadian->nama_kegiatan}}</th>
                                 <th>{{$kepribadian->deskripsi}}</th>
                                 <th>{{$kepribadian->link}}</th>
-                                <th><a href="delete/Pembinaan-Kepribadian/{{ $kepribadian->image }}"
-                                        class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
+                                <th><a href="delete/Pembinaan-Kepribadian/{{ $kepribadian->image }}" class="btn btn-info btn-xs btn-danger"> <i class="fa fa-trash"></i> Hapus</a>
                                 </th>
                             </tr>
                         </tbody>
@@ -54,11 +52,10 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="myModalLabel">Input Kegiatan WBP Lapas Kelas IIA Karawang</h4>
+                            <h4 class="modal-title" id="myModalLabel">Input Kegiatan WBP Rutan Kelas I Depok</h4>
                         </div>
                         <div class="modal-body">
-                            <form class="form-horizontal form-label-left" action="{{route('post.kepribadian')}}"
-                                method="POST" enctype="multipart/form-data">
+                            <form class="form-horizontal form-label-left" action="{{route('post.kepribadian')}}" method="POST" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Kegiatan</label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
@@ -68,8 +65,7 @@
                                 </br>
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Deksripsi Singkat</label>
                                 <div class="col-md-9 col-sm-9 col-xs-12">
-                                    <textarea class="form-control" name="deskripsi"
-                                        placeholder="Masukan Deksripsi Singkat Berita"></textarea>
+                                    <textarea class="form-control" name="deskripsi" placeholder="Masukan Deksripsi Singkat Berita"></textarea>
                                 </div>
                                 </br>
                                 </br>
@@ -86,8 +82,7 @@
                                 </br>
                                 </br>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i
-                                            class="fa fa-remove"></i> Close</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>
                                         Simpan</button>
                                 </div>

@@ -244,13 +244,13 @@ class MobileController extends Controller
   }
   public function formdaftarkunjungan()
   {
-    /*if (!Session::get('login')) {
+    if (!Session::get('login')) {
       return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
-    } else { */
-    $datawbp = DB::table('data_wbp')->get();
-    $user = DB::table('users')->get();
-    return view('mobile.page._formdaftarkunjungan', ['datawbp' => $datawbp], ['users' => $user])->with('gagal', 'Selamat Datang Di Pendaftaran Kunjungan !!');
-    /*}*/
+    } else {
+      $datawbp = DB::table('data_wbp')->get();
+      $user = DB::table('users')->get();
+      return view('mobile.page._formdaftarkunjungan', ['datawbp' => $datawbp], ['users' => $user])->with('gagal', 'Selamat Datang Di Pendaftaran Kunjungan !!');
+    }
   }
   public function autocomplete(Request $request)
   {
