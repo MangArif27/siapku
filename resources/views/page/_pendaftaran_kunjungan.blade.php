@@ -60,7 +60,7 @@
 
                 <div class="x_title">
 
-                    <h2>Pendaftaran Kunjungan Lapas Kelas IIA Karawang</h2>
+                    <h2>Pendaftaran Kunjungan Rutan Kelas I Depok</h2>
 
                     <div class="clearfix"></div>
 
@@ -90,11 +90,12 @@
 
                         <tbody>
 
-                            <?php $no = 0; $tanggal=date('Y-m-d');?>
+                            <?php $no = 0;
+                            $tanggal = date('Y-m-d'); ?>
 
                             @foreach($data_wbp as $p)
 
-                            <?php $no++ ;?>
+                            <?php $no++; ?>
 
                             <tr>
 
@@ -106,8 +107,7 @@
 
                                 <td>{{ $p->kejahatan }}</td>
 
-                                <td><a href="/pendaftaran/{{ $p->no_induk }}" type="button"
-                                        class="btn btn-xs btn-success"><i class="fa fa-edit"></i> Pilih</a></td>
+                                <td><a href="/pendaftaran/{{ $p->no_induk }}" type="button" class="btn btn-xs btn-success"><i class="fa fa-edit"></i> Pilih</a></td>
 
                             </tr>
 

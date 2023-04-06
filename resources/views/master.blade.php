@@ -32,151 +32,151 @@
 
       <div class="modal fade bs-example-modal-lg-s" tabindex="-1" role="dialog" aria-hidden="true">
 
-                    <div class="modal-dialog">
+        <div class="modal-dialog">
 
-                      <div class="modal-content">
+          <div class="modal-content">
 
-                        <div class="modal-header">
+            <div class="modal-header">
 
-                          <h4 class="modal-title" id="myModalLabel">Profile Pengguna : {{ Session::get('nama') }}</h4>
+              <h4 class="modal-title" id="myModalLabel">Profile Pengguna : {{ Session::get('nama') }}</h4>
 
-                        </div>
+            </div>
 
-                        <div class="modal-body">
+            <div class="modal-body">
 
-                          <form class="form-horizontal form-label-left" action="{{ route('update.akun') }}" method="POST" enctype="multipart/form-data">
+              <form class="form-horizontal form-label-left" action="{{ route('update.akun') }}" method="POST" enctype="multipart/form-data">
 
-                            {{ csrf_field() }}
+                {{ csrf_field() }}
 
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">No Induk</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">No Induk</label>
 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                              <input type="text" class="form-control" id="nik" name="nik" readonly value="{{ Session::get('nik') }}">
+                  <input type="text" class="form-control" id="nik" name="nik" readonly value="{{ Session::get('nik') }}">
 
-                            </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                              <input type="text" id="nama" name="nama" required="required" class="form-control" value="{{ Session::get('nama') }}">
+                  <input type="text" id="nama" name="nama" required="required" class="form-control" value="{{ Session::get('nama') }}">
 
-                            </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis Kelamin</label>
 
-                          <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                            <input type="text" id="jenis_kelamin" name="jenis_kelamin" required="required" class="form-control"  value="{{ Session::get('jenis_kelamin') }}">
+                  <input type="text" id="jenis_kelamin" name="jenis_kelamin" required="required" class="form-control" value="{{ Session::get('jenis_kelamin') }}">
 
-                          </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat</label>
 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                              <textarea class="form-control" id="alamat" required="required" name="alamat">{{ Session::get('alamat') }}</textarea>
+                  <textarea class="form-control" id="alamat" required="required" name="alamat">{{ Session::get('alamat') }}</textarea>
 
-                            </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                            <label class="control-label col-md-3 col-sm-3 col-xs-12">No Handphone</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">No Handphone</label>
 
-                            <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                              <input type="text" id="no_hp" name="no_hp" required="required" class="form-control" value="{{ Session::get('no_hp') }}">
+                  <input type="text" id="no_hp" name="no_hp" required="required" class="form-control" value="{{ Session::get('no_hp') }}">
 
-                            </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
 
-                          <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                            <input type="email" id="email" name="email" class="form-control" required="required" value="{{ Session::get('email') }}">
+                  <input type="email" id="email" name="email" class="form-control" required="required" value="{{ Session::get('email') }}">
 
-                          </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Ganti Password </label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Ganti Password </label>
 
-                          <div class="col-md-9 col-sm-9 col-xs-12">
+                <div class="col-md-9 col-sm-9 col-xs-12">
 
-                            <a href="/reseter"><button type="button" class="btn btn-primary">Klik Disini</button></a>
+                  <a href="/reseter"><button type="button" class="btn btn-primary">Klik Disini</button></a>
 
-                          </div>
+                </div>
 
-                          </br>
+                </br>
 
-                          </br>
+                </br>
 
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Scan Identitas</label>
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Scan Identitas</label>
 
-                            <div class="profile_img">
+                <div class="profile_img">
 
-                              <div id="crop-avatar">
+                  <div id="crop-avatar">
 
-                                <img class="img-responsive avatar-view" src="{{ url('image/Scan_Ktp/'.Session::get('scan_ktp')) }}" width="75%">
-
-                              </div>
-
-                            </div>
-
-                          </br>
-
-                          <label class="control-label col-md-3 col-sm-3 col-xs-12">Photo</label>
-
-                            <div class="profile_img">
-
-                              <div id="crop-avatar">
-
-                                <img class="img-responsive avatar-view" src="{{ url('image/Photo/'.Session::get('photo')) }}" width="75%">
-
-                              </div>
-
-                            </div>
-
-                          </div>
-
-                      <div class="modal-footer">
-
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-
-                      </div>
-
-                      </form>
-
-                    </div>
+                    <img class="img-responsive avatar-view" src="{{ url('image/Scan_Ktp/'.Session::get('scan_ktp')) }}" width="75%">
 
                   </div>
 
                 </div>
+
+                </br>
+
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Photo</label>
+
+                <div class="profile_img">
+
+                  <div id="crop-avatar">
+
+                    <img class="img-responsive avatar-view" src="{{ url('image/Photo/'.Session::get('photo')) }}" width="75%">
+
+                  </div>
+
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+              <button type="submit" class="btn btn-primary">Save changes</button>
+
+            </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
 
       <!-- /top navigation -->
 
@@ -204,7 +204,7 @@
 
 
 
-@include('partials._script')
+  @include('partials._script')
 
 
 

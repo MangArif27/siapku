@@ -683,7 +683,7 @@
 
             <div class="x_title">
 
-                <h2>Histori Pendaftaran Tamu Dinas Lapas Kelas IIA Karawang</h2>
+                <h2>Histori Pendaftaran Tamu Dinas Rutan Kelas I Depok</h2>
 
                 <div class="clearfix"></div>
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 @include('partials._head')
@@ -14,9 +13,9 @@
           <br />
           <!-- sidebar menu -->
           @if(Session::get('status')=="ADMIN")
-            @include('partials._sidebar_menu_admin')
+          @include('partials._sidebar_menu_admin')
           @elseif(Session::get('status')=="USER")
-            @include('partials._sidebar_menu_user')
+          @include('partials._sidebar_menu_user')
           <!-- /sidebar menu -->
           @endif
         </div>
@@ -26,9 +25,9 @@
       <!-- /top navigation -->
       @if( Session::has('modal_message_error'))
       <script type="text/javascript">
-          $(document).ready(function() {
-              $('#popupmodal').modal();
-          });
+        $(document).ready(function() {
+          $('#popupmodal').modal();
+        });
       </script>
       <!-- page content -->
       @yield('konten')
@@ -40,8 +39,9 @@
 
     </div>
   </div>
-</div>
+  </div>
 
-@include('partials._script')
+  @include('partials._script')
 </body>
+
 </html>

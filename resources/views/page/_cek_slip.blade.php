@@ -24,7 +24,7 @@
 		Sistem Slip Gaji Dan Tunjangan Online
 		<br /> Kementerian Hukum dan Hak Asasi Manusia
 		<br /> Kantor Wilayah
-		<br /> Rutan Kelas I Depok
+		<br /> Rumah Tahanan Kelas I Depok
 		<br />Menyatakan Bahwa:
 		@foreach($gaji as $p)
 		@foreach($tunkir as $t)
