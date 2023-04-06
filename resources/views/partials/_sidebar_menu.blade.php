@@ -23,6 +23,10 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
                     <li><a href="data_pengunjung">Data User</a></li>
                     @else
                     @endif
+                    @if($submenu->user==1)
+                    <li><a href="data_keluarga">Data Keluarga</a></li>
+                    @else
+                    @endif
                 </ul>
             </li>
             @else
@@ -73,8 +77,7 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
                     </li>
                     @else
                     @endif
-                    @if($submenu->layanan_slip==1 || $submenu->layanan_download_slip==1 || $submenu->karis==1 ||
-                    $submenu->pensiun==1)
+                    @if($submenu->layanan_slip==1 || $submenu->layanan_download_slip==1 || $submenu->karis==1)
                     <li><a> Layanan Pegawai <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             @if($submenu->layanan_slip==1)

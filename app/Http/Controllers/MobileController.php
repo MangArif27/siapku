@@ -646,36 +646,122 @@ class MobileController extends Controller
     $media = DB::table('media')->get();
     return view('mobile.page._galery', ['media' => $media]);
   }
-  public function lappengamanan()
-  {
-    if (!Session::get('login')) {
-      return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
-    } else {
-      return view('mobile.page._formlappengamanan');
-    }
-  }
-  public function postlappengamanan(Request $request)
-  {
-    $datetime = date('Y-m-d:H:i:s');
-    DB::table('lap_pengamanan')->insert([
-      'nik' => $request->nik,
-      'jenis_laporan' => $request->jenis,
-      'isi_laporan' => $request->isi,
-      'pos_pengamanan' => $request->pos,
-      'created_at' => $datetime,
-      'updated_at' => $datetime,
-    ]);
-    return view('mobile.page._formlappengamanan');
-  }
   public function GetNoIndukWbp($No_Induk)
   {
     $course = DB::table('data_wbp')->where('no_induk', $No_Induk)->get();
     return response()->json($course);
   }
-  public function toko()
+  public function Pembinaan($no_induk)
   {
-    $slide = DB::table('slide')->get();
-    $galery = DB::table('galery')->get();
-    return view('mobile.page._toko', ['slide' => $slide, 'galery' => $galery]);
+    $Cari = DB::table('keluarga_inti')->where('nik', $no_induk)->first();
+    if ($Cari) {
+      if ($Cari->status == "Pending") {
+        Session::flash('alert', 'Mohon Maaf Pengajuan Keluarga Inti Masih Menunggu Persetujuan Oleh Admin !');
+        return redirect('/Apk/Index');
+      } elseif ($Cari->status == "Ditolak") {
+        Session::flash('alert', 'Mohon Maaf Pengajuan Keluarga Inti Ditolak Silahkan Input Data Dengan Benar !');
+        return view('mobile.page._formkeluargainti');
+      } else {
+        $keluargainti = DB::table('keluarga_inti')->where('nik', $no_induk)->get();
+        $datawbp = DB::table('data_wbp')->where('no_induk', $Cari->no_induk)->get();
+        return view('mobile.page._tiketkeluargainti', ['KeluargaInti' => $keluargainti, 'DataWbp' => $datawbp]);
+      }
+    } else {
+      return view('mobile.page._formkeluargainti');
+    }
+  }
+  public function PembinaanCek()
+  {
+    if (!Session::get('login')) {
+      return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
+    }
+  }
+  public function PembinaanInputKeluarga(Request $request)
+  {
+    $Cari = DB::table('keluarga_inti')->where('nik', $request->NoIdentitas)->first();
+    if ($Cari->status == "Ditolak") {
+      $wbp = $request->nama_wbp;
+      $data = DB::table('data_wbp')->where('nama', 'like', '%' . $wbp . '%')->first();
+      $NoInduk = $data->no_induk;
+      $NoKTP = $data->nik_wbp;
+      if ($NoKTP == $request->nik_wbp) {
+        $fileijin = $request->file('fileijin');
+        $nama_suratijin = $fileijin->getClientOriginalName();
+        $uplode_suratijin = 'backup_restore/restore/surat/';
+        $fileijin->move($uplode_suratijin, $nama_suratijin);
+        DB::table('keluarga_inti')->where('nik', $request->NoIdentitas)->update([
+          'no_induk' => $data->no_induk,
+          'scan_kk' => $nama_suratijin,
+          'status_keluarga' => $request->hubungan,
+          'status' => "Pending",
+        ]);
+        Session::flash('alert', 'Pengajuan Keluarga Inti Menunggu Persetujuan Oleh Admin !');
+        return redirect('/Apk/Index');
+      } else {
+        $fileijin = $request->file('fileijin');
+        $nama_suratijin = $fileijin->getClientOriginalName();
+        $uplode_suratijin = 'backup_restore/restore/surat/';
+        $fileijin->move($uplode_suratijin, $nama_suratijin);
+        DB::table('keluarga_inti')->where('nik', $request->NoIdentitas)->update([
+          'no_induk' => $data->no_induk,
+          'scan_kk' => $nama_suratijin,
+          'status_keluarga' => $request->hubungan,
+          'status' => "Pending",
+        ]);
+        DB::table('data_wbp')->where('no_induk', $NoInduk)->update([
+          'nik_wbp' => $request->nik_wbp,
+        ]);
+        Session::flash('alert', 'Pengajuan Keluarga Inti Menunggu Persetujuan Oleh Admin !');
+        return redirect('/Apk/Index');
+      }
+    } else {
+      $wbp = $request->nama_wbp;
+      $data = DB::table('data_wbp')->where('nama', 'like', '%' . $wbp . '%')->first();
+      $NoInduk = $data->no_induk;
+      $NoKTP = $data->nik_wbp;
+      if ($NoKTP == $request->nik_wbp) {
+        $fileijin = $request->file('fileijin');
+        $nama_suratijin = $fileijin->getClientOriginalName();
+        $uplode_suratijin = 'backup_restore/restore/surat/';
+        $fileijin->move($uplode_suratijin, $nama_suratijin);
+        DB::table('keluarga_inti')->insert([
+          'nik' => $request->NoIdentitas,
+          'no_induk' => $data->no_induk,
+          'scan_kk' => $nama_suratijin,
+          'status_keluarga' => $request->hubungan,
+          'status' => "Pending",
+        ]);
+        Session::flash('alert', 'Pengajuan Keluarga Inti Menunggu Persetujuan Oleh Admin !');
+        return redirect('/Apk/Index');
+      } else {
+        $fileijin = $request->file('fileijin');
+        $nama_suratijin = $fileijin->getClientOriginalName();
+        $uplode_suratijin = 'backup_restore/restore/surat/';
+        $fileijin->move($uplode_suratijin, $nama_suratijin);
+        DB::table('keluarga_inti')->insert([
+          'nik' => $request->NoIdentitas,
+          'no_induk' => $data->no_induk,
+          'scan_kk' => $nama_suratijin,
+          'status_keluarga' => $request->hubungan,
+          'status' => "Pending",
+        ]);
+        DB::table('data_wbp')->where('no_induk', $NoInduk)->update([
+          'nik_wbp' => $request->nik_wbp,
+        ]);
+        Session::flash('alert', 'Pengajuan Keluarga Inti Menunggu Persetujuan Oleh Admin !');
+        return redirect('/Apk/Index');
+      }
+    }
+  }
+  public function PengajuanFormulir($no_induk)
+  {
+    DB::table('keluarga_inti')->where('nik', $no_induk)->update([
+      'status_integrasi' => "Pending",
+    ]);
+    $Cari = DB::table('keluarga_inti')->where('nik', $no_induk)->first();
+    $keluargainti = DB::table('keluarga_inti')->where('nik', $no_induk)->get();
+    $datawbp = DB::table('data_wbp')->where('no_induk', $Cari->no_induk)->get();
+    Session::flash('alert', 'Selamat Permintaan Formulir Sedang Di Ajukan, Silahkan Menunggu Proses Persetujuan Oleh Admin !');
+    return view('mobile.page._tiketkeluargainti', ['KeluargaInti' => $keluargainti, 'DataWbp' => $datawbp]);
   }
 }

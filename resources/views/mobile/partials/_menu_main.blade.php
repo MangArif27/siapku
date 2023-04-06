@@ -2,10 +2,17 @@
     <div class="card-top">
         <a href="#" class="close-menu float-end me-2 text-center mt-3 icon-40 notch-clear"><i class="fa fa-times color-white"></i></a>
     </div>
+    @if(Session::get('status')=="PEGAWAI")
+    <div class="card-bottom">
+        <h1 class="color-white ps-3 mb-n1 font-28">SIAPKU</h1>
+        <p class="mb-2 ps-3 font-12 color-white opacity-50">Sistem Aplikasi Kepegawaian, Keuangan dan Umum</p>
+    </div>
+    @else
     <div class="card-bottom">
         <h1 class="color-white ps-3 mb-n1 font-28">SiRatu Cilok</h1>
         <p class="mb-2 ps-3 font-12 color-white opacity-50">Sistem Informasi Rutan Kelas I Cilodong Depok</p>
     </div>
+    @endif
     <div class="card-overlay bg-gradient"></div>
 </div>
 <div class="mt-4"></div>

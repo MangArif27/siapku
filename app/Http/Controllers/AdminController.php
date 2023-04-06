@@ -84,6 +84,12 @@ class AdminController extends Controller
         'kamar' => $request->kamar,
         'kejahatan' => $request->kejahatan,
         'status_wbp' => $request->status_wbp,
+        'nik_wbp' => $request->nik,
+        'pidana' => $request->pidana,
+        'tanggal_ditahan' => $request->tgl_ditahan,
+        'tanggal_ekspirasi' => $request->tgl_ekspirasi,
+        'kegiatan_pembinaan' => $request->pembinaan,
+        'skor_pembinaan' => $request->skor_pembinaan,
         'status' => $request->status,
         'button' => $level,
       ]);
@@ -118,11 +124,11 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      if ($request->status == "ADMIN") {
+      if ($request->status == "ADMIN" || $request->status == "ADMIN PEGAWAI" || $request->status == "ADMIN KUNJUNGAN") {
         $level = "btn-success";
-      } elseif ($request->status == "COUNTER PEGAWAI") {
+      } elseif ($request->status == "COUNTER PEGAWAI" || $request->status == "COUNTER") {
         $level = "btn-primary";
-      } elseif ($request->status == "PEGAWAI") {
+      } elseif ($request->status == "PEGAWAI" || $request->status == "USER") {
         $level = "btn-warning";
       } else {
         $level = "btn-danger";
@@ -136,6 +142,55 @@ class AdminController extends Controller
         'status' => $request->status,
         'level' => $level,
       ]);
+      DB::table('sub_menu')->where('no_identitas', $request->nik)->update([
+        'user' => $request->user,
+        'wbp' => $request->wbp,
+        'keluarga' => $request->keluarga,
+        'penitipan_barang' => $request->penitipan_barang,
+        'kunjungan' => $request->kunjungan,
+        'video_call' => $request->video_call,
+        'tamu_dinas' => $request->tamu_dinas,
+        'integrasi' => $request->integrasi,
+        'remisi' => $request->remisi,
+        'izin_alasan_penting' => $request->iap,
+        'layanan_slip' => $request->layanan_slip,
+        'layanan_download_slip' => $request->layanan_download_slip,
+        'karis' => $request->karis,
+        'pengamanan' => 2,
+        'visi_misi' => $request->visi_misi,
+        'struktur_organisasi' => $request->struktur_organisasi,
+        'hotline' => $request->hotline,
+        'layanan_pengaduan' => $request->layanan_pengaduan,
+        'surat' => $request->surat_ijin,
+        'print_surat' => $request->print_surat,
+        'form_pengaduan' => $request->form_pengaduan,
+        'list_pengaduan' => $request->list_pengaduan,
+        'pos_pam' => 2,
+        'lap_pam' => 2,
+        'gaji' => $request->gaji,
+        'tunkin' => $request->tunkin,
+        'print_slip' => $request->print_slip,
+        'daftar_barang' => $request->daftar_barang,
+        'daftar_ruangan' => $request->daftar_ruangan,
+        'slide' => $request->slide,
+        'galery' => $request->galery,
+        'master_dokumen' => $request->master_dokumen,
+        'backup_data' => $request->backup_data,
+        'about' => $request->about,
+
+      ]);
+      DB::table('menu')->where('no_identitas', $request->nik)->update([
+        'home' => $request->home,
+        'data' => $request->data,
+        'informasi' => $request->informasi,
+        'layanan_kunjungan' => $request->layanan_kunjungan,
+        'layanan_pengaduan' => $request->layanan_pengaduan,
+        'gaji_tunkin' => $request->gaji_tunkin,
+        'pengamanan' => 2,
+        'inventory' => $request->inventory,
+        'pengaturan' => $request->pengaturan,
+      ]);
+      Session::flash('sukses', 'Data Pengguna Berhasil di Update !');
       return redirect('/data_pengunjung');
     }
   }
@@ -146,6 +201,28 @@ class AdminController extends Controller
     } else {
       $keluarga_inti = DB::table('keluarga_inti')->get();
       return view('/page/_data_keluarga_inti', ['keluarga_inti' => $keluarga_inti]);
+    }
+  }
+  public function postupdatekeluarga(Request $request)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      if ($request->status_integrasi == "Pending") {
+        $status_integrasi = "Pending";
+      } elseif ($request->status_integrasi == "Ditolak") {
+        $status_integrasi = "Ditolak";
+      } elseif ($request->status_integrasi == "Disetujui") {
+        $status_integrasi = "Disetujui";
+      } else {
+        $status_integrasi = "";
+      }
+      DB::table('keluarga_inti')->where('nik', $request->nik_keluarga)->update([
+        'status' => $request->status_keluarga,
+        'status_integrasi' => $status_integrasi,
+      ]);
+      Session::flash('alert', 'Selamat Update Data Keluarga Inti Berhasil !!');
+      return redirect('data_keluarga');
     }
   }
   public function informasi_kunjungan()
@@ -767,114 +844,6 @@ class AdminController extends Controller
       $insert_p->alasan_pembuktian = "-";
       $insert_p->save();
       $tanggal = date('Y-m-d');
-      $cari = DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->first();
-      if ($cari) {
-        if ($request->ratings == 1) {
-          $sangat_buruk = $cari->sangat_buruk + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'sangat_buruk' => $sangat_buruk,
-          ]);
-        } else if ($request->ratings == 2) {
-          $buruk = $cari->buruk + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'buruk' => $buruk,
-          ]);
-        } else if ($request->ratings == 3) {
-          $kurang = $cari->kurang + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'kurang' => $kurang,
-          ]);
-        } else if ($request->ratings == 4) {
-          $cukup = $cari->cukup + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'cukup' => $cukup,
-          ]);
-        } else if ($request->ratings == 5) {
-          $baik = $cari->baik + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'baik' => $baik,
-          ]);
-        } else if ($request->ratings == 6) {
-          $sangat_baik = $cari->sangat_baik + 1;
-          DB::table('ratings')->where('tanggal', $tanggal)->where('jenis_layanan', "Layanan Pengaduan")->update([
-            'sangat_baik' => $sangat_baik,
-          ]);
-        }
-      } else {
-        if ($request->ratings == 1) {
-          $sangat_buruk = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 0,
-            'sangat_buruk' => 1,
-            'cukup' => 0,
-            'buruk' => 0,
-            'baik' => 0,
-            'sangat_baik' => 0,
-            'tanggal' => $tanggal,
-          ]);
-        } else if ($request->ratings == 2) {
-          $buruk = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 0,
-            'sangat_buruk' => 0,
-            'cukup' => 0,
-            'buruk' => 1,
-            'baik' => 0,
-            'sangat_baik' => 0,
-            'tanggal' => $tanggal,
-          ]);
-        } else if ($request->ratings == 3) {
-          $kurang = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 1,
-            'sangat_buruk' => 0,
-            'cukup' => 0,
-            'buruk' => 0,
-            'baik' => 0,
-            'sangat_baik' => 0,
-            'tanggal' => $tanggal,
-          ]);
-        } else if ($request->ratings == 4) {
-          $cukup = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 0,
-            'sangat_buruk' => 0,
-            'cukup' => 1,
-            'buruk' => 0,
-            'baik' => 0,
-            'sangat_baik' => 0,
-            'tanggal' => $tanggal,
-          ]);
-        } else if ($request->ratings == 5) {
-          $baik = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 0,
-            'sangat_buruk' => 0,
-            'cukup' => 0,
-            'buruk' => 0,
-            'baik' => 1,
-            'sangat_baik' => 0,
-            'tanggal' => $tanggal,
-          ]);
-        } else if ($request->ratings == 6) {
-          $sangat_baik = 1;
-          DB::table('ratings')->insert([
-            'jenis_layanan' => "Layanan Pengaduan",
-            'kurang' => 0,
-            'sangat_buruk' => 0,
-            'cukup' => 0,
-            'buruk' => 0,
-            'baik' => 0,
-            'sangat_baik' => 1,
-            'tanggal' => $tanggal,
-          ]);
-        }
-      }
       Session::flash('sukses', 'Pengaduan Anda Berhasil Terkirim !!!');
       return redirect('/history_pengaduan');
     }

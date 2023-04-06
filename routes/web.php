@@ -39,6 +39,12 @@ Route::get('data_pengunjung', 'AdminController@data_user');
 Route::post('data_pengunjung', 'AdminController@postupdateakun')->name('post.update.akun');
 Route::get('delete/user/{nik}', 'AdminController@deleteuser');
 /*
+Route Page Data Keluarga Inti
+*/
+Route::get('data_keluarga', 'AdminController@data_keluarga_inti');
+Route::post('data_keluarga', 'AdminController@postupdatekeluarga')->name('post.update.keluarga');
+Route::get('delete/user/{nik}', 'AdminController@deletekeluarga');
+/*
 Route Page Informasi Kunjungan
 */
 Route::get('Penitipan-Barang', 'AdminController@penitipanbarang');
@@ -209,5 +215,7 @@ Route::get('/Apk/Pusat-Berkas', 'MobileController@pusatberkas');
 Route::get('/Apk/Download/Berkas/{link}', 'MobileController@DonwloadDokumen');
 Route::get('/Apk/Layanan-Tamu', 'MobileController@tamu');
 Route::post('/Apk/Layanan-Tamu', 'MobileController@posttamu')->name('post.tamu');
-Route::get('/Apk/Lap-Pengamanan', 'MobileController@lappengamanan');
-Route::post('/Apk/Lap-Pengamanan', 'MobileController@postlappengamanan')->name('post.lappengamanan');
+Route::get('/Apk/Pembinaan/{no_induk}', 'MobileController@Pembinaan');
+Route::get('/Apk/Pembinaan/', 'MobileController@PembinaanCek');
+Route::post('/Apk/PembinaanInputKeluarga', 'MobileController@PembinaanInputKeluarga')->name('post.formdaftarkeluarga');
+Route::get('/Apk/Pengajuan-Formulir/{no_induk}', 'MobileController@PengajuanFormulir');

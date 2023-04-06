@@ -96,37 +96,56 @@ class UserController extends Controller
       $data->scan_ktp = $nama_ktp;
       // Proses Save
       $data->save();
-      /*DB::table('sub_menu')->insert([
+      DB::table('sub_menu')->insert([
         'no_identitas' => $request->nik,
         'user' => 2,
-        'about' => 2,
-        'hotline' => 2,
+        'wbp' => 2,
+        'keluarga' => 2,
+        'penitipan_barang' => 2,
+        'kunjungan' => 2,
+        'video_call' => 2,
+        'tamu_dinas' => 2,
+        'integrasi' => 2,
+        'remisi' => 2,
+        'izin_alasan_penting' => 2,
         'layanan_slip' => 2,
         'layanan_download_slip' => 2,
-        'survey' => 2,
         'karis' => 2,
-        'pensiun' => 2,
+        'pengamanan' => 2,
         'visi_misi' => 2,
         'struktur_organisasi' => 2,
+        'hotline' => 2,
+        'layanan_pengaduan' => 2,
+        'surat' => 2,
         'print_surat' => 2,
+        'form_pengaduan' => 2,
+        'list_pengaduan' => 2,
         'pos_pam' => 2,
         'lap_pam' => 2,
+        'gaji' => 2,
+        'tunkin' => 2,
         'print_slip' => 2,
-        'r_gaji' => 2,
-        'r_tunkin' => 2,
+        'daftar_barang' => 2,
+        'daftar_ruangan' => 2,
         'slide' => 2,
+        'galery' => 2,
         'master_dokumen' => 2,
         'backup_data' => 2,
+        'about' => 2,
+
       ]);
       DB::table('menu')->insert([
         'no_identitas' => $request->nik,
         'home' => 2,
         'data' => 2,
         'informasi' => 2,
+        'layanan_kunjungan' => 2,
+        'layanan_pengaduan' => 2,
         'gaji_tunkin' => 2,
-        'pengaturan' => 2,
         'pengamanan' => 2,
-      ]);*/
+        'inventory' => 2,
+        'pengaturan' => 2,
+      ]);
       return redirect('/login')->with('alert', 'Kamu berhasil Register');
     }
   }

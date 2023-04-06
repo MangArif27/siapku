@@ -44,7 +44,7 @@
             </a>
         </div> -->
         <div class="col-4 ps-2">
-            <a href="#" class="card card-style py-3 mx-0 mb-3">
+            <a href="/Apk/Pembinaan/{{Session::get('nik')}}" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-clipboard-check color-blue-light fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Layanan Pembinaan</h6>
                 <span class="font-10">Tap to View</span>
@@ -88,7 +88,7 @@
             </a>
         </div> -->
         <div class="col-4 ps-2">
-            <a href="#" class="card card-style py-3 mx-0 mb-3">
+            <a href="/Apk/Pembinaan" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-clipboard-check color-blue-light fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Layanan Pembinaan</h6>
                 <span class="font-10">Tap to View</span>
