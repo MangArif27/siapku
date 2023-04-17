@@ -203,6 +203,23 @@
                     </div>
                     </br>
                     </br>
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Ruangan Pegawai</label>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <select name="ruangan" id="status" class="form-control" required>
+                            <option>~ Ruangan Pegawai ~</option>
+                            @foreach(DB::table('daftar_ruangan')->get() as $Ruangan)
+                            @foreach(DB::table('pegawai_ruangan')->where('nik', $p->nik)->get() as $PRuangan)
+                            @if($Ruangan->kode_ruangan==$PRuangan->id_ruangan)
+                            <option value="{{$Ruangan->kode_ruangan}}" selected>{{$Ruangan->nama_ruangan}}</option>
+                            @else
+                            <option value="{{$Ruangan->kode_ruangan}}">{{$Ruangan->nama_ruangan}}</option>
+                            @endif
+                            @endforeach
+                            @endforeach
+                        </select>
+                    </div>
+                    </br>
+                    </br>
                     <label class="control-label col-md-9 col-sm-9 col-xs-12">MANAGEMENT MENU</label>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <table id="datatable" class="table table-striped table-bordered">

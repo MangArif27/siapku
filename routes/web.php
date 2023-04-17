@@ -219,3 +219,5 @@ Route::get('/Apk/Pembinaan/{no_induk}', 'MobileController@Pembinaan');
 Route::get('/Apk/Pembinaan/', 'MobileController@PembinaanCek');
 Route::post('/Apk/PembinaanInputKeluarga', 'MobileController@PembinaanInputKeluarga')->name('post.formdaftarkeluarga');
 Route::get('/Apk/Pengajuan-Formulir/{no_induk}', 'MobileController@PengajuanFormulir');
+Route::get('/Apk/LayananInventory/{no_induk}', 'MobileController@Inventory');
+Route::get('/Apk/LayananInventory/', 'MobileController@InventoryCek');

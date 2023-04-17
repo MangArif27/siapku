@@ -133,6 +133,10 @@ class AdminController extends Controller
       } else {
         $level = "btn-danger";
       }
+      DB::table('pegawai_ruangan')->where('nik', $request->nik)->update([
+        'id_ruangan' => $request->ruangan,
+      ]);
+
       DB::table('users')->where('nik', $request->nik)->update([
         'nama' => $request->nama,
         'jenis_kelamin' => $request->jenis_kelamin,

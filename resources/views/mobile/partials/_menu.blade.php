@@ -59,7 +59,7 @@
             </a>
         </div>
         <div class="col-4 ps-2">
-            <a href="#" class="card card-style py-3 mx-0 mb-3">
+            <a href="/Apk/LayananInventory/{{Session::get('nik')}}" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-archive color-teal-light fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Inventaris</br>Barang</h6>
                 <span class="font-10">Tap to View</span>
@@ -95,14 +95,14 @@
             </a>
         </div>
         <div class="col-4 pe-2">
-            <a href="/Apk/LayananGajiTunkin/{{Session::get('nik')}}" class="card card-style py-3 mx-0 mb-3">
+            <a href="/Apk/LayananGajiTunkin" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-money-bill-alt color-green-dark fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Slip Gaji</br>Pegawai</h6>
                 <span class="font-10">Tap to View</span>
             </a>
         </div>
         <div class="col-4 ps-2">
-            <a href="#" class="card card-style py-3 mx-0 mb-3">
+            <a href="/Apk/LayananInventory" class="card card-style py-3 mx-0 mb-3">
                 <i class="fa fa-archive color-teal-light fa-3x mb-1 pb-2"></i>
                 <h6 class="mb-0">Inventaris</br>Barang</h6>
                 <span class="font-10">Tap to View</span>

@@ -764,4 +764,20 @@ class MobileController extends Controller
     Session::flash('alert', 'Selamat Permintaan Formulir Sedang Di Ajukan, Silahkan Menunggu Proses Persetujuan Oleh Admin !');
     return view('mobile.page._tiketkeluargainti', ['KeluargaInti' => $keluargainti, 'DataWbp' => $datawbp]);
   }
+  public function Inventory($no_induk)
+  {
+    $Cari = DB::table('pegawai_ruangan')->where('nik', $no_induk)->first();
+    if ($Cari) {
+      $DataRuangan = DB::table('daftar_ruangan')->where('kode_ruangan', $Cari->id_ruangan)->get();
+      return view('mobile.page._inventory', ['DataRuangan' => $DataRuangan]);
+    } else {
+      return redirect('/Apk/Index');
+    }
+  }
+  public function InventoryCek()
+  {
+    if (!Session::get('login')) {
+      return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
+    }
+  }
 }

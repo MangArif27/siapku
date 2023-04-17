@@ -146,6 +146,10 @@ class UserController extends Controller
         'inventory' => 2,
         'pengaturan' => 2,
       ]);
+      DB::table('pegawai_ruangan')->insert([
+        'nik' => $request->nik,
+        'id_ruangan' => "0014",
+      ]);
       return redirect('/login')->with('alert', 'Kamu berhasil Register');
     }
   }
