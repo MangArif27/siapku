@@ -16,7 +16,7 @@
                     Kode Barang : {{ $db->kode_barang}}</br>
                 </p>
                 <div class="card-bottom text-end">
-                    <div class="me-1 color-white">
+                    <div class="me-3 color-white">
                         <a href="#" data-menu="menu-success-2-1-{{$db->kode_barang}}" class="btn btn-xxs rounded-m text-uppercase font-500 shadow-s bg-blue-light">Lihat Barang</a>
                     </div>
                 </div>

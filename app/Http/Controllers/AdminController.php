@@ -44,7 +44,11 @@ class AdminController extends Controller
     $galery = DB::table('galery')->get();
     $kepribadian = DB::table('kepribadian')->get();
     return view('/_home', ['slide' => $slide, 'galery' => $galery, 'kepribadian' => $kepribadian]);*/
-    return view('/_home');
+    if (!Session::get('login')) {
+      return view('page._landing_page');
+    } else {
+      return view('/_home');
+    }
   }
   public function kunjungan()
   {
