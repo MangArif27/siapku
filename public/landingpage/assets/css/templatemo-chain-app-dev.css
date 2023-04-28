@@ -1577,6 +1577,7 @@ footer {
   margin-top: 130px;
   padding-top: 200px;
   padding-bottom: 10px;
+  position: relative;
 }
 
 footer .section-heading {

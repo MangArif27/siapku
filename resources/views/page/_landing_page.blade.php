@@ -340,7 +340,7 @@ https://templatemo.com/tm-570-chain-app-dev
       myIndex = 1
     }
     x[myIndex - 1].style.display = "block";
-    setTimeout(carousel, 2000); // Change image every 2 seconds
+    setTimeout(carousel, 20000); // Change image every 2 seconds
   }
 </script>
 <script>
