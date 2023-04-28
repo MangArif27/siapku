@@ -84,7 +84,7 @@ https://templatemo.com/tm-570-chain-app-dev
   </div>
 </header>
 <!-- ***** Header Area End ***** -->
-<div class="main-banner section " id="top" data-wow-duration="1s" data-wow-delay="0.5s">
+<div class="main-banner mySlides section " id="top" data-wow-duration="1s" data-wow-delay="0.5s">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -114,7 +114,7 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 </div>
-<div id="services" class="services section ">
+<div id="services" class="services mySlides section ">
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
@@ -159,7 +159,7 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 </div>
-<div id="about" class="about-us section">
+<div id="about" class="about-us mySlides section">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 align-self-center">
@@ -209,7 +209,7 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 </div>
-<div id="pricing" class="pricing-tables  section ">
+<div id="pricing" class="pricing-tables mySlides section ">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
@@ -270,7 +270,7 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 </div>
-<footer id="newsletter" class="">
+<footer id="newsletter" class="mySlides section">
   <div class="container">
     <div class="col-lg-12">
       <div class="section-heading" style="text-align: center; -webkit-text-fill-color: white;">
@@ -340,7 +340,7 @@ https://templatemo.com/tm-570-chain-app-dev
       myIndex = 1
     }
     x[myIndex - 1].style.display = "block";
-    setTimeout(carousel, 5000); // Change image every 2 seconds
+    setTimeout(carousel, 2000); // Change image every 2 seconds
   }
 </script>
 <script>
