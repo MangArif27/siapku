@@ -1,5 +1,22 @@
 @extends('mobile.index')
 @section('konten')
+@if(empty(Session::get('alert')))
+@else
+<div id="menu-welcome-modal" class="menu menu-box-modal menu-box-round-medium menu-box-detached rounded-s menu-active" data-menu-width="310" data-menu-height="350" data-menu-effect="menu-over" data-menu-select="page-components" style="display: block; height: 350px; width: 310px;">
+    <!-- add data-cookie-activate above to auto-activate the menu on cookie detection -->
+    <div class="boxed-text-xl mt-4">
+        <h1 class="mb-3"><i class="fa fa-bullhorn color-red2-dark fa-3x"></i></h1>
+        <h2 class="font-700 mb-n1">Notifikasi !</h2>
+        <p class="color-highlight">Sisten Informasi Rutan Kelas I Depok</p>
+        <p>
+            {{Session::get('alert')}}
+        </p>
+        <!-- add hide-cookie to the class to delete the cookie-->
+        <a href="#" class="close-menu btn btn-m btn-center-xl rounded-xs shadow-m bg-highlight text-uppercase font-900">Tutup
+            Notifikasi</a>
+    </div>
+</div>
+@endif
 <div class="page-content pb-0">
     <div data-card-height="cover-full" class="card mb-0" style="background-image:url(images/pictures/ImageLogin.jpg)">
         <div class="card-center">
@@ -31,10 +48,10 @@
 
                 <div class="row pt-3 mb-3">
                     <div class="col-6 text-start font-11">
-                        <a class="color-white opacity-50" href="page-system-forgot-2.html">Lupa Password</a>
+                        <a class="color-white opacity-50" href="#">Lupa Password</a>
                     </div>
                     <div class="col-6 text-end font-11">
-                        <a class="color-white opacity-50" href="page-system-signup-2.html">Buat Akun</a>
+                        <a class="color-white opacity-50" href="/Apk/registrasi">Buat Akun</a>
                     </div>
                 </div>
 

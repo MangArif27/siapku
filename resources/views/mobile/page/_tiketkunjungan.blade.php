@@ -34,8 +34,6 @@
         </div>
         @foreach($kunjungan as $ku)
         @if($ku->nik==Session::get('nik'))
-        @foreach($datawbp as $wbp)
-        @if($wbp->no_induk==$ku->no_induk)
         @if($user = DB::table('users')->where('nik',Session::get('nik'))->first())
         <div class="card card-style ">
             <div class="content mb-0">
@@ -67,16 +65,8 @@
                     </a>
                     <a href="#">
                         <i class="fa fa-universal-access color-green1-dark"></i>
-                        <span class="font-10">Nama WBP : {{ $wbp->nama }}</span>
-                        <strong>Perkara : {{ $wbp->kejahatan}}</strong>
+                        <span class="font-10">Nama WBP : {{ $ku->nama_wbp }}</span>
                     </a>
-                    @if($ku->status="TIDAK DIIJINKAN")
-                    <a href="#">
-                        <i class="fa fa-paperclip color-red2-dark"></i>
-                        <span class="font-5">Alasan : </span>
-                        <strong>{{ $ku->alasan }}</strong>
-                    </a>
-                    @endif
                 </div>
                 @elseif($ku->keperluan=="Penitipan Barang")
                 <div class="list-group list-custom-large mb-2">
@@ -97,15 +87,9 @@
                     </a>
                     <a href="#">
                         <i class="fa fa-universal-access color-green1-dark"></i>
-                        <span class="font-10">Nama WBP : {{ $wbp->nama }}</span>
-                        <strong>Perkara : {{ $wbp->kejahatan}}</strong>
+                        <span class="font-10">Nama WBP : {{ $ku->nama_wbp }}</span>
                     </a>
-                    @if($ku->status="TIDAK DIIJINKAN")
-                    <a href="#">
-                        <i class="fa fa-paperclip color-red2-dark"></i>
-                        <span class="font-10">Alasan : </span>
-                        <strong>{{ $ku->alasan }}</strong>
-                    </a>
+
                     @endif
                 </div>
                 @else
@@ -127,26 +111,24 @@
                     </a>
                     <a href="#">
                         <i class="fa fa-universal-access color-green1-dark"></i>
-                        <span class="font-10">Nama WBP : {{ $wbp->nama }}</span>
-                        <strong>Perkara : {{ $wbp->kejahatan}}</strong>
+                        <span class="font-10">Nama WBP : {{ $ku->nama_wbp }}</span>
                     </a>
-                    @if($ku->status="TIDAK DIIJINKAN")
-                    <a href="#">
-                        <i class="fa fa-paperclip color-red2-dark"></i>
-                        <span class="font-5">Alasan : </span>
-                        <strong>{{ $ku->alasan }}</strong>
-                    </a>
-                    @endif
                 </div>
                 @endif
                 <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mb-3 shadow-xl btn-m btn-full">Kode
                     Booking : {{$ku->kode_booking}}
                 </a>
+                @if($ku->keperluan="Penitipan Barang")
+                @if($ku->foto=="-")
+                <h3>Barang Belum Diterima !!</h3>
+                @else
+                <h3>Serah Terima :</h3>
+                <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto )}}" class="mb-3">
+                @endif
+                @endif
             </div>
         </div>
-        @endif
-        @endif
-        @endforeach
+
         @endif
         @endforeach
     </div>

@@ -94,6 +94,7 @@ Route Page Kunjungan
 */
 Route::get('surat_ijin', 'AdminController@surat_ijin');
 Route::get('counter', 'AdminController@counter');
+Route::get('sikawan', 'AdminController@sikawan');
 Route::post('counter/kunjungan', 'AdminController@postcounterkunjungan')->name('counter.kunjungan');
 Route::post('counter', 'AdminController@postcounteradmin')->name('post.counter.admin');
 /*
@@ -176,7 +177,7 @@ Route::get('/resetpassword/{token}', 'AdminController@resetpassword');
 Route::get('/logout', 'UserController@logout');
 
 //Moblie
-Route::get('Apk/Index', 'MobileController@home');
+Route::get('/Apk/Index', 'MobileController@home');
 //proses login buat akun dan signout serta lupa password
 Route::get('Apk/login', 'MobileController@login');
 Route::get('Apk/loginn', 'MobileController@loginn');

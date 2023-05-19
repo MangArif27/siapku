@@ -34,6 +34,8 @@ use App\Imports\upload_tunkir;
 use Illuminate\Http\Response;
 use PhpParser\Node\Stmt\Else_;
 
+use function PHPUnit\Framework\isEmpty;
+
 class MobileController extends Controller
 {
   public function home()
@@ -107,8 +109,8 @@ class MobileController extends Controller
       $data->email = $request->Email;
       $data->password = bcrypt($request->RegistrasiPassword);
       $data->photo = $nama_photo;
-      $data->level = "btn-danger";
-      $data->status = "PENDING";
+      $data->level = "btn-warning";
+      $data->status = "USER";
       $data->remember_token = csrf_token();
       $data->scan_ktp = $nama_ktp;
       // Proses Save
@@ -117,35 +119,39 @@ class MobileController extends Controller
         'no_identitas' => $request->nik,
         'user' => 2,
         'wbp' => 2,
+        'keluarga' => 2,
+        'penitipan_barang' => 2,
         'kunjungan' => 2,
+        'video_call' => 2,
+        'tamu_dinas' => 2,
         'integrasi' => 2,
         'remisi' => 2,
         'izin_alasan_penting' => 2,
-        'about' => 2,
-        'penitipan_barang' => 2,
-        'video_call' => 2,
-        'hotline' => 2,
         'layanan_slip' => 2,
         'layanan_download_slip' => 2,
-        'layanan_pengaduan' => 2,
-        'survey' => 2,
         'karis' => 2,
-        'pensiun' => 2,
+        'pengamanan' => 2,
         'visi_misi' => 2,
         'struktur_organisasi' => 2,
-        'tamu_dinas' => 2,
+        'hotline' => 2,
+        'layanan_pengaduan' => 2,
         'surat' => 2,
         'print_surat' => 2,
+        'sikawan' => 2,
         'form_pengaduan' => 2,
         'list_pengaduan' => 2,
-        'r_gaji' => 2,
-        'r_tunkin' => 2,
+        'pos_pam' => 2,
+        'lap_pam' => 2,
+        'gaji' => 2,
+        'tunkin' => 2,
         'print_slip' => 2,
-        'kemandirian' => 2,
-        'kepribadian' => 2,
+        'daftar_barang' => 2,
+        'daftar_ruangan' => 2,
         'slide' => 2,
+        'galery' => 2,
         'master_dokumen' => 2,
         'backup_data' => 2,
+        'about' => 2,
       ]);
       DB::table('menu')->insert([
         'no_identitas' => $request->nik,
@@ -154,10 +160,14 @@ class MobileController extends Controller
         'informasi' => 2,
         'layanan_kunjungan' => 2,
         'layanan_pengaduan' => 2,
-        'pengaturan' => 2,
-        'pembinaan' => 2,
-        'surat' => 2,
         'gaji_tunkin' => 2,
+        'pengamanan' => 2,
+        'inventory' => 2,
+        'pengaturan' => 2,
+      ]);
+      DB::table('pegawai_ruangan')->insert([
+        'nik' => $request->nik,
+        'id_ruangan' => "0014",
       ]);
       return redirect('/Apk/login')->with('alert', 'Selamat Kamu Berhasil Registrasi, Selanjutnya Menunggu Persetujuan Admin !!');
     }
@@ -268,143 +278,74 @@ class MobileController extends Controller
       $nik = $request->NoIdentitas;
       $tanggal = $request->tanggal;
       $keperluan = $request->keperluan;
-      $wbp = $request->nama_wbp;
-      $dtanggal = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal)->count();
-      if ($dtanggal > 30) {
-        return redirect('/Apk/layanan-kunjungan')->with('alert', 'Kuota Pendaftar Sudah Melebihi 30 Pendaftar Perhari, Silahkan Daftar Dihari Yang Lain !!!');
+      if ($tanggal == date('Y-m-d')) {
+        return redirect('/Apk/layanan-kunjungan')->with('alert', 'Maksimal Daftar H-1 Sebelum Waktu Kunjungan !!!');
       } else {
-        $data = DB::table('data_wbp')->where('nama', $wbp)->first();
-        if ($data->status == "SIDANG") {
-          return redirect('/Apk/layanan-kunjungan')->with('alert', 'Maaf Warga Binaan yang dimaksud sedang melaksanakan Sidang, sehingga tidak bisa dilaksanakan kunjungan !!!');
-        } else if ($data->status == "OFFLINE") {
-          return redirect('/Apk/layanan-kunjungan')->with('alert', 'Maaf Warga Binaan yang dimaksud sedang tidak bisa dikunjungi !!!');
+        $dtanggal = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal)->count();
+        if ($dtanggal > 20) {
+          return redirect('/Apk/layanan-kunjungan')->with('alert', 'Kuota Pendaftar Sudah Melebihi 20 Pendaftar Perhari, Silahkan Daftar Dihari Yang Lain !!!');
         } else {
-          $data = DB::table('kunjungan')->where('no_induk', $wbp)->Where('nik', $nik)->Where('tanggal_kunjungan', $tanggal)->first();
-          if ($data) {
-            return redirect('/Apk/layanan-kunjungan')->with('alert', 'Maaf Anda Tidak Bisa Daftar Dengan WBP Di Hari Yang Sama !!!');
+          if (isEmpty($request->file('fileijin'))) {
+            $nama_suratijin = '-';
           } else {
-            $data = DB::table('data_wbp')->where('nama', $wbp)->first();
-            if ($data->status_wbp == "TAHANAN") {
-              if (empty($request->file('fileijin'))) {
-                return redirect('/Apk/layanan-kunjungan')->with('alert', 'WBP yang dituju masih status tahanan, silahkan isi Surat Ijin Bagi Tahanan !!');
-              } else {
-                $fileijin = $request->file('fileijin');
-                $nama_suratijin = $fileijin->getClientOriginalName();
-                $uplode_suratijin = 'backup_restore/restore/surat/';
-                $fileijin->move($uplode_suratijin, $nama_suratijin);
-                //jumlah panjang karakter angka dan huruf.
-                $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-                $acak = substr(str_shuffle($permitted_chars), 0, 6);
-                $data = DB::table('data_wbp')->where('nama', 'like', '%' . $wbp . '%')->first();
-                $NoIndukWbp = $data->no_induk;
-                $insert = new pendaftaran();
-                $insert->tanggal_kunjungan = $tanggal;
-                $insert->no_induk = $NoIndukWbp;
-                $insert->nik = $nik;
-                $insert->surat_ijin = $nama_suratijin;
-                $insert->status_keluarga = $request->hubungan;
-                $insert->keperluan = $keperluan;
-                $insert->sesi = $request->sesi;
-                $insert->kode_booking = $acak;
-                $insert->status = "PROSES";
-                $insert->alasan =  "-";
-                $insert->button = "btn-warning";
-                // Proses Save
-                $insert->save();
-                if ($keperluan == "Penitipan Barang") {
-                  $jumlah = $request->jumlahbarang;
-                  if ($jumlah == "Tidak Ada") {
-                    return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
-                  } else {
-                    for ($i = 0; $i < $jumlah; $i++) {
-                      $insert_p = new Kunjungan();
-                      $insert_p->tanggal_kunjungan = $tanggal;
-                      $insert_p->no_induk = $NoIndukWbp;
-                      $insert_p->nik = $nik;
-                      $insert_p->kode = $acak;
-                      $insert_p->nik_pengikut = $request->JenisBarang[$i];
-                      $insert_p->nama = $request->NamaBarang[$i];
-                      $insert_p->save();
-                    }
-                  }
-                } else {
+            $fileijin = $request->file('fileijin');
+            $nama_suratijin = $fileijin->getClientOriginalName();
+            $uplode_suratijin = 'backup_restore/restore/surat/';
+            $fileijin->move($uplode_suratijin, $nama_suratijin);
+          }
 
-                  $jumlah = $request->jumlahorang;
-                  if ($jumlah == "Tidak Ada") {
-                    return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
-                  } else {
-                    for ($i = 0; $i < $jumlah; $i++) {
-                      $insert_p = new Kunjungan();
-                      $insert_p->tanggal_kunjungan = $tanggal;
-                      $insert_p->no_induk = $NoIndukWbp;
-                      $insert_p->nik = $nik;
-                      $insert_p->kode = $acak;
-                      $insert_p->nik_pengikut = $request->NoIndukPengikut[$i];
-                      $insert_p->nama = $request->Pengikut[$i];
-                      $insert_p->save();
-                    }
-                  }
-                }
-
-                return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
-              }
-            } else {
-              //jumlah panjang karakter angka dan huruf.
-              $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-              $acak = substr(str_shuffle($permitted_chars), 0, 6);
-              $data = DB::table('data_wbp')->where('nama', 'like', '%' . $wbp . '%')->first();
-              $NoIndukWbp = $data->no_induk;
-              $insert = new pendaftaran();
-              $insert->tanggal_kunjungan = $tanggal;
-              $insert->no_induk = $NoIndukWbp;
-              $insert->nik = $nik;
-              $insert->surat_ijin = "-";
-              $insert->status_keluarga = $request->hubungan;
-              $insert->keperluan = $keperluan;
-              $insert->sesi = $request->sesi;
-              $insert->kode_booking = $acak;
-              $insert->status = "PROSES";
-              $insert->alasan =  "-";
-              $insert->button = "btn-warning";
-              // Proses Save
-              $insert->save();
-              if ($keperluan == "Penitipan Barang") {
-                $jumlah = $request->jumlahbarang;
-                if ($jumlah == "Tidak Ada") {
-                  return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
-                } else {
-                  for ($i = 0; $i < $jumlah; $i++) {
-                    $insert_p = new Kunjungan();
-                    $insert_p->tanggal_kunjungan = $tanggal;
-                    $insert_p->no_induk = $NoIndukWbp;
-                    $insert_p->nik = $nik;
-                    $insert_p->kode = $acak;
-                    $insert_p->nik_pengikut = $request->JenisBarang[$i];
-                    $insert_p->nama = $request->NamaBarang[$i];
-                    $insert_p->save();
-                  }
-                }
-              } else {
-
-                $jumlah = $request->jumlahorang;
-                if ($jumlah == "Tidak Ada") {
-                  return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
-                } else {
-                  for ($i = 0; $i < $jumlah; $i++) {
-                    $insert_p = new Kunjungan();
-                    $insert_p->tanggal_kunjungan = $tanggal;
-                    $insert_p->no_induk = $NoIndukWbp;
-                    $insert_p->nik = $nik;
-                    $insert_p->kode = $acak;
-                    $insert_p->nik_pengikut = $request->NoIndukPengikut[$i];
-                    $insert_p->nama = $request->Pengikut[$i];
-                    $insert_p->save();
-                  }
-                }
-              }
+          //jumlah panjang karakter angka dan huruf.
+          $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+          $acak = substr(str_shuffle($permitted_chars), 0, 6);
+          $NoIndukWbp = $request->NamaWbp;
+          $insert = new pendaftaran();
+          $insert->tanggal_kunjungan = $tanggal;
+          $insert->nama_wbp = $request->NamaWbp;
+          $insert->nik = $nik;
+          $insert->surat_ijin = $nama_suratijin;
+          $insert->status_keluarga = $request->hubungan;
+          $insert->keperluan = $keperluan;
+          $insert->sesi = $request->sesi;
+          $insert->kode_booking = $acak;
+          $insert->status = "PROSES";
+          $insert->foto =  "-";
+          $insert->button = "btn-warning";
+          // Proses Save
+          $insert->save();
+          if ($keperluan == "Penitipan Barang") {
+            $jumlah = $request->jumlahbarang;
+            if ($jumlah == "Tidak Ada") {
               return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
+            } else {
+              for ($i = 0; $i < $jumlah; $i++) {
+                $insert_p = new Kunjungan();
+                $insert_p->tanggal_kunjungan = $tanggal;
+                $insert_p->nama_wbp = $request->NamaWbp;
+                $insert_p->nik = $nik;
+                $insert_p->kode = $acak;
+                $insert_p->nik_pengikut = $request->JenisBarang[$i];
+                $insert_p->nama = $request->NamaBarang[$i];
+                $insert_p->save();
+              }
+            }
+          } else {
+            $jumlah = $request->jumlahorang;
+            if ($jumlah == "Tidak Ada") {
+              return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
+            } else {
+              for ($i = 0; $i < $jumlah; $i++) {
+                $insert_p = new Kunjungan();
+                $insert_p->tanggal_kunjungan = $tanggal;
+                $insert_p->nama_wbp = $request->NamaWbp;
+                $insert_p->nik = $nik;
+                $insert_p->kode = $acak;
+                $insert_p->nik_pengikut = $request->NoIndukPengikut[$i];
+                $insert_p->nama = $request->Pengikut[$i];
+                $insert_p->save();
+              }
             }
           }
+          return redirect('/Apk/Ticket/Kunjungan/' . $acak)->with('alert', 'Selamat anda berhasil mendaftar, silahkan berikan informasi tiket kunjungan kepada petugas !!');
         }
       }
     }

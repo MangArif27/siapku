@@ -214,13 +214,11 @@
                     Sistem Informasi Rutan Kelas I Depok Cilodong
                 </p>
                 <input class="form-control" name="NoIdentitas" hidden type="number" value="{{Session::get('nik')}}">
-                <select id="form5" class="cari form-control mb-6" name="nama_wbp">
-                </select>
-                <div class="input-style has-borders no-icon mb-4">
-                    <label for="form5" class="color-highlight">Nama WBP</label>
+                <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
+                    <input type="text" name="NamaWbp" class="form-control" id="NamaWBP" placeholder="Nama Warga Binaan Pemasyarakatan">
+                    <label for="form1ac" class="color-theme opacity-50 text-uppercase font-700 font-10">Nama WBP</label>
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
                     <i class="fa fa-check disabled valid color-green-dark"></i>
-                    <i class="fa fa-check disabled invalid color-red-dark"></i>
-                    <em></em>
                 </div>
                 <div class="file-data input-style has-borders no-icon pb-4">
                     <input type="file" id="file-upload" name="fileijin" class="upload-file bg-highlight shadow-s rounded-s" accept="image/*">

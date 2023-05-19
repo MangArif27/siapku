@@ -8,7 +8,7 @@
         <div class="spinner-border color-highlight" role="status"></div>
     </div>
     <div id="page">
-        @if(Request::path() =="Apk/login")
+        @if(Request::path() =="Apk/login" || Request::path() =="Apk/registrasi")
         @else
         @if(Session::get('status')=="PEGAWAI")
         <div class="header header-fixed header-logo-center header-auto-show">

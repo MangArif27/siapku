@@ -1,4 +1,4 @@
-<div class="card card-style mt-1 mb-3">
+<!--<div class="card card-style mt-1 mb-3">
     <div class="content mb-0">
         <h1 class="text-center mb-n1 font-20 mb-4">Penyerapan Anggaran</h1>
         <p class="text-center font-12 font-600 color-highlight">Rumah Tahanan Negara Kelas I Depok</p>
@@ -6,4 +6,4 @@
             <canvas class="graph" id="vertical-chart" /></canvas>
         </div>
     </div>
-</div>
+    </div> -->

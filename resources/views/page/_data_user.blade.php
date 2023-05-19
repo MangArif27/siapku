@@ -543,10 +543,22 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Print Surat </label>
+                                        <!--<label class="col-md-6 col-sm-6 col-xs-12">Print Surat </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="print_surat" id="print_surat">
                                                 @if($submenu->print_surat=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>-->
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Sikawan </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="sikawan" id="sikawan">
+                                                @if($submenu->sikawan=='1')
                                                 <option value="1" selected>Tampil</option>
                                                 <option value="2">Tidak</option>
                                                 @else

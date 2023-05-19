@@ -141,8 +141,12 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
                     <li><a href="surat_ijin"> History Pendaftaran </a></li>
                     @else
                     @endif
-                    @if($submenu->print_surat==1)
+                    <!--@if($submenu->print_surat==1)
                     <li><a href="counter"> Counter Kunjungan </a></li>
+                    @else
+                    @endif-->
+                    @if($submenu->sikawan==1)
+                    <li><a href="sikawan"> Sikawan </a></li>
                     @else
                     @endif
                 </ul>

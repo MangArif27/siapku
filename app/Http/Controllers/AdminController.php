@@ -33,6 +33,8 @@ use App\Imports\upload_gaji;
 use App\Imports\upload_tunkir;
 use phpDocumentor\Reflection\Location as ReflectionLocation;
 
+use function PHPUnit\Framework\isEmpty;
+
 class AdminController extends Controller
 {
   /*
@@ -171,6 +173,7 @@ class AdminController extends Controller
         'layanan_pengaduan' => $request->layanan_pengaduan,
         'surat' => $request->surat_ijin,
         'print_surat' => $request->print_surat,
+        'sikawan' => $request->sikawan,
         'form_pengaduan' => $request->form_pengaduan,
         'list_pengaduan' => $request->list_pengaduan,
         'pos_pam' => 2,
@@ -739,6 +742,14 @@ class AdminController extends Controller
       return view('/page/_pendaftaran_kunjungan', ['data_wbp' => $data_wbp], ['users' => $user]);
     }
   }
+  public function sikawan()
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      return view('/page/_sikawan');
+    }
+  }
   public function pendaftaran($no_induk)
   {
     if (!Session::get('login')) {
@@ -933,13 +944,28 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
+      if ($request->layanan == "penitipan barang") {
+        if (isEmpty($request->file('serahterima'))) {
+          $fileijin = $request->file('serahterima');
+          $nama_suratijin = $fileijin->getClientOriginalName();
+          $uplode_suratijin = 'backup_restore/restore/serhterima/';
+          $fileijin->move($uplode_suratijin, $nama_suratijin);
+          $status = "Selesai";
+        } else {
+          $nama_suratijin = "-";
+          $status = "Dikirim";
+        }
+      } else {
+        $nama_suratijin = "-";
+        $status = "Selesai";
+      }
       $kode = $request->kode;
       $print = pendaftaran::where('kode_booking', $kode)->first();
-      $print->status = "SELESAI";
+      $print->foto = $nama_suratijin;
+      $print->status = $status;
       $print->button = "btn-succes";
       $print->save();
-
-      return view('/page/_ticket', ['kunjungan' => $print]);
+      return redirect('surat_ijin')->with('sukses', 'Data Kunjungan Berhasil Di Update');
     }
   }
   public function postupdatetamudinas(Request $request)

@@ -118,6 +118,7 @@ class UserController extends Controller
         'layanan_pengaduan' => 2,
         'surat' => 2,
         'print_surat' => 2,
+        'sikawan' => 2,
         'form_pengaduan' => 2,
         'list_pengaduan' => 2,
         'pos_pam' => 2,
@@ -132,7 +133,6 @@ class UserController extends Controller
         'master_dokumen' => 2,
         'backup_data' => 2,
         'about' => 2,
-
       ]);
       DB::table('menu')->insert([
         'no_identitas' => $request->nik,
