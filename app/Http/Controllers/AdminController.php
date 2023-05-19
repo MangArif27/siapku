@@ -747,7 +747,22 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      return view('/page/_sikawan');
+      $sikawan = DB::table('waktu_kujungan')->orderBy('id', 'DESC')->get();
+      return view('/page/_sikawan', ['sikawan' => $sikawan]);
+    }
+  }
+  public function postinputsikawan(Request $request)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      DB::table('waktu_kujungan')->insert([
+        'nama_wbp' => $request->nama_wbp,
+        'kamar_wbp' => $request->kamar_wbp,
+        'waktu' => $request->waktu,
+        'status' => "Belum Dimulai"
+      ]);
+      return redirect('/sikawan')->with('sukses', 'Data Kunjungan Berhasil Disimpan');
     }
   }
   public function pendaftaran($no_induk)

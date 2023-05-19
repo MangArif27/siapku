@@ -95,6 +95,7 @@ Route Page Kunjungan
 Route::get('surat_ijin', 'AdminController@surat_ijin');
 Route::get('counter', 'AdminController@counter');
 Route::get('sikawan', 'AdminController@sikawan');
+Route::post('Input-Sikawan', 'AdminController@postinputsikawan')->name('input.waktu');
 Route::post('counter/kunjungan', 'AdminController@postcounterkunjungan')->name('counter.kunjungan');
 Route::post('counter', 'AdminController@postcounteradmin')->name('post.counter.admin');
 /*
