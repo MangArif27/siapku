@@ -31,6 +31,7 @@ use Stevebauman\Location\Facades\Location;
 use App\Imports\DataWBP;
 use App\Imports\upload_gaji;
 use App\Imports\upload_tunkir;
+use DateTime;
 use phpDocumentor\Reflection\Location as ReflectionLocation;
 
 use function PHPUnit\Framework\isEmpty;
@@ -761,6 +762,23 @@ class AdminController extends Controller
         'kamar_wbp' => $request->kamar_wbp,
         'waktu' => $request->waktu,
         'status' => "Belum Dimulai"
+      ]);
+      return redirect('/sikawan')->with('sukses', 'Data Kunjungan Berhasil Disimpan');
+    }
+  }
+  public function postupdatesikawan($id)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $date = date("Y-m-d H:i:s");
+      $time = date("H:i:s");
+      $cari = DB::table('waktu_kujungan')->where('id', $id)->first();
+      $WaktuKunjungan = date("Y-m-d H:i:s", strtotime("$cari->waktu minutes", strtotime($time)));
+      DB::table('waktu_kujungan')->where('id', $id)->update([
+        'waktu_mulai' => $date,
+        'waktu_selesai' => $WaktuKunjungan,
+        'status' => "Belum Selesai"
       ]);
       return redirect('/sikawan')->with('sukses', 'Data Kunjungan Berhasil Disimpan');
     }

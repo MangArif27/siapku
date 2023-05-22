@@ -47,7 +47,7 @@
                         <div class="clearfix"></div>
                         <br />
                         <div>
-                            <h1><img src="{{ asset('assets/images/SMartPAs.png') }}" width="50px" alt=""></i> Rutan Kelas I Depok</h1>
+                            <h1><img src="{{ asset('assets/images/Logo_Apk.png') }}" width="50px" alt=""></i> Rutan Kelas I Depok</h1>
                             <p>Copyright © 2019<script>
                                     new Date().getFullYear() > 2018 && document.write("-" + new Date().getFullYear());
                                 </script>, IT Team Mitra Digital Persada</p>

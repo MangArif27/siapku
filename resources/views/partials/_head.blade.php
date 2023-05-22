@@ -7,7 +7,6 @@
     <link rel="icon" href="{{ asset('assets/images/Logo_Apk.png') }}" type="image/ico" />
 
     <title>SIRATU CILOK</title>
-
     <!-- Bootstrap -->
     <link href="{{ asset('assets/vendors/bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">

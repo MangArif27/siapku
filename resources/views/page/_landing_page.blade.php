@@ -60,7 +60,7 @@ https://templatemo.com/tm-570-chain-app-dev
         <nav class="main-nav">
           <!-- ***** Logo Start ***** -->
           <a href="#" class="logo">
-            <img src="{{ asset('landingpage/assets/images/logo.png') }}" alt="Chain App Dev">
+            <img src="{{ asset('image/siratucilok.png') }}">
           </a>
           <!-- ***** Logo End ***** -->
           <!-- ***** Menu Start ***** -->
@@ -302,7 +302,7 @@ https://templatemo.com/tm-570-chain-app-dev
         <div class="footer-widget">
           <h4>Tentang SiRatu Cilok</h4>
           <div class="logo">
-            <img src="{{ asset('landingpage/assets/images/white-logo.png')}}" alt="">
+            <img src="{{ asset('images/siratucilok.png')}}" alt="">
           </div>
           <p>Sistem Informasi Rutan Kelas Satu Cilodong Depok merupakan sistem informasi pelayanan publik yang khusus digunakan pada Rutan Kelas I Depok</p>
         </div>

@@ -1,6 +1,56 @@
 @extends('master')
 @section('konten')
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=Rqf5vZLu"></script>
+@foreach($sikawan as $sk)
+<script type="text/javascript">
+    function <?php echo "play" . "$sk->id" . "()" ?> {
+        responsiveVoice.speak(
+            "Kunjungan, atas nama,{{$sk->nama_wbp}}, kamar {{$sk->kamar_wbp}}, Sudah Habis, Dipersilahkan Untuk Meninggalkan Ruang Kunjungan, Terima Kasih, Atas Kunjungan Anda",
+            "Indonesian Male", {
+                pitch: 1,
+                rate: 1,
+                volume: 100
+            }
+        );
+    }
+</script>
+<script>
+    // Set the date we're counting down to
+    var <?php echo "countDownDate" . "$sk->id" ?> = new Date("<?php echo "$sk->waktu_selesai" ?>").getTime();
+
+    // Update the count down every 1 second
+    var <?php echo "x" . "$sk->id" ?> = setInterval(function() {
+
+        // Get today's date and time
+        var <?php echo "now" . "$sk->id" ?> = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var <?php echo "distance" . "$sk->id" ?> = <?php echo "countDownDate" . "$sk->id" ?> - <?php echo "now" . "$sk->id" ?>;
+
+        // Time calculations for days, hours, minutes and seconds
+        var <?php echo "days" . "$sk->id" ?> = Math.floor(<?php echo "distance" . "$sk->id" ?> / (1000 * 60 * 60 * 24));
+        var <?php echo "hours" . "$sk->id" ?> = Math.floor((<?php echo "distance" . "$sk->id" ?> % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var <?php echo "minutes" . "$sk->id" ?> = Math.floor((<?php echo "distance" . "$sk->id" ?> % (1000 * 60 * 60)) / (1000 * 60));
+        var <?php echo "seconds" . "$sk->id" ?> = Math.floor((<?php echo "distance" . "$sk->id" ?> % (1000 * 60)) / 1000);
+
+        // Output the result in an element with id="demo"
+        document.getElementById("demo{{$sk->id}}").innerHTML = <?php echo "hours" . "$sk->id" ?> + "h " +
+            <?php echo "minutes" . "$sk->id" ?> + "m " + <?php echo "seconds" . "$sk->id" ?> + "s ";
+
+        // If the count down is over, write some text 
+        if (<?php echo "distance" . "$sk->id" ?> < 0) {
+            clearInterval(<?php echo "x" . "$sk->id" ?>);
+            document.getElementById("demo{{$sk->id}}").style.display = "none";
+            document.getElementById("Selesaitext{{$sk->id}}").innerHTML = "Selesai";
+            document.getElementById("Selesai{{$sk->id}}").style.display = "block";
+            document.getElementById("MyDiv{{$sk->id}}").style.display = "block";
+            document.getElementById("Tambah{{$sk->id}}").style.display = "none";
+        }
+    }, 1000);
+</script>
+@endforeach
 <div class="right_col" role="main">
+
     <!-- top tiles -->
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -32,6 +82,7 @@
                                 <th>Nama</th>
                                 <th>Blok/Kamar</th>
                                 <th>Waktu Kunjungan</th>
+                                <th>Timer Kunjungan</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
@@ -44,8 +95,18 @@
                                 <td>{{$sk->nama_wbp}}</td>
                                 <td>{{$sk->kamar_wbp}}</td>
                                 <td>{{$sk->waktu}} Menit</td>
-                                <td><button type="button" class="btn btn-xs btn-primary"><i class="fa fa-edit"> Mulai</i>
-                                    </button></td>
+                                <td>
+                                    <p style="display:block" id="demo{{$sk->id}}"></p>
+                                    <button id="MyDiv{{$sk->id}}" onclick="<?php echo "play" . "$sk->id" . "();" ?>" style="display:none">Play</button>
+                                </td>
+                                <td>@if($sk->status=="Belum Dimulai")
+                                    <a href="Update-Sikawan/{{$sk->id}}" id="Tambah{{$sk->id}}" class="btn btn-xs btn-primary"><i class="fa fa-edit"> {{$sk->status}}</i></a>
+                                    @else
+                                    <a href="#" id="Selesai{{$sk->id}}" style="display:none;" class="btn btn-xs btn-primary"><i class="fa fa-edit">
+                                            <p id="Selesaitext{{$sk->id}}"></p>
+                                        </i></a>
+                                    @endif
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
