@@ -138,7 +138,19 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
             <li><a><i class="fa fa-book"></i>Layanan Kunjungan <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
                     @if($submenu->surat==1)
-                    <li><a href="surat_ijin"> History Pendaftaran </a></li>
+                    <li><a href="surat_ijin"> Kunjungan Tatap Muka</a></li>
+                    @else
+                    @endif
+                    @if($submenu->surat_1==1)
+                    <li><a href="History-Penitipan-Barang"> Penitipan Barang </a></li>
+                    @else
+                    @endif
+                    @if($submenu->surat_2==1)
+                    <li><a href="History-Video-Call"> Video Call </a></li>
+                    @else
+                    @endif
+                    @if($submenu->surat_3==1)
+                    <li><a href="History-Tamu-Dinas"> Tamu Dinas </a></li>
                     @else
                     @endif
                     <!--@if($submenu->print_surat==1)

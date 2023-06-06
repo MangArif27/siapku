@@ -529,9 +529,51 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Surat Ijin </label>
+                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Tatap Muka </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="surat_ijin" id="surat_ijin">
+                                                @if($submenu->surat=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                        </br>
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Penitipan Barang </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="surat_1" id="surat_1">
+                                                @if($submenu->surat=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                        </br>
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Video Call </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="surat_2" id="surat_2">
+                                                @if($submenu->surat=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                        </br>
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Tamu Dinas </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="surat_3" id="surat_3">
                                                 @if($submenu->surat=='1')
                                                 <option value="1" selected>Tampil</option>
                                                 <option value="2">Tidak</option>

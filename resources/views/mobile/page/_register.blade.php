@@ -81,7 +81,7 @@
                     </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-lock"></i>
-                        <input type="password" name="password" class="form-control validate-password" id="form1a" placeholder="Password">
+                        <input type="password" name="RegistrasiPassword" class="form-control validate-password" id="form1a" placeholder="Password">
                         <label for="form1a" class="color-highlight">Password</label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>

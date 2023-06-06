@@ -173,7 +173,10 @@ class AdminController extends Controller
         'hotline' => $request->hotline,
         'layanan_pengaduan' => $request->layanan_pengaduan,
         'surat' => $request->surat_ijin,
-        'print_surat' => $request->print_surat,
+        'surat_1' => $request->surat_1,
+        'surat_2' => $request->surat_2,
+        'surat_3' => $request->surat_3,
+        'print_surat' => 2,
         'sikawan' => $request->sikawan,
         'form_pengaduan' => $request->form_pengaduan,
         'list_pengaduan' => $request->list_pengaduan,
@@ -957,9 +960,35 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      $kunjungan = DB::table('kunjungan')->get();
+      $kunjungan = DB::table('kunjungan')->where('keperluan', 'Kunjungan Tatap Muka')->get();
+      return view('/page/_surat_ijin', ['kunjungan' => $kunjungan]);
+    }
+  }
+  public function HistoryPenitipanBarang()
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $kunjungan = DB::table('kunjungan')->where('keperluan', 'Penitipan Barang')->get();
+      return view('/page/_penitipan_barang', ['kunjungan' => $kunjungan]);
+    }
+  }
+  public function HistoryVideoCall()
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $kunjungan = DB::table('kunjungan')->where('keperluan', 'Video Call')->get();
+      return view('/page/_video_call', ['kunjungan' => $kunjungan]);
+    }
+  }
+  public function HistoryTamuDinas()
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
       $tamu = DB::table('tamu')->get();
-      return view('/page/_surat_ijin', ['kunjungan' => $kunjungan], ['tamu' => $tamu]);
+      return view('/page/_tamu_dinas', ['tamu' => $tamu]);
     }
   }
   public function counter()

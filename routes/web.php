@@ -98,6 +98,9 @@ Route::post('Informasi-Pengaduan', 'AdminController@postinformasipengaduan')->na
 Route Page Kunjungan
 */
 Route::get('surat_ijin', 'AdminController@surat_ijin');
+Route::get('History-Penitipan-Barang', 'AdminController@HistoryPenitipanBarang');
+Route::get('History-Video-Call', 'AdminController@HistoryVideoCall');
+Route::get('History-Tamu-Dinas', 'AdminController@HistoryTamuDinas');
 Route::get('counter', 'AdminController@counter');
 Route::get('sikawan', 'AdminController@sikawan');
 Route::post('Input-Sikawan', 'AdminController@postinputsikawan')->name('input.waktu');
