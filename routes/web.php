@@ -17,7 +17,12 @@ Route Master
 */
 
 Route::get('/clear-cache', function () {
+    Artisan::call('cache:clear');
     Artisan::call('optimize');
+    Artisan::call('route:cache');
+    Artisan::call('route:clear');
+    Artisan::call('view:clear');
+    Artisan::call('config:cache');
     return "Cache is cleared";
 });
 Route::get('/', 'AdminController@home');
