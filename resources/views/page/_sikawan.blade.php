@@ -55,7 +55,8 @@
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <div class="x_panel">
-                <div class="clearfix">{{-- notifikasi form validasi --}}
+                <div class="x_title">
+                    {{-- notifikasi form validasi --}}
                     @if ($errors->has('file'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('file') }}</strong>
@@ -69,12 +70,13 @@
                         <strong>{{ $sukses }}</strong>
                     </div>
                     @endif
-                </div>
-                <div class="clearfix">
                     <h2>Sistem Ketepatan Waktu Kunjungan</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal"><i class="fa fa-upload"></i> Tambah</button></span>
+                    </ul>
+                    <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
-                    <button type="submit" class="btn btn-primary " data-toggle="modal" data-target="#myModal"><i class="fa fa-upload"></i> Tambah</button></span>
                     <table id="datatable" class="table table-striped table-bordered">
                         <thead>
                             <tr>

@@ -315,9 +315,9 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      DB::table('informasi')->where('informasi', "Tentang Aplikasi")->update([
+      /*DB::table('informasi')->where('informasi', "Tentang Aplikasi")->update([
         'isi_informasi' => $request->konten,
-      ]);
+      ]);*/
       $isi_pesan = $request->isi_pesan;
       DB::table('data_aplikasi')->where('no', $request->id)->update([
         'nama_aplikasi' => $request->nama_aplikasi,
