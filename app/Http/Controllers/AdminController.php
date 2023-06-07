@@ -751,7 +751,8 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
-      $sikawan = DB::table('waktu_kujungan')->orderBy('id', 'DESC')->get();
+      $date = date("Y-m-d");
+      $sikawan = DB::table('waktu_kujungan')->where('tanggal_kunjungan', $date)->orderBy('id', 'DESC')->get();
       return view('/page/_sikawan', ['sikawan' => $sikawan]);
     }
   }
@@ -760,10 +761,12 @@ class AdminController extends Controller
     if (!Session::get('login')) {
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
+      $date = date("Y-m-d");
       DB::table('waktu_kujungan')->insert([
         'nama_wbp' => $request->nama_wbp,
         'kamar_wbp' => $request->kamar_wbp,
         'waktu' => $request->waktu,
+        'tanggal_kunjungan' => $date,
         'status' => "Belum Dimulai"
       ]);
       return redirect('/sikawan')->with('sukses', 'Data Kunjungan Berhasil Disimpan');
@@ -1007,26 +1010,63 @@ class AdminController extends Controller
       return redirect('/login')->with('alert', 'Kamu harus login dulu');
     } else {
       if ($request->layanan == "penitipan barang") {
-        if (isEmpty($request->file('serahterima'))) {
-          $fileijin = $request->file('serahterima');
-          $nama_suratijin = $fileijin->getClientOriginalName();
-          $uplode_suratijin = 'backup_restore/restore/serhterima/';
-          $fileijin->move($uplode_suratijin, $nama_suratijin);
-          $status = "Selesai";
+        if ($request->status == "PROSES") {
+          if (isEmpty($request->file('serahterima1'))) {
+            $fileijin1 = $request->file('serahterima1');
+            $nama_suratijin1 = $fileijin1->getClientOriginalName();
+            $uplode_suratijin1 = 'backup_restore/restore/serhterima/';
+            $fileijin1->move($uplode_suratijin1, $nama_suratijin1);
+            $status = "DIKIRIM";
+            $kode = $request->kode;
+            $print = pendaftaran::where('kode_booking', $kode)->first();
+            $print->foto_in = $nama_suratijin1;
+            $print->status = $status;
+            $print->button = "btn-succes";
+            $print->save();
+          } else {
+            $nama_suratijin1 = "-";
+            $status = "DIKIRIM";
+            $kode = $request->kode;
+            $print = pendaftaran::where('kode_booking', $kode)->first();
+            $print->foto_in = $nama_suratijin1;
+            $print->status = $status;
+            $print->button = "btn-succes";
+            $print->save();
+          }
+        } else if ($request->status == "DIKIRIM") {
+          if (isEmpty($request->file('serahterima'))) {
+            $fileijin = $request->file('serahterima');
+            $nama_suratijin = $fileijin->getClientOriginalName();
+            $uplode_suratijin = 'backup_restore/restore/serhterima/';
+            $fileijin->move($uplode_suratijin, $nama_suratijin);
+            $status = "SELESAI";
+            $kode = $request->kode;
+            $print = pendaftaran::where('kode_booking', $kode)->first();
+            $print->foto = $nama_suratijin;
+            $print->status = $status;
+            $print->button = "btn-succes";
+            $print->save();
+          } else {
+            $nama_suratijin = "-";
+            $status = "DIKIRIM";
+            $kode = $request->kode;
+            $print = pendaftaran::where('kode_booking', $kode)->first();
+            $print->foto = $nama_suratijin;
+            $print->status = $status;
+            $print->button = "btn-succes";
+            $print->save();
+          }
         } else {
-          $nama_suratijin = "-";
-          $status = "Dikirim";
+          return redirect('/History-Penitipan-Barang')->with('sukses', 'Data Kunjungan Berhasil Di Update');
         }
       } else {
-        $nama_suratijin = "-";
         $status = "Selesai";
+        $kode = $request->kode;
+        $print = pendaftaran::where('kode_booking', $kode)->first();
+        $print->status = $status;
+        $print->button = "btn-succes";
+        $print->save();
       }
-      $kode = $request->kode;
-      $print = pendaftaran::where('kode_booking', $kode)->first();
-      $print->foto = $nama_suratijin;
-      $print->status = $status;
-      $print->button = "btn-succes";
-      $print->save();
       return redirect('surat_ijin')->with('sukses', 'Data Kunjungan Berhasil Di Update');
     }
   }

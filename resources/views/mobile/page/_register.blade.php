@@ -87,16 +87,26 @@
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <em>(required)</em>
                     </div>
+                    <div class="row pt-1 mb-1">
+                        <div class="col-6 text-start font-11">
+                            <i class="fa fa-card"></i>
+                            <a class="color-white opacity-50" href="#">Photo Diri</a>
+                        </div>
+                    </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <input type="file" name="PhotoDiri" class="form-control validate-name" id="form1a" placeholder="No Identitas">
-                        <label for="form1a" class="color-highlight">Photo Diri </label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <em>(required)</em>
                     </div>
+                    <div class="row pt-1 mb-1">
+                        <i class="fa fa-adress-card"></i>
+                        <div class="col-6 text-start font-11">
+                            <a class="color-white opacity-50" href="#">Photo Identitas</a>
+                        </div>
+                    </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <input type="file" name="PhotoIdentitas" class="form-control validate-name" id="form1a" placeholder="No Identitas">
-                        <label for="form1a" class="color-highlight">Photo Identitas </label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
                         <em>(required)</em>
@@ -110,7 +120,7 @@
                         <a class="color-white opacity-50" href="/Apk/registrasi">Login</a>
                     </div>
                 </div>
-                <button type="submit" form="FormRegistrasi" class="btn btn-full btn-l font-600 font-13 gradient-highlight mt-1 rounded-s">Register</button>
+                <button type="submit" form="FormRegistrasi" class="btn btn-full btn-l font-600 font-13 gradient-highlight mt-1 rounded-s">Simpan</button>
             </div>
         </div>
         <div class="card-overlay bg-black opacity-85"></div>

@@ -134,7 +134,7 @@
                                                         Booking</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                                         <input type="text" id="kode" name="kode" class="form-control" value="{{ $kunjungan->kode_booking }}" readonly>
-                                                        </br>
+                                                        <input type="text" name="status" class="form-control" value="{{ $kunjungan->status }}" style="visibility: hidden;">
                                                     </div>
                                                     <center>
                                                         @if($kunjungan->keperluan=="Kunjungan Tatap Muka")
@@ -175,14 +175,30 @@
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                                         <input type="text" id="nama_pengikut[]" name="nama_pengikut[]" class="form-control" value="{{ $pengikut->nama}}" disabled>
                                                     </div>
+                                                    </br>
+                                                    </br>
                                                     @if($kunjungan->keperluan=="Penitipan Barang")
-                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Serah Terima</label>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Serah Terima Petugas :</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                                         <input type="text" id="layanan" name="layanan" value="penitipan barang" hidden>
-                                                        <input type="file" id="serahterima" name="serahterima" class="form-control">
+                                                        @if($kunjungan->foto_in=="-")
+                                                        <input type="file" id="serahterima1" name="serahterima1" class="form-control">
+                                                        @else
+                                                        <embed type="application/pdf" src="{{url('backup_restore/restore/serhterima/'.$kunjungan->foto_in)}}" width="400" height="400"></embed>
+                                                        @endif
                                                         </br>
                                                     </div>
-
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Serah Terima WBP :</label>
+                                                    <div class="col-md-9 col-sm-9 col-xs-12">
+                                                        @if($kunjungan->foto=="-")
+                                                        <input type="file" id="serahterima" name="serahterima" class="form-control">
+                                                        @else
+                                                        <embed type="application/pdf" src="{{url('backup_restore/restore/serhterima/'.$kunjungan->foto)}}" width="400" height="400"></embed>
+                                                        @endif
+                                                        </br>
+                                                    </div>
                                                     @endif
                                                     </br>
                                                     </br>

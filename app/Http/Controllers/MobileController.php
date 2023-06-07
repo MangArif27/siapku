@@ -74,7 +74,7 @@ class MobileController extends Controller
         } else if ($data->status == "ADMIN KUNJUNGAN" || $data->status == "COUNTER PEGAWAI" || $data->status == "PEMANGGILAN" || $data->status == "ADMIN" || $data->status == "ADMIN PEGAWAI" || $data->status == "ADMIN SURAT") {
           return redirect('/Apk/login')->with('alert', 'Akun anda hanya bisa dibuka di aplikasi berbasis web !');
         } else {
-          return redirect('/Apk/login')->with('alert', 'Akun Anda Belum Di Setujui Oleh Admin !');
+          return redirect('/Apk/login')->with('alert', 'Akun Anda Telah Dipending, agar segera menghubungi Admin !');
         }
       } else {
         return redirect('/Apk/login')->with('alert', 'Password atau No Identitas, Salah !');
@@ -312,6 +312,7 @@ class MobileController extends Controller
           $insert->kode_booking = $acak;
           $insert->status = "PROSES";
           $insert->foto =  "-";
+          $insert->foto_in =  "-";
           $insert->button = "btn-warning";
           // Proses Save
           $insert->save();

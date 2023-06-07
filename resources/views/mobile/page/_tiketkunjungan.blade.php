@@ -21,10 +21,10 @@
         <div class="content ml-2 mr-2">
             <div class="d-flex">
                 <div>
-                    <img src="{{ url('image/Photo/'.Session::get('photo')) }}" class="rounded-circle" width="80">
+                    <img src="{{ url('image/Photo/'.Session::get('photo')) }}" style="border-radius: 100px; " height="90">
                 </div>
                 <div class="flex-grow-1 ml-2">
-                    <p class="ps-3 mb-2 ">
+                    <p class="ps-3 mb-2 mr-2">
                     <h6>{{ Session::get('anama') }}</h6>
                     No Identitas : {{ Session::get('nik') }}<br>
                     Alamat : {{ Session::get('alamat') }}
@@ -38,7 +38,7 @@
         <div class="card card-style ">
             <div class="content mb-0">
                 <h3>{{$ku->keperluan}}</h3>
-                <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Depok Cilodong</p>
+                <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Cilodong</p>
                 <div class="card-top text-end ">
                     <div class="me-3 color-white">
                         <a href="#" class="btn text-uppercase font-400 bg-highlight rounded-sm mt-4 shadow-xl btn-m ">Status
@@ -115,16 +115,41 @@
                     </a>
                 </div>
                 @endif
-                <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mb-3 shadow-xl btn-m btn-full">Kode
+                <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mb-3 shadow-xl btn-s ">Kode
                     Booking : {{$ku->kode_booking}}
                 </a>
-                @if($ku->keperluan="Penitipan Barang")
-                @if($ku->foto=="-")
-                <h3>Barang Belum Diterima !!</h3>
+                @if($ku->keperluan=="Penitipan Barang")
+                @if($ku->foto_in=="-")
+                <h4>Serah Terima Petugas:</h4>
+                <div class="card text-end ">
+                    <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Belum Diterima
+                    </a>
+                </div>
                 @else
-                <h3>Serah Terima :</h3>
-                <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto )}}" class="mb-3">
+                <h4>Serah Terima Petugas:</h4>
+                <div class="card text-end ">
+                    <a href="#" data-menu="menu-success-1-{{$ku->kode_booking}}" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Sudah Diterima
+                    </a>
+                </div>
+                <div id="menu-success-1-{{$ku->kode_booking}}" class="menu menu-box-modal bg-orange-dark rounded-m text-center" data-menu-height="350" data-menu-width="350">
+                    </br>
+                    <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto_in )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%">
+                </div>
                 @endif
+                @if($ku->foto=="-")
+                @else
+                <h4>Serah Terima WBP :</h4>
+                <div class="card text-end ">
+                    <a href="#" data-menu="menu-success-2-{{$ku->kode_booking}}" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Sudah Diterima
+                    </a>
+                </div>
+                <div id="menu-success-2-{{$ku->kode_booking}}" class="menu menu-box-modal bg-orange-dark rounded-m text-center" data-menu-height="350" data-menu-width="350">
+                    </br>
+                    <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%">
+                </div>
+                @endif
+                @else
+
                 @endif
             </div>
         </div>

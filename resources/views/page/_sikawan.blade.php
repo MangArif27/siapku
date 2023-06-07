@@ -1,6 +1,6 @@
 @extends('master')
 @section('konten')
-<script src="https://code.responsivevoice.org/responsivevoice.js?key=Rqf5vZLu"></script>
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=X8IS7IC9"></script>
 @foreach($sikawan as $sk)
 <script type="text/javascript">
     function <?php echo "play" . "$sk->id" . "()" ?> {
@@ -50,7 +50,36 @@
 </script>
 @endforeach
 <div class="right_col" role="main">
-
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 ">
+        <div class="tile-stats">
+            <div class="count"><img src="{{url('assets/images/Logo_Panjang.png')}}" width="70%"></div>
+            <audio controls>
+                <source src="{{url('assets/audio/Audio_Himbauan.mp3')}}" type="audio/mpeg">
+            </audio>
+            <h3>Audio Himbauan</h3>
+            <p>Sistem Informasi Rutan Kelas I Cilodong Depok</p>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 ">
+        <div class="tile-stats">
+            <div class="count"><img src="{{url('assets/images/Logo_Panjang.png')}}" width="70%"></div>
+            <audio controls>
+                <source src="{{url('assets/audio/Audio_10_Menit.mp3')}}" type="audio/mpeg">
+            </audio>
+            <h3>Himbauan 10 Menit</h3>
+            <p>Sistem Informasi Rutan Kelas I Cilodong Depok</p>
+        </div>
+    </div>
+    <div class="animated flipInY col-lg-4 col-md-4 col-sm-6 ">
+        <div class="tile-stats">
+            <div class="count"><img src="{{url('assets/images/Logo_Panjang.png')}}" width="70%"></div>
+            <audio controls>
+                <source src="{{url('assets/audio/Audio_Kunjungan_Selesai.mp3')}}" type="audio/mpeg">
+            </audio>
+            <h3>Waktu Kunjungan Selesai</h3>
+            <p>Sistem Informasi Rutan Kelas I Cilodong Depok</p>
+        </div>
+    </div>
     <!-- top tiles -->
     <div class="row">
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -153,4 +182,5 @@
         </div>
     </div>
 </div>
+
 @endsection
