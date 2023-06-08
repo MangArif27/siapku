@@ -49,7 +49,29 @@
                                 <td>{{ $p->jenis_kelamin }}</td>
                                 <td>{{ $p->alamat }}</td>
                                 <td>{{ $p->no_hp }}</td>
-                                <td><button type="button" class="btn btn-xs {{ $p->level }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->id }}"><i class="fa fa-edit"></i> {{ $p->status }}</button></td>
+                                <td><button type="button" class="btn btn-xs {{ $p->level }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->id }}"><i class="fa fa-edit"></i> {{ $p->status }}</button>
+                                    <button type="button" class="btn btn-xs danger" data-toggle="modal" data-target=".bs-example-modal-lg-delete{{ $p->id }}"><i class="fa fa-edit"></i> Delete</button>
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                                    <h4 class="modal-title" id="myModalLabel">Import Data WBP</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <form action="{{ route('post.upload_wbp') }}" method="post" enctype="multipart/form-data">
+                                                        {{ csrf_field() }}
+                                                        <div class="input-group col-sm-12 navbar-right">
+                                                            <input type="file" name="file" id="file" required="required" class="form-control">
+                                                            <span class="input-group-btn">
+                                                                <button type="submit" class="btn btn-primary "><i class="fa fa-upload"></i>
+                                                                    Tambah</button></span>
+                                                        </div>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                             @endforeach
