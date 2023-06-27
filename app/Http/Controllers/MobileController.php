@@ -308,7 +308,6 @@ class MobileController extends Controller
           $insert->surat_ijin = $nama_suratijin;
           $insert->status_keluarga = $request->hubungan;
           $insert->keperluan = $keperluan;
-          $insert->sesi = $request->sesi;
           $insert->kode_booking = $acak;
           $insert->status = "PROSES";
           $insert->foto =  "-";
@@ -723,6 +722,38 @@ class MobileController extends Controller
   {
     if (!Session::get('login')) {
       return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
+    }
+  }
+  public function lappengamanan()
+
+  {
+    if (!Session::get('login')) {
+      return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
+    } else {
+      return view('mobile.page._formlappengamanan');
+    }
+  }
+
+  public function postlappengamanan(Request $request)
+  {
+    if (empty($request->pos)) {
+      return redirect('/Apk/Lap-Pengamanan')->with('alert', 'Anda Belum Scan Qr Code Pos Checkin');
+    } else {
+      $datetime = date('Y-m-d:H:i:s');
+      $data = DB::table('pos_pengamanan')->where('encrypt_pos', $request->pos)->first();
+      if ($data) {
+        DB::table('lap_pengamanan')->insert([
+          'nik' => $request->nik,
+          'jenis_laporan' => $request->jenis,
+          'isi_laporan' => $request->isi,
+          'pos_pengamanan' => $data->nama_pos,
+          'created_at' => $datetime,
+          'updated_at' => $datetime,
+        ]);
+        return redirect('/Apk/Lap-Pengamanan')->with('alert', 'Laporan Pengamanan Sudah Tersimpan !');
+      } else {
+        return redirect('/Apk/Lap-Pengamanan')->with('alert', 'Maaf Qr Code Titik Cek Tidak Ditemukan !');
+      }
     }
   }
 }

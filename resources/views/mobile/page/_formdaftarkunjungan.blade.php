@@ -270,20 +270,6 @@
                     <i class="fa fa-times disabled invalid color-red-dark"></i>
                     <i class="fa fa-check disabled valid color-green-dark"></i>
                 </div>
-                <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4" id="Sesi" hidden>
-                    <select name="sesi" id="SesiBiasa" class="form-control" required hidden>
-                        <option value="default" disabled selected>Pilih Sesi Kunjungan </option>
-                        <option value="Sesi I (08.00-11.30 WIB)">Sesi I (08.00-11.30 WIB)</option>
-                        <option value="Sesi II (13.00-14.30 WIB)">Sesi II (13.00-14.30 WIB)</option>
-                    </select>
-                    <select name="sesi" id="SesiSabtu" class="form-control" required hidden>
-                        <option value="default" disabled selected>Pilih Sesi Kunjungan </option>
-                        <option value="Sesi I (08.00-11.30 WIB)">Sesi I (08.00-11.30 WIB)</option>
-                    </select>
-                    <label for="form1ac" class="color-theme opacity-50 text-uppercase font-700 font-10">Sesi Kunjungan</label>
-                    <i class="fa fa-times disabled invalid color-red-dark"></i>
-                    <i class="fa fa-check disabled valid color-green-dark"></i>
-                </div>
             </div>
         </div>
         <div class="card card-style">

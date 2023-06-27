@@ -119,7 +119,7 @@
                         </thead>
                         <tbody>
                             <?php $no = 0; ?>
-                            @foreach($sikawan as $sk)
+                            @forelse($sikawan as $sk)
                             <?php $no++; ?>
                             <tr>
                                 <td>{{$no}}</td>
@@ -139,7 +139,11 @@
                                     @endif
                                 </td>
                             </tr>
-                            @endforeach
+                            @empty
+                            <tr>
+                                No posts found!
+                            </tr>
+                            @endforelse
                         </tbody>
                     </table>
                 </div>

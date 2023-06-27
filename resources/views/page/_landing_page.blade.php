@@ -98,7 +98,7 @@ https://templatemo.com/tm-570-chain-app-dev
                 </div>
                 <div class="col-lg-12">
                   <div class="white-button scroll-to-section">
-                    <a href="#contact">Download In PlayStore <i class="fab fa-google-play"></i></a>
+                    <a href="https://play.google.com/store/apps/details?id=com.siratucilok">Download In PlayStore <i class="fab fa-google-play"></i></a>
                   </div>
                 </div>
               </div>

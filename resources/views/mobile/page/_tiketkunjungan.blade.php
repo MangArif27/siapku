@@ -51,7 +51,7 @@
                     <a href="#">
                         <i class="far fa-calendar color-blue2-dark"></i>
                         <span class="font-10">Tanggal : {{ $ku->tanggal_kunjungan}}</span>
-                        <strong>Waktu : {{ $ku->sesi}}</strong>
+                        <strong>Waktu : 09.00 - 11.30 WIB</strong>
                     </a>
                     <a href="#">
                         <i class="fa fa-map-marker-alt color-red2-dark"></i>
@@ -73,7 +73,7 @@
                     <a href="#">
                         <i class="far fa-calendar color-blue2-dark"></i>
                         <span class="font-10">Tanggal : {{ $ku->tanggal_kunjungan}}</span>
-                        <strong>Waktu : {{ $ku->sesi}}</strong>
+                        <strong>Waktu : 09.00 - 11.30 WIB</strong>
                     </a>
                     <a href="#">
                         <i class="fa fa-map-marker-alt color-red2-dark"></i>
@@ -97,7 +97,7 @@
                     <a href="#">
                         <i class="far fa-calendar color-blue2-dark"></i>
                         <span class="font-10">Tanggal : {{ $ku->tanggal_kunjungan}}</span>
-                        <strong>Waktu : {{ $ku->sesi}}</strong>
+                        <strong>Waktu : 09.00 - 11.30 WIB</strong>
                     </a>
                     <a href="#">
                         <i class="fa fa-map-marker-alt color-red2-dark"></i>

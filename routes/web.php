@@ -226,6 +226,8 @@ Route::get('/Apk/Pusat-Berkas', 'MobileController@pusatberkas');
 Route::get('/Apk/Download/Berkas/{link}', 'MobileController@DonwloadDokumen');
 Route::get('/Apk/Layanan-Tamu', 'MobileController@tamu');
 Route::post('/Apk/Layanan-Tamu', 'MobileController@posttamu')->name('post.tamu');
+Route::get('/Apk/Lap-Pengamanan', 'MobileController@lappengamanan');
+Route::post('/Apk/Lap-Pengamanan', 'MobileController@postlappengamanan')->name('post.lappengamanan');
 Route::get('/Apk/Pembinaan/{no_induk}', 'MobileController@Pembinaan');
 Route::get('/Apk/Pembinaan/', 'MobileController@PembinaanCek');
 Route::post('/Apk/PembinaanInputKeluarga', 'MobileController@PembinaanInputKeluarga')->name('post.formdaftarkeluarga');
