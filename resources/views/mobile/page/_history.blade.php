@@ -12,7 +12,7 @@
                 <p class="text-white" style="padding-left: 6px;">
                     <span class="font-18"><b>{{$ku->keperluan}}</b></span></br>
                     <span class="color-white font-10 opacity-70 mt-1 mb-n1"><i class="far fa-calendar"></i>
-                        {{$ku->tanggal_kunjungan}} <i class="ml-3 far fa-clock"></i> {{ $ku->sesi }}
+                        {{$ku->tanggal_kunjungan}} <i class="ml-3 far fa-clock"></i> Waktu : 09.00 - 11.30 WIB
                     </span></br>
                     <span class="color-white font-10 opacity-70 mt-1 mb-n1"><i class="fa fa-id-card"></i>
                         {{ $ku->nama_wbp }}
@@ -52,7 +52,7 @@
                 <p class="text-white" style="padding-left: 6px;">
                     <span class="font-18"><b>Layanan Tamu Dinas</b></span></br>
                     <span class="color-white font-10 opacity-70 mt-1 mb-n1"><i class="far fa-calendar"></i>
-                        {{ $tamu->tanggal }} <i class="ml-3 far fa-clock"></i> 09.00 WIB
+                        {{ $tamu->tanggal }} <i class="ml-3 far fa-clock"></i> Waktu : 09.00 - 11.30 WIB
                     </span></br>
                     <span class="color-white font-10 opacity-70 mt-1 mb-n1"><i class="fa fa-file"></i>
                         {{ $tamu->keperluan }}

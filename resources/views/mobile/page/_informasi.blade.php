@@ -9,6 +9,7 @@
             </p>
         </div>
     </div>
+    @if(Session::get('status')=="USER" || Session::get('status')!="PEGAWAI")
     <div class="card card-style pb-4">
         <div class="content mb-0">
             <h4 class="font-700">Layanan Informasi Kunjungan</h4>
@@ -135,6 +136,7 @@
             </div>
         </div>
     </div>
+    @elseif(Session::get('status')=="PEGAWAI")
     <div class="card card-style pb-4">
         <div class="content mb-0">
             <h4 class="font-700">Layanan Pegawai</h4>
@@ -222,6 +224,7 @@
             </div>
         </div>
     </div>
+    @endif
     <div class="card card-style pb-4">
         <div class="content mb-0">
             <h4 class="font-700">Call Center</h4>

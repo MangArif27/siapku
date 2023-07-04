@@ -17,8 +17,26 @@
     </div>
 </div>
 @endif
-<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+@if (!isset($_GET['reload']))
+<meta http-equiv=Refresh content="0;url=/Apk/layanan-kunjungan?reload=1">
+@endif
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js' type='text/javascript'></script>
+<script type="text/javascript">
+    $(function() {
+        $("#keperluan").change(function() {
+            if ($(this).val() == "Penitipan Barang") {
+                $("#Keperluan1").show();
+                $("#Keperluan2").hide();
+            } else if ($(this).val() == "Kunjungan Tatap Muka") {
+                $("#Keperluan1").hide();
+                $("#Keperluan2").show();
+            } else {
+                $("#Keperluan1").hide();
+                $("#Keperluan2").hide();
+            }
+        });
+    });
+</script>
 <script type='text/javascript'>
     $(window).load(function() {
         $("#jumlahorang").change(function() {
@@ -163,35 +181,12 @@
         });
     });
 </script>
-<script type='text/javascript'>
-    $(window).load(function() {
-        $("#keperluan").change(function() {
-            console.log($("#keperluan option:selected").val());
-            if ($("#keperluan option:selected").val() == 'Penitipan Barang') {
-                $('#Keperluan1').prop('hidden', false);
-                $('#Keperluan2').prop('hidden', true);
-                $('#Jumlah1').prop('hidden', false);
-                $('#Jumlah2').prop('hidden', true);
-            } else if ($("#keperluan option:selected").val() == 'Kunjungan Tatap Muka') {
-                $('#Keperluan1').prop('hidden', true);
-                $('#Keperluan2').prop('hidden', false);
-                $('#Jumlah1').prop('hidden', true);
-                $('#Jumlah2').prop('hidden', false);
-            } else {
-                $('#Keperluan1').prop('hidden', true);
-                $('#Keperluan2').prop('hidden', true);
-                $('#Jumlah1').prop('hidden', true);
-                $('#Jumlah2').prop('hidden', true);
-            }
-        });
-    });
-</script>
 <div class="page-content">
     <div class="card card-style">
         <div class="content ml-2 mr-2">
             <div class="d-flex">
                 <div>
-                    <img src="images/pictures/15t.jpg" class="rounded-circle" width="80">
+                    <img src="{{url('image/Photo/'.Session::get('photo'))}}" class="rounded-circle" width="80">
                 </div>
                 <div class="flex-grow-1 ml-2">
                     <p class="ps-3 mb-2 ">
@@ -240,6 +235,7 @@
                 </div>
                 <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
                     <select name="hubungan" class="form-control" required>
+                        <option disabled selected>Pilih Jenis Hubungan </option>
                         <option value="Teman">Teman</option>
                         <option value="Ayah">Ayah</option>
                         <option value="Ibu">Ibu</option>
@@ -261,7 +257,7 @@
                 </div>
                 <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
                     <select name="keperluan" id="keperluan" class="form-control" required>
-                        <option value="default" disabled selected>Pilih Jenis Layanan </option>
+                        <option disabled selected>Pilih Jenis Layanan </option>
                         <option value="Video Call">Video Call</option>
                         <option value="Penitipan Barang">Penitipan Barang</option>
                         <option value="Kunjungan Tatap Muka">Kunjungan Tatap Muka</option>
@@ -273,7 +269,7 @@
             </div>
         </div>
         <div class="card card-style">
-            <div class="content mb-0" id="Keperluan1" hidden>
+            <div class="content mb-0" id="Keperluan1" style="display: none;">
                 <h3>Daftar Penitipan Barang</h3>
                 <p>
                     Maksimal 5 Jenis Barang
@@ -363,7 +359,7 @@
                     <em>(required)</em>
                 </div>
             </div>
-            <div class="content mb-0" id="Keperluan2" hidden>
+            <div class="content mb-0" id="Keperluan2" style="display: none;">
                 <h3>Daftar Pengikut</h3>
                 <p>
                     Maksimal 5 Pengikut
@@ -460,9 +456,6 @@
             <div class="row pt-3 mb-3">
                 <div class="col-6 text-start">
                     <button type="submit" form="FormKunjungan" class="btn btn-l btn-full mb-0 rounded-xl text-uppercase font-700 shadow-s bg-blue-light">Simpan</button>
-                </div>
-                <div class="col-6 text-end">
-                    <button onClick="document.location.reload(true)" class="btn btn-l btn-full mb-0 rounded-xl text-uppercase font-700 shadow-s bg-blue-light" style="float:right;">Reload</button>
                 </div>
             </div>
         </div>

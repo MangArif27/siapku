@@ -21,13 +21,13 @@
         <div class="content ml-2 mr-2">
             <div class="d-flex">
                 <div>
-                    <img src="{{ url('image/Photo/'.Session::get('photo')) }}" style="border-radius: 100px; " height="90">
+                    <img src="{{url('image/Photo/'.Session::get('photo'))}}" class="rounded-circle" width="80">
                 </div>
                 <div class="flex-grow-1 ml-2">
-                    <p class="ps-3 mb-2 mr-2">
-                    <h6>{{ Session::get('anama') }}</h6>
-                    No Identitas : {{ Session::get('nik') }}<br>
-                    Alamat : {{ Session::get('alamat') }}
+                    <p class="ps-3 mb-2 ">
+                    <h6>{{Session::get('nama')}}</h6>
+                    No Identitas : {{Session::get('nik')}}<br>
+                    Alamat : {{Session::get('alamat')}}
                     </p>
                 </div>
             </div>
@@ -41,8 +41,7 @@
                 <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Cilodong</p>
                 <div class="card-top text-end ">
                     <div class="me-3 color-white">
-                        <a href="#" class="btn text-uppercase font-400 bg-highlight rounded-sm mt-4 shadow-xl btn-m ">Status
-                            : {{$ku->status}}
+                        <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mt-2 shadow-xl btn-s ">{{$ku->status}}
                         </a>
                     </div>
                 </div>
