@@ -79,7 +79,7 @@
                                                 </select>
                                             </div>
                                             <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="number" id="tahun" name="tahun" class="form-control" placehorder="TAHUN PENERIMAAN">
+                                                <input type="text" id="tahun" name="tahun" class="form-control" placehorder="TAHUN PENERIMAAN">
                                             </div>
                                             </br>
                                             </br>
@@ -90,12 +90,11 @@
                                                     <option disabled selected> ~ Bank ~</option>
                                                     <option value="BNI">BNI</option>
                                                     <option value="BRI">BRI</option>
-                                                    <option value="BTPN">BTPN</option>
-                                                    <option value="MANDIRI">MANDIRI</option>
+                                                    <option value="BJB">BJB</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-3 col-sm-3 col-xs-12">
-                                                <input type="number" id="rekening" name="rekening" class="form-control" placehorder="Nomor Rekening">
+                                                <input type="text" id="rekening" name="rekening" class="form-control" placehorder="Nomor Rekening">
                                             </div>
                                             </br>
                                             </br>
@@ -106,76 +105,119 @@
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Gaji Pokok </label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Gaji Pokok
+                                            </label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="gaji_pokok" name="gaji_pokok" class="form-control">
+                                                <input type="number" id="blok" name="gaji_pokok" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Dharma
-                                                Wanita</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Suami/Istri</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="potongan_bank" name="potongan_dw" class="form-control">
+                                                <input type="number" id="potongan_bank" name="tunjangan_pasangan" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Bank
-                                                BRI/BSM</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Anak</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="potongan_koperasi" name="potongan_bank" class="form-control">
+                                                <input type="number" id="potongan_koperasi" name="tunjangan_anak" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                Koperasi</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Umum</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="potongan_dw" name="potongan_koperasi" class="form-control">
+                                                <input type="number" id="potongan_dw" name="tunjangan_umum" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Dana Sosial</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan TA. Umum</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="arisan_dw" name="dana_sosial" class="form-control">
+                                                <input type="number" id="arisan_dw" name="tunjangan_ta_umum" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Sumbangan
-                                                Olahraga</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Papua</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="simpanan_koperasi" name="sumbangan_olahraga" class="form-control">
+                                                <input type="number" id="simpanan_koperasi" name="tunjangan_papua" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Rumah Dinas</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Terpencil</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="porpasos" name="rumah_dinas" class="form-control">
+                                                <input type="number" id="porpasos" name="tunjangan_terpencil" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Bank
-                                                BTN</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Struktur</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="porpasos" name="potongan_bank2" class="form-control">
+                                                <input type="number" id="porpasos" name="tunjangan_struktur" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Palang Merah
-                                                Indonesia</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Fungsi</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="porpasos" name="pmi" class="form-control">
+                                                <input type="number" id="porpasos" name="tunjangan_fungsi" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Harkop</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Lain</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="porpasos" name="harkop" class="form-control">
+                                                <input type="number" id="porpasos" name="tunjangan_lain" class="form-control">
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Administrasi
-                                                Bank</label>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Beras
+                                            </label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="number" id="porpasos" name="adm_bank" class="form-control">
+                                                <input type="number" id="porpasos" name="tunjangan_beras" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan IWP</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="potongan_bank" name="iwp" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan BPJS</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="potongan_koperasi" name="bpjs" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Sewa Rumah</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="potongan_dw" name="sewa_rumah" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Tunggakan</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="arisan_dw" name="tunggakan" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Utang</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="simpanan_koperasi" name="utang" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Lain</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="porpasos" name="potongan_lain" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Taperum</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="number" id="porpasos" name="taperum" class="form-control">
+                                            </div>
+                                            </br>
+                                            </br>
+                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Pph</label>
+                                            <div class="col-md-5 col-sm-5 col-xs-12">
+                                                <input type="text" id="porpasos" name="potongan_pph" class="form-control">
                                             </div>
                                             </br>
                                             </br>
@@ -223,7 +265,7 @@
                                 <td>{{ $p->nip }}</td>
                                 <td>Rp. {{ number_format($p->gaji_pokok,0,".",",") }}</td>
                                 <td>Rp.
-                                    {{ number_format($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank,0,".",",")}}
+                                    {{number_format($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum),0,".","."}}
                                 </td>
                                 <td><button type="button" class="btn btn-info btn-xs success" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->kode }}"><i class="fa fa-eye"></i>
                                         Lihat</button> <a href="/Cetak_Pdf_Gaji/{{ $p->kode }}" type="button" class="btn btn-primary btn-xs "><i class="fa fa-download"></i> Download</a>
@@ -274,93 +316,136 @@
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Dharma Wanita</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Suamis/Istri</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_bank" name="potongan_dw" readonly class="form-control" value="{{ $p->potongan_dw }}">
+                                                        <input type="text" id="potongan_bank" name="potongan_dw" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_pasangan),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Bank BRI/BSM</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Anak</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_koperasi" name="potongan_bank" readonly class="form-control" value="{{ $p->potongan_bank}}">
+                                                        <input type="text" id="potongan_koperasi" name="potongan_bank" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_anak),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Koperasi</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Umum</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_dw" name="potongan_koperasi" readonly class="form-control" value="{{ $p->potongan_koperasi}}">
+                                                        <input type="text" id="potongan_dw" name="potongan_koperasi" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_umum),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Dana
-                                                        Sosial</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan TA. Umum</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="arisan_dw" name="dana_sosial" readonly class="form-control" value="{{$p->dana_sosial}}">
+                                                        <input type="text" id="arisan_dw" name="dana_sosial" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_ta_umum),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Sumbangan
-                                                        Olahraga</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Papua</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="simpanan_koperasi" name="sumbangan_olahraga" readonly class="form-control" value="{{ $p->sumbangan_olahraga}}">
+                                                        <input type="text" id="simpanan_koperasi" name="sumbangan_olahraga" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_papua),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Rumah
-                                                        Dinas</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Terpencil</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="rumah_dinas" readonly class="form-control" value="{{$p->rumah_dinas}}">
+                                                        <input type="text" id="porpasos" name="rumah_dinas" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_terpencil),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Bank BTN</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Struktur</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="potongan_bank2" readonly class="form-control" value="{{$p->potongan_bank2}}">
+                                                        <input type="text" id="porpasos" name="potongan_bank2" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_struktur),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Palang
-                                                        Merah Indonesia</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Fungsi</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="pmi" readonly class="form-control" value="{{$p->pmi}}">
+                                                        <input type="text" id="porpasos" name="pmi" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_fungsi),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Harkop</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Lain</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="harkop" readonly class="form-control" value="{{$p->harkop}}">
+                                                        <input type="text" id="porpasos" name="harkop" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_lain),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Administrasi
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Beras
                                                         Bank</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="adm_bank" readonly class="form-control" value="{{$p->adm_bank}}">
+                                                        <input type="text" id="porpasos" name="adm_bank" readonly class="form-control" value="Rp. {{number_format($p->tunjangan_beras),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah
-                                                        Potongan</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Tunjangan</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{ number_format($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank,2,".",",") }}">
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{number_format($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan IWP</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="potongan_bank" name="potongan_dw" readonly class="form-control" value="Rp. {{number_format($p->iwp),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan BPJS</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="potongan_koperasi" name="potongan_bank" readonly class="form-control" value="Rp. {{number_format($p->bpjs),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Sewa Rumah</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="potongan_dw" name="potongan_koperasi" readonly class="form-control" value="Rp. {{number_format($p->sewa_rumah),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Tunggakan</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="arisan_dw" name="dana_sosial" readonly class="form-control" value="Rp. {{number_format($p->tunggakan),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Utang</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="simpanan_koperasi" name="sumbangan_olahraga" readonly class="form-control" value="Rp. {{number_format($p->utang),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Lain</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="porpasos" name="rumah_dinas" readonly class="form-control" value="Rp. {{number_format($p->potongan_lain),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Taperum</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="porpasos" name="potongan_bank2" readonly class="form-control" value="Rp. {{number_format($p->taperum),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Pph</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="porpasos" name="potongan_pph" readonly class="form-control" value="Rp. {{number_format($p->potongan_pph),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Potongan</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{number_format($p->iwp + $p->bpjs + $p->potongan_pph + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Gaji
                                                         Bersih</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{ number_format($p->gaji_pokok - ($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank),2,".",",") }}">
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{number_format($p->gaji_pokok + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)-($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum + $p->potongan_pph)),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
                                                 </form>
                                             </div>
-                                            </br>
-                                            </br>
                                             </br>
                                             </br>
                                             <div class="modal-footer">
@@ -387,7 +472,7 @@
                                                         <input type="text" id="nama_rekening" name="nama_rekening" class="form-control" value="{{ $p->nama_rekening }}">
                                                     </div>
                                                     <div class="col-md-3 col-sm-3 col-xs-12">
-                                                        <input type="number" id="rekening" name="rekening" class="form-control" value="{{ $p->rekening_gaji }}">
+                                                        <input type="text" id="rekening" name="rekening" class="form-control" value="{{ $p->rekening_gaji }}">
                                                     </div>
                                                     </br>
                                                     </br>
@@ -409,90 +494,135 @@
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12">Gaji Pokok
                                                     </label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="gaji_pokok" name="gaji_pokok" class="form-control" value="{{ $p->gaji_pokok}}">
+                                                        <input type="number" id="blok" name="gaji_pokok" class="form-control" value="{{$p->gaji_pokok}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Dharma Wanita</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Suami/Istri</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_bank" name="potongan_dw" class="form-control" value="{{ $p->potongan_dw }}">
+                                                        <input type="number" id="potongan_bank" name="tunjangan_pasangan" class="form-control" value="{{$p->tunjangan_pasangan}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Bank BRI/BSM</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Anak</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_koperasi" name="potongan_bank" class="form-control" value="{{ $p->potongan_bank}}">
+                                                        <input type="number" id="potongan_koperasi" name="tunjangan_anak" class="form-control" value="{{$p->tunjangan_anak}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Koperasi</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Umum</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="potongan_dw" name="potongan_koperasi" class="form-control" value="{{ $p->potongan_koperasi}}">
+                                                        <input type="number" id="potongan_dw" name="tunjangan_umum" class="form-control" value="{{$p->tunjangan_umum}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Dana
-                                                        Sosial</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan TA. Umum</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="arisan_dw" name="dana_sosial" class="form-control" value="{{$p->dana_sosial}}">
+                                                        <input type="number" id="arisan_dw" name="tunjangan_ta_umum" class="form-control" value="{{$p->tunjangan_ta_umum}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Sumbangan
-                                                        Olahraga</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Papua</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="simpanan_koperasi" name="sumbangan_olahraga" class="form-control" value="{{ $p->sumbangan_olahraga}}">
+                                                        <input type="number" id="simpanan_koperasi" name="tunjangan_papua" class="form-control" value="{{$p->tunjangan_papua}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Rumah
-                                                        Dinas</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Terpencil</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="rumah_dinas" class="form-control" value="{{$p->rumah_dinas}}">
+                                                        <input type="number" id="porpasos" name="tunjangan_terpencil" class="form-control" value="{{$p->tunjangan_terpencil}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan
-                                                        Bank BTN</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Struktur</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="potongan_bank2" class="form-control" value="{{$p->potongan_bank2}}">
+                                                        <input type="number" id="porpasos" name="tunjangan_struktur" class="form-control" value="{{$p->tunjangan_struktur}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Palang
-                                                        Merah Indonesia</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Fungsi</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="pmi" class="form-control" value="{{$p->pmi}}">
+                                                        <input type="number" id="porpasos" name="tunjangan_fungsi" class="form-control" value="{{$p->tunjangan_fungsi}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Harkop</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Lain</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="harkop" class="form-control" value="{{$p->harkop}}">
+                                                        <input type="number" id="porpasos" name="tunjangan_lain" class="form-control" value="{{$p->tunjangan_lain}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Administrasi
-                                                        Bank</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Tunjangan Beras
+                                                    </label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="number" id="porpasos" name="adm_bank" class="form-control" value="{{$p->adm_bank}}">
+                                                        <input type="number" id="porpasos" name="tunjangan_beras" class="form-control" value="{{$p->tunjangan_beras}}">
                                                     </div>
                                                     </br>
                                                     </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah
-                                                        Potongan</label>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Tunjangan</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{ number_format($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank,2,".",",") }}">
+                                                        <input type="text" class="form-control" readonly value="Rp. {{number_format($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras),0,".","."}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan IWP</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="potongan_bank" name="iwp" class="form-control" value="{{$p->iwp}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan BPJS</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="potongan_koperasi" name="bpjs" class="form-control" value="{{$p->bpjs}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Sewa Rumah</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="potongan_dw" name="sewa_rumah" class="form-control" value="{{$p->sewa_rumah}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Tunggakan</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="arisan_dw" name="tunggakan" class="form-control" value="{{$p->tunggakan}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Utang</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="simpanan_koperasi" name="utang" class="form-control" value="{{$p->utang}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Lain</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="porpasos" name="potongan_lain" class="form-control" value="{{$p->potongan_lain}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Taperum</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="number" id="porpasos" name="taperum" class="form-control" value="{{$p->taperum}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Potongan Pph</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" id="porpasos" name="potongan_pph" class="form-control" value="{{$p->potongan_pph}}">
+                                                    </div>
+                                                    </br>
+                                                    </br>
+                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Potongan</label>
+                                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                                        <input type="text" class="form-control" readonly value="Rp. {{number_format($p->iwp + $p->potongan_pph + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12">Jumlah Gaji
                                                         Bersih</label>
                                                     <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{ number_format($p->gaji_pokok - ($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank),2,".",",") }}">
+                                                        <input type="text" id="kejahatan" name="kejahatan" class="form-control" readonly value="Rp. {{number_format($p->gaji_pokok-($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum + $p->potongan_pph) + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)),0,".","."}}">
                                                     </div>
                                                     </br>
                                                     </br>

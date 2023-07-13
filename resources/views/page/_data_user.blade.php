@@ -50,25 +50,23 @@
                                 <td>{{ $p->alamat }}</td>
                                 <td>{{ $p->no_hp }}</td>
                                 <td><button type="button" class="btn btn-xs {{ $p->level }}" data-toggle="modal" data-target=".bs-example-modal-lg{{ $p->id }}"><i class="fa fa-edit"></i> {{ $p->status }}</button>
-                                    <button type="button" class="btn btn-xs danger" data-toggle="modal" data-target=".bs-example-modal-lg-delete{{ $p->id }}"><i class="fa fa-edit"></i> Delete</button>
-                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
+                                    <button type="button" class="btn btn-xs btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm-{{ $p->id }}"><i class="fa fa-trash"></i> Delete</button>
+                                    <div class="modal fade bs-example-modal-sm-{{ $p->id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-sm">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                                    <h4 class="modal-title" id="myModalLabel">Import Data WBP</h4>
+                                                    <h4 class="modal-title" id="myModalLabel">Notifikasi SiRatu Cilok !</h4>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <form action="{{ route('post.upload_wbp') }}" method="post" enctype="multipart/form-data">
-                                                        {{ csrf_field() }}
-                                                        <div class="input-group col-sm-12 navbar-right">
-                                                            <input type="file" name="file" id="file" required="required" class="form-control">
-                                                            <span class="input-group-btn">
-                                                                <button type="submit" class="btn btn-primary "><i class="fa fa-upload"></i>
-                                                                    Tambah</button></span>
-                                                        </div>
+                                                    <center>
+                                                        <h4>Apakah Anda Yakin Akan Menghapus Akun Atas Nama {{ $p->nama }} ??</h4>
+                                                    </center>
                                                 </div>
-                                                </form>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-close"></i> Tidak</button>
+                                                    <a href="delete/akun/{{ $p->nik}}" class="btn btn-danger"><i class="fa fa-trash"></i> Yakin</a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +160,6 @@
                             <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER">USER</option>
-                            <option value="COUNTER">COUNTER</option>
                             <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
                             <option value="PENDING">PENDING</option>
                             <option value="PEGAWAI">PEGAWAI</option>
@@ -171,7 +168,6 @@
                             <option value="ADMIN PEGAWAI" selected>ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER">USER</option>
-                            <option value="COUNTER">COUNTER</option>
                             <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
                             <option value="PENDING">PENDING</option>
                             <option value="PEGAWAI">PEGAWAI</option>
@@ -180,16 +176,6 @@
                             <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER" selected>USER</option>
-                            <option value="COUNTER">COUNTER</option>
-                            <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
-                            <option value="PENDING">PENDING</option>
-                            <option value="PEGAWAI">PEGAWAI</option>
-                            @elseif($p->status=='COUNTER')
-                            <option value="ADMIN">ADMIN</option>
-                            <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
-                            <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
-                            <option value="USER">USER</option>
-                            <option value="COUNTER" selected>COUNTER</option>
                             <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
                             <option value="PENDING">PENDING</option>
                             <option value="PEGAWAI">PEGAWAI</option>
@@ -198,7 +184,6 @@
                             <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER">USER</option>
-                            <option value="COUNTER">COUNTER</option>
                             <option value="COUNTER PEGAWAI" selected>COUNTER PEGAWAI</option>
                             <option value="PENDING">PENDING</option>
                             <option value="PEGAWAI">PEGAWAI</option>
@@ -207,7 +192,6 @@
                             <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER">USER</option>
-                            <option value="COUNTER">COUNTER</option>
                             <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
                             <option value="PENDING" selected>PENDING</option>
                             <option value="PEGAWAI">PEGAWAI</option>
@@ -216,7 +200,6 @@
                             <option value="ADMIN PEGAWAI">ADMIN PEGAWAI</option>
                             <option value="ADMIN KUNJUNGAN">ADMIN KUNJUNGAN</option>
                             <option value="USER">USER</option>
-                            <option value="COUNTER">COUNTER</option>
                             <option value="COUNTER PEGAWAI">COUNTER PEGAWAI</option>
                             <option value="PENDING">PENDING</option>
                             <option value="PEGAWAI" selected>PEGAWAI</option>
@@ -871,7 +854,6 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <button type="submit" form="DataAkun{{ $p->id }}" class="btn btn-primary">Save</button>
             </div>
-
         </div>
     </div>
 </div>

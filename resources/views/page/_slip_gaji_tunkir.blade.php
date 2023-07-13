@@ -248,58 +248,94 @@ header("Refresh:5; $url");
                     <td>: Rp. {{number_format($p->gaji_pokok),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp; 2. POTONGAN </td>
+                    <td>&nbsp;&nbsp;&nbsp; 2. TUNJANGAN TAMBAHAN </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Potongan Dharma Wanita </td>
-                    <td>: Rp. {{number_format($p->potongan_dw),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Tunjangan Suami/Istri </td>
+                    <td>: Rp. {{number_format($p->tunjangan_pasangan),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Potongan BRI/BSM </td>
-                    <td>: Rp. {{number_format($p->potongan_bank),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Tunjangan Anak </td>
+                    <td>: Rp. {{number_format($p->tunjangan_anak),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Potongan Koperasi </td>
-                    <td>: Rp. {{number_format($p->potongan_koperasi),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Tunjangan Umum </td>
+                    <td>: Rp. {{number_format($p->tunjangan_umum),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Dana Sosial </td>
-                    <td>: Rp. {{number_format($p->dana_sosial),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Tunjangan TA. Umum </td>
+                    <td>: Rp. {{number_format($p->tunjangan_ta_umum),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Sumbangan Olahraga</td>
-                    <td>: Rp. {{number_format($p->sumbangan_olahraga),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Tunjangan Papua</td>
+                    <td>: Rp. {{number_format($p->tunjangan_papua),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Rumah Dinas </td>
-                    <td>: Rp. {{number_format($p->rumah_dinas),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Tunjangan Terpencil </td>
+                    <td>: Rp. {{number_format($p->tunjangan_terpencil),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g. Potongan Bank BTN </td>
-                    <td>: Rp. {{number_format($p->potongan_bank2),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g. Tunjangan Struktur </td>
+                    <td>: Rp. {{number_format($p->tunjangan_struktur),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h. Palang Merah Indonesia </td>
-                    <td>: Rp. {{number_format($p->pmi),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; h. Tunjangan Fungsi </td>
+                    <td>: Rp. {{number_format($p->tunjangan_fungsi),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Harkop </td>
-                    <td>: Rp. {{number_format($p->harkop),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i. Tunjangan Lain </td>
+                    <td>: Rp. {{number_format($p->tunjangan_lain),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j. Administrasi Bank </td>
-                    <td>: Rp. {{number_format($p->adm_bank),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j. Tunjangan Beras </td>
+                    <td>: Rp. {{number_format($p->tunjangan_beras),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp; 3. JUMLAH POTONGAN </td>
+                    <td>&nbsp;&nbsp;&nbsp; 3. JUMLAH TUNJANGAN TAMBAHAN </td>
                     <td>: Rp.
-                        {{number_format($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank),0,".","."}}
+                        {{number_format($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras),0,".","."}}
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp; 4. GAJI BERSIH </td>
+                    <td>&nbsp;&nbsp;&nbsp; 4. POTONGAN </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. IWP </td>
+                    <td>: Rp. {{number_format($p->iwp),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. BPJS </td>
+                    <td>: Rp. {{number_format($p->bpjs),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Sewa Rumah </td>
+                    <td>: Rp. {{number_format($p->sewa_rumah),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Tunggakan </td>
+                    <td>: Rp. {{number_format($p->tunggakan),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Utang</td>
+                    <td>: Rp. {{number_format($p->utang),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Potongan Lain </td>
+                    <td>: Rp. {{number_format($p->potongan_lain),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g. Taperum </td>
+                    <td>: Rp. {{number_format($p->taperum),0,".","."}}</td>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp; 5. JUMLAH POTONGAN </td>
                     <td>: Rp.
-                        {{number_format($p->gaji_pokok-($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank)),0,".","."}}
+                        {{number_format($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum),0,".","."}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp; 6. GAJI BERSIH </td>
+                    <td>: Rp.
+                        {{number_format($p->gaji_pokok + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)-($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank)),0,".","."}}
                     </td>
                 </tr>
                 <tr>
@@ -324,43 +360,39 @@ header("Refresh:5; $url");
                     <td>&nbsp;&nbsp;&nbsp; 2. POTONGAN </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Potongan Dharma Wanita</td>
-                    <td>: Rp. {{number_format($t->potongan_dw),0,".","."}}</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Potongan Atribut</td>
+                    <td>: Rp. {{number_format($t->potongan_atribut),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Potongan Koperasi </td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Potongan Arisan DWP </td>
+                    <td>: Rp. {{number_format($t->potongan_arisan_dwp),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Potongan Arisan PIPAS </td>
+                    <td>: Rp. {{number_format($t->potongan_arisan_pipas),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Potongan Bank BJB </td>
+                    <td>: Rp. {{number_format($t->potongan_bjb),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Potongan Simpanan Wajib </td>
+                    <td>: Rp. {{number_format($t->potongan_simpanan_wajib),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Potongan Koperasi </td>
                     <td>: Rp. {{number_format($t->potongan_koperasi),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Dana Sosial </td>
-                    <td>: Rp. {{number_format($t->dana_sosial),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Sumbangan Olahraga </td>
-                    <td>: Rp. {{number_format($t->sumbangan_olahraga),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Potongan Bank BTN </td>
-                    <td>: Rp. {{number_format($t->potongan_bank),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Potongan Absen </td>
-                    <td>: Rp. {{number_format($t->potongan_absen),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g. Potongan Jurnal </td>
-                    <td>: Rp. {{number_format($t->potongan_jurnal),0,".","."}}</td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp; 3. JUMLAH POTONGAN </td>
                     <td>: Rp.
-                        {{number_format($t->potongan_dw + $t->potongan_koperasi + $t->dana_sosial + $t-> potongan_absen + $t->sumbangan_olahraga + $t->potongan_bank + $t->potongan_absen + $t->potongan_jurnal),0,".","."}}
+                        {{number_format($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum),0,".","."}}
                     </td>
                 </tr>
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp; 4. TUNKER BERSIH </td>
                     <td>: Rp.
-                        {{number_format($t->tunker-($t->potongan_dw + $t->potongan_koperasi + $t->dana_sosial + $t-> potongan_absen + $t->sumbangan_olahraga + $t->potongan_bank + $t->potongan_absen + $t->potongan_jurnal)),0,".","."}}
+                        {{number_format($t->tunker-($t->potongan_atribut + $t->potongan_koperasi + $t->potongan_arisan_dwp + $t->potongan_arisan_pipas + $t->potongan_bjb + $t->potongan_simpanan_wajib)),0,".","."}}
                     </td>
                 </tr>
                 <tr>

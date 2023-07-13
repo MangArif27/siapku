@@ -173,22 +173,16 @@
         <div id="invoice_head">
             <table style="width:350%; border-spacing:0;">
                 <tr>
-                    <td rowspan="2">
-                        <img src="https://www.kemenkumham.go.id/images/jux_portfolio_pro/logo_fix.png" width='70px'>
+                    <td style="width: 70px;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg/1876px-Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg.png" width='70px'>
                     </td>
-                    <td style="font-size: 6pt;">
+                    <td style="font-size: 11pt;">
                         <center>
                             <p>KEMENTERIAN HUKUM DAN HAM REPUBLIK INDONESIA</p>
                             <p>KANTOR WILAYAH JAWA BARAT</p>
                             <b>RUMAH TAHANAN NEGARA KELAS I DEPOK</b>
-                        </center>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-size: 4pt;">
-                        <center>
-                            <p>Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok, Jawa Barat</p>
-                            <p>Telp:- Web:http://rutandepok.kemenkumham.go.id</p>
+                            <p style="font-size: 8pt;">Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok, Jawa Barat</p>
+                            <p style="font-size: 8pt;">Telp:- Web:http://rutandepok.kemenkumham.go.id</p>
                         </center>
                     </td>
                 </tr>
@@ -221,12 +215,12 @@
                 </br>
                 <tr>
                     <td style="font-size: 11pt;">A. TUNJANGAN KINERJA BULAN
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </td>
                     <td style="font-size: 11pt;">: {{$t->penerimaan_bulan}} {{$t->penerimaan_tahun}}</td>
                 </tr>
             </table>
-            <table style="width:380%; border-spacing:0;" border="0">
+            <table style="width:200%; border-spacing:0;" border="0">
                 </br>
                 <tr>
                     <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp; 1. TUNJANGAN KINERJA </td>
@@ -236,46 +230,40 @@
                     <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp; 2. POTONGAN </td>
                 </tr>
                 <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Potongan Dharma Wanita
-                    </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_dw),0,".","."}}</td>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a. Potongan Atribut</td>
+                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_atribut),0,".","."}}</td>
                 </tr>
                 <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Potongan Koperasi </td>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b. Potongan Arisan DWP </td>
+                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_arisan_dwp),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Potongan Arisan PIPAS </td>
+                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_arisan_pipas),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Potongan Bank BJB </td>
+                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_bjb),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Potongan Simpanan Wajib </td>
+                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_simpanan_wajib),0,".","."}}</td>
+                </tr>
+                <tr>
+                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Potongan Koperasi </td>
                     <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_koperasi),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c. Dana Sosial </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->dana_sosial),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d. Sumbangan Olahraga </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->sumbangan_olahraga),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; e. Potongan Bank BTN </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_bank),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; f. Potongan Absen </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_absen),0,".","."}}</td>
-                </tr>
-                <tr>
-                    <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; g. Potongan Jurnal </td>
-                    <td style="font-size: 11pt;">: Rp. {{number_format($t->potongan_jurnal),0,".","."}}</td>
                 </tr>
                 <tr>
                     <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp; 3. JUMLAH POTONGAN </td>
                     <td style="font-size: 11pt;">: Rp.
-                        {{number_format($t->potongan_dw + $t->potongan_koperasi + $t->dana_sosial + $t-> potongan_absen + $t->sumbangan_olahraga + $t->potongan_bank + $t->potongan_absen + $t->potongan_jurnal),0,".","."}}
+                        {{number_format($t->potongan_atribut + $t->potongan_koperasi + $t->potongan_arisan_dwp + $t->potongan_arisan_pipas + $t->potongan_bjb + $t->potongan_simpanan_wajib),0,".","."}}
                     </td>
                 </tr>
                 <tr>
                     <td style="font-size: 11pt;">&nbsp;&nbsp;&nbsp; 4. TUNKER BERSIH </td>
                     <td style="font-size: 11pt;">: Rp.
-                        {{number_format($t->tunker-($t->potongan_dw + $t->potongan_koperasi + $t->dana_sosial + $t-> potongan_absen + $t->sumbangan_olahraga + $t->potongan_bank + $t->potongan_absen + $t->potongan_jurnal)),0,".","."}}
+                        {{number_format($t->tunker-($t->potongan_atribut + $t->potongan_koperasi + $t->potongan_arisan_dwp + $t->potongan_arisan_pipas + $t->potongan_bjb + $t->potongan_simpanan_wajib)),0,".","."}}
                     </td>
-                </tr>
                 </tr>
             </table>
             <table style="width:380%; border-spacing:0;" border="0">
@@ -291,7 +279,8 @@
                 <tr>
                     <td>
                         </br>
-                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('silaci.kemenkumham.go.id/cek_slip/'.$t->kode, 'qrcode')}}" }} height="100">
+                        </br>
+                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('silaci.kemenkumham.go.id/cek_slip/'.$t->kode, 'qrcode')}}" }} height="150px">
                     </td>
                 </tr>
             </table>

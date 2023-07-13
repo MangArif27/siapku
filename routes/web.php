@@ -42,13 +42,12 @@ Route Page Data User
 */
 Route::get('data_pengunjung', 'AdminController@data_user');
 Route::post('data_pengunjung', 'AdminController@postupdateakun')->name('post.update.akun');
-Route::get('delete/user/{nik}', 'AdminController@deleteuser');
+Route::get('delete/akun/{nik}', 'AdminController@deleteuser');
 /*
 Route Page Data Keluarga Inti
 */
 Route::get('data_keluarga', 'AdminController@data_keluarga_inti');
 Route::post('data_keluarga', 'AdminController@postupdatekeluarga')->name('post.update.keluarga');
-Route::get('delete/user/{nik}', 'AdminController@deletekeluarga');
 /*
 Route Page Informasi Kunjungan
 */
