@@ -117,6 +117,10 @@ Route::get('delete/pengaduan/{pengaduan}', 'AdminController@deletepengaduan');
 /*
 Route Page Gaji Tunkin
 */
+Route::get('Realisasi-Pagu', 'AdminController@realisasipagu');
+Route::post('Realisasi-Pagu', 'AdminController@insertrealisasi')->name('post.insert.realisasi');
+Route::post('Update-Realisasi', 'AdminController@updaterealisasi')->name('post.update.realisasi');
+Route::get('delete/realisasi/{id}', 'AdminController@deleterealisasi');
 Route::get('Riwayat_Gaji', 'AdminController@riwayatgaji');
 Route::get('Riwayat_Tunkir', 'AdminController@riwayattunkir');
 Route::post('Riwayat_Gaji', 'AdminController@uploadgaji')->name('upload.gaji');

@@ -172,19 +172,24 @@ https://templatemo.com/tm-570-chain-app-dev
           <div class="col-lg-6">
             <div class="box-item">
               <h4>Pegawai</h4>
-              <h5>Maintance Problems</h5>
+              <?php $user = DB::table('users')->where('status', 'PEGAWAI')->count(); ?>
+              <h5>{{$user}} Orang</h5>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="box-item">
               <h4>Jumlah WBP</h4>
-              <h5>Maintance Problems</h5>
+              @foreach( DB::table('data_aplikasi')->get() as $wbp)
+              <h5>{{$wbp->jumlah_wbp}} WBP</h5>
+              @endforeach
             </div>
           </div>
           <div class="col-lg-6">
             <div class="box-item">
               <h4>Pagu</h4>
-              <h5>Maintance Problems</h5>
+              @foreach( DB::table('data_aplikasi')->get() as $pagu)
+              <h5>Rp. {{number_format($pagu->jumlah_pagu),0,".","."}}</h5>
+              @endforeach
             </div>
           </div>
           <div class="col-lg-6">
@@ -195,9 +200,10 @@ https://templatemo.com/tm-570-chain-app-dev
           </div>
           <div class="col-lg-12">
             <div class="gradient-button">
-              <a href="#">Download In PlayStore <i class="fab fa-google-play"></i></a>
+              <a href="https://play.google.com/store/apps/details?id=com.siratucilok">Download In PlayStore <i class="fab fa-google-play"></i></a>
             </div>
-            <span>*Data pada tanggal 27 April 2023</span>
+            <?php $DateNow = date('Y-m-d'); ?>
+            <span>*Data pada tanggal {{$DateNow}}</span>
           </div>
         </div>
       </div>
@@ -221,49 +227,67 @@ https://templatemo.com/tm-570-chain-app-dev
       </div>
       <div class="col-lg-4">
         <div class="pricing-item-regular">
-          <span class="price">15 Org</span>
+          <?php $tanggal2 = date('Y-m-d', strtotime('-1 days'));;
+          $pengunjung2 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal2)->count();
+          $tatapmuka2 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal2)->where('keperluan', 'Kunjungan Tatap Muka')->count();
+          $penitipanbarang2 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal2)->where('keperluan', 'Penitipan Barang')->count();
+          $videocall2 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal2)->where('keperluan', 'Video Call')->count(); ?>
+          <span class="price">{{$pengunjung2}} Org</span>
           <h4>Kunjungan Hari Kemarin</h4>
           <div class="icon">
             <img src="{{ asset('landingpage/assets/images/pricing-table-01.png')}}" alt="">
           </div>
           <ul>
-            <li>15 Laki-Laki</li>
-            <li>216 Perempuan</li>
+            <li>{{$tatapmuka2}} Kunjungan </li>
+            <li>{{$penitipanbarang2}} Penitipan </li>
+            <li>{{$videocall2}} Video Call </li>
           </ul>
           <div class="border-button">
-            <a href="#">Purchase This Plan Now</a>
+            <a href="#">Rutan Kelas I Depok</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="pricing-item-pro">
-          <span class="price">20 Org</span>
+          <?php $tanggal1 = date('Y-m-d');
+          $pengunjung1 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal1)->count();
+          $tatapmuka1 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal1)->where('keperluan', 'Kunjungan Tatap Muka')->count();
+          $penitipanbarang1 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal1)->where('keperluan', 'Penitipan Barang')->count();
+          $videocall1 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal1)->where('keperluan', 'Video Call')->count(); ?>
+          <span class="price">{{$pengunjung1}} Org</span>
           <h4>Kunjungan Hari Ini</h4>
           <div class="icon">
             <img src="{{ asset('landingpage/assets/images/pricing-table-01.png')}}" alt="">
           </div>
           <ul>
-            <li>15 Laki-Laki</li>
-            <li>216 Perempuan</li>
+            <li>{{$tatapmuka1}} Kunjungan </li>
+            <li>{{$penitipanbarang1}} Penitipan </li>
+            <li>{{$videocall1}} Video Call </li>
           </ul>
           <div class="border-button">
-            <a href="#">Purchase This Plan Now</a>
+            <a href="#">Rutan Kelas I Depok</a>
           </div>
         </div>
       </div>
       <div class="col-lg-4">
         <div class="pricing-item-regular">
-          <span class="price">10 Org</span>
+          <?php $tanggal3 = date('Y-m-d', strtotime('+1 days'));;
+          $pengunjung3 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal3)->count();
+          $tatapmuka3 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal3)->where('keperluan', 'Kunjungan Tatap Muka')->count();
+          $penitipanbarang3 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal3)->where('keperluan', 'Penitipan Barang')->count();
+          $videocall3 = DB::table('kunjungan')->where('tanggal_kunjungan', $tanggal3)->where('keperluan', 'Video Call')->count(); ?>
+          <span class="price">{{$pengunjung3}} Org</span>
           <h4>Kunjungan Hari Besok</h4>
           <div class="icon">
             <img src="{{ asset('landingpage/assets/images/pricing-table-01.png')}}" alt="">
           </div>
           <ul>
-            <li>15 Laki-Laki</li>
-            <li>216 Perempuan</li>
+            <li>{{$tatapmuka3}} Kunjungan </li>
+            <li>{{$penitipanbarang3}} Penitipan </li>
+            <li>{{$videocall3}} Video Call </li>
           </ul>
           <div class="border-button">
-            <a href="#">Purchase This Plan Now</a>
+            <a href="#">Rutan Kelas I Depok</a>
           </div>
         </div>
       </div>
@@ -367,10 +391,13 @@ https://templatemo.com/tm-570-chain-app-dev
     },
 
     series: [{
-      name: 'Realisasi',
+      name: 'Total Belanja',
       data: [10, 19, 11]
     }, {
       name: 'Target',
+      data: [24, 18, 20]
+    }, {
+      name: 'Deviasi',
       data: [24, 18, 20]
     }],
 

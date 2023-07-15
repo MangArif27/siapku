@@ -2,33 +2,20 @@
 
   <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
 
-    <span class="count_top"><i class="fa fa-user"></i> Total Pengguna</span>
+    <span class="count_top green"><i class="fa fa-user"></i> Total Pengguna</span>
 
-    <?php $user=DB::table('users')->count(); ?>
+    <?php $user = DB::table('users')->count(); ?>
 
     <div class="count">{{$user}}</div>
 
     <span class="count_bottom"><i class="green">==============</i></span>
 
   </div>
-
   <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
 
-    <span class="count_top"><i class="fa fa-user"></i> Pengunjung Hari Ini</span>
+    <span class="count_top green"><i class="fa fa-user"></i> Total Pegawai</span>
 
-    <?php $tanggal=date('Y-m-d');$pengunjung=DB::table('kunjungan')->where('tanggal_kunjungan',$tanggal)->count(); ?>
-
-    <div class="count green">{{$pengunjung}}</div>
-
-    <span class="count_bottom"><i>==============</i></span>
-
-  </div>
-
-  <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-
-    <span class="count_top"><i class="fa fa-user"></i> Total User Laki-Laki</span>
-
-    <?php $user_l=DB::table('users')->where('jenis_kelamin','Laki-Laki')->count(); ?>
+    <?php $user_l = DB::table('users')->where('status', 'PEGAWAI')->count(); ?>
 
     <div class="count">{{$user_l}}</div>
 
@@ -36,25 +23,13 @@
 
   </div>
 
-  <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+  <div class="col-md-2 col-sm-2 col-xs-4 tile_stats_count">
 
-    <span class="count_top"><i class="fa fa-user"></i> Total User Perempuan</span>
+    <span class="count_top green"><i class="fa fa-user"></i> Total Masyarakat</span>
 
-    <?php $user_p=DB::table('users')->where('jenis_kelamin','Perempuan')->count(); ?>
+    <?php $user_p = DB::table('users')->where('status', 'user')->count(); ?>
 
-    <div class="count green">{{$user_p}}</div>
-
-    <span class="count_bottom"><i>==============</i></span>
-
-  </div>
-
-  <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
-
-    <span class="count_top"><i class="fa fa-user"></i> Total WBP</span>
-
-    <?php $wbp=DB::table('data_wbp')->count(); ?>
-
-    <div class="count">{{$wbp}}</div>
+    <div class="count">{{$user_p}}</div>
 
     <span class="count_bottom"><i class="green">==============</i></span>
 
@@ -62,15 +37,27 @@
 
   <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
 
-    <span class="count_top"><i class="fa fa-user"></i> Pengunjung Hari Esok</span>
+    <span class="count_top green"><i class="fa fa-user"></i> Total WBP</span>
 
-    <?php $tanggal=date('Y-m-d',strtotime('+1 days'));$pengunjung_esok=DB::table('kunjungan')->where('tanggal_kunjungan',$tanggal)->count(); ?>
+    @foreach( DB::table('data_aplikasi')->get() as $wbp)
 
-    <div class="count green">{{$pengunjung_esok}}</div>
+    <div class="count">{{$wbp->jumlah_wbp}}</div>
+    @endforeach
 
-    <span class="count_bottom"><i>==============</i></span>
+    <span class="count_bottom"><i class="green">==============</i></span>
+
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-xs-12 tile_stats_count">
+
+    <span class="count_top green"><i class="fa fa-money"></i> Pagu Rutan Kelas I Depok</span>
+
+    @foreach( DB::table('data_aplikasi')->get() as $pagu)
+
+    <div class="count" style="font-size: 37px;">Rp. {{number_format($pagu->jumlah_pagu),0,".","."}}</div>
+    @endforeach
+    <span class="count_bottom"><i class="green">========================================================</i></span>
 
   </div>
 
 </div>
-

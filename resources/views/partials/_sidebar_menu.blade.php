@@ -15,18 +15,18 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
             @if($menu->data==1)
             <li><a><i class="fa fa-users"></i> Data Induk <span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    @if($submenu->wbp==1)
+                    <!--@if($submenu->wbp==1)
                     <li><a href="data_wbp">Data WBP</a></li>
                     @else
-                    @endif
+                    @endif -->
                     @if($submenu->user==1)
                     <li><a href="data_pengunjung">Data User</a></li>
                     @else
                     @endif
-                    @if($submenu->user==1)
+                    <!-- @if($submenu->user==1)
                     <li><a href="data_keluarga">Data Keluarga</a></li>
                     @else
-                    @endif
+                    @endif-->
                 </ul>
             </li>
             @else
@@ -181,8 +181,12 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
             @else
             @endif
             @if($menu->gaji_tunkin==1)
-            <li><a><i class="fa fa-money"></i> Gaji & Tunkin<span class="fa fa-chevron-down"></a>
+            <li><a><i class="fa fa-money"></i> Keuangan<span class="fa fa-chevron-down"></a>
                 <ul class="nav child_menu">
+                    @if($submenu->pagu==1)
+                    <li><a href="Realisasi-Pagu">Realisasi Pagu</a></li>
+                    @else
+                    @endif
                     @if($submenu->gaji==1)
                     <li><a href="Riwayat_Gaji">Riwayat Gaji</a></li>
                     @else

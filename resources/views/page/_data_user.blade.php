@@ -659,7 +659,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Gaji & Tunkir </label>
+                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Keuangan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="gaji_tunkin" id="gaji_tunkin">
                                                 @if($menu->gaji_tunkin=='1')
@@ -672,7 +672,21 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Riwayat Gaji</label>
+                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Realisasi Pagu</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="pagu" id="pagu">
+                                                @if($submenu->pagu=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                        </br>
+                                        <label class="col-md-6 col-sm-6 col-xs-12">Riwayat Gaji</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="gaji" id="r_gaji">
                                                 @if($submenu->gaji=='1')

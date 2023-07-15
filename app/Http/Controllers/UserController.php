@@ -126,6 +126,7 @@ class UserController extends Controller
         'list_pengaduan' => 2,
         'pos_pam' => 2,
         'lap_pam' => 2,
+        'pagu' => 2,
         'gaji' => 2,
         'tunkin' => 2,
         'print_slip' => 2,

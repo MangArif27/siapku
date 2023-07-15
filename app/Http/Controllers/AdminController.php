@@ -182,6 +182,7 @@ class AdminController extends Controller
         'list_pengaduan' => $request->list_pengaduan,
         'pos_pam' => 2,
         'lap_pam' => 2,
+        'pagu' => $request->gaji,
         'gaji' => $request->gaji,
         'tunkin' => $request->tunkin,
         'print_slip' => $request->print_slip,
@@ -319,14 +320,15 @@ class AdminController extends Controller
         'isi_informasi' => $request->konten,
       ]);*/
       $isi_pesan = $request->isi_pesan;
-      DB::table('data_aplikasi')->where('no', $request->id)->update([
-        'nama_aplikasi' => $request->nama_aplikasi,
+      DB::table('data_aplikasi')->where('nama_aplikasi', $request->nama_aplikasi)->update([
         'nama_upt' => $request->nama_upt,
         'alamat_upt' => $request->alamat_upt,
         'nama_admin' => $request->nama_admin,
         'wa_admin' => $request->wa_admin,
         'email_admin' => $request->email_admin,
         'wa_toko' => $request->wa_toko,
+        'jumlah_wbp' => $request->jumlah_wbp,
+        'jumlah_pagu' => $request->jumlah_pagu,
         'pesan' => $request->pesan,
         'isi_pesan' => $isi_pesan,
       ]);
@@ -1219,6 +1221,57 @@ class AdminController extends Controller
   //End Controller Print
 
   //Start PEGAWAI
+  public function realisasipagu()
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $keuangan = DB::table('keuangan')->get();
+      return view('/page/_realisasi_pagu', ['keuangan' => $keuangan]);
+    }
+  }
+  public function insertrealisasi(Request $request)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $datetimenow = date('Y-m-d H:i:s');
+      DB::table('keuangan')->insert([
+        'tanggal' => $request->tanggal,
+        'total_belanja' => $request->total_belanja,
+        'target' => $request->target,
+        'deviasi' => $request->deviasi,
+        'created_at' => $datetimenow,
+        'updated_at' => $datetimenow,
+      ]);
+      return redirect('/Realisasi-Pagu');
+    }
+  }
+  public function updaterealisasi(Request $request)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      $datetimenow = date('Y-m-d H:i:s');
+      DB::table('keuangan')->where('id', $request->id)->update([
+        'tanggal' => $request->tanggal,
+        'total_belanja' => $request->total_belanja,
+        'target' => $request->target,
+        'deviasi' => $request->deviasi,
+        'updated_at' => $datetimenow,
+      ]);
+      return redirect('/Realisasi-Pagu');
+    }
+  }
+  public function deleterealisasi($id)
+  {
+    if (!Session::get('login')) {
+      return redirect('/login')->with('alert', 'Kamu harus login dulu');
+    } else {
+      DB::table('keuangan')->where('id', $id)->delete();
+      return redirect('/Realisasi-Pagu');
+    }
+  }
   public function riwayatgaji()
   {
     if (!Session::get('login')) {
