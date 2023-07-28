@@ -47,8 +47,19 @@ class AdminController extends Controller
     $galery = DB::table('galery')->get();
     $kepribadian = DB::table('kepribadian')->get();
     return view('/_home', ['slide' => $slide, 'galery' => $galery, 'kepribadian' => $kepribadian]);*/
+    $tanggal = [];
+    $total_belanja = [];
+    $target = [];
+    $deviasi = [];
+    $SearchData = DB::table('keuangan')->get();
+    foreach ($SearchData as $SearchTanggal) {
+      $tanggal[] = $SearchTanggal->tanggal;
+      $total_belanja[] = $SearchTanggal->total_belanja;
+      $target[] = $SearchTanggal->target;
+      $deviasi[] = $SearchTanggal->deviasi;
+    }
     if (!Session::get('login')) {
-      return view('page._landing_page');
+      return view('page._landing_page', ['tanggal' => $tanggal, 'total_belanja' => $total_belanja, 'target' => $target, 'deviasi' => $deviasi]);
     } else {
       return view('/_home');
     }
@@ -1238,6 +1249,8 @@ class AdminController extends Controller
       $datetimenow = date('Y-m-d H:i:s');
       DB::table('keuangan')->insert([
         'tanggal' => $request->tanggal,
+        'pagu' => $request->pagu,
+        'realisasi_pagu' => $request->realisasi_pagu,
         'total_belanja' => $request->total_belanja,
         'target' => $request->target,
         'deviasi' => $request->deviasi,
@@ -1255,6 +1268,8 @@ class AdminController extends Controller
       $datetimenow = date('Y-m-d H:i:s');
       DB::table('keuangan')->where('id', $request->id)->update([
         'tanggal' => $request->tanggal,
+        'pagu' => $request->pagu,
+        'realisasi_pagu' => $request->realisasi_pagu,
         'total_belanja' => $request->total_belanja,
         'target' => $request->target,
         'deviasi' => $request->deviasi,

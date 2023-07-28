@@ -195,7 +195,7 @@ https://templatemo.com/tm-570-chain-app-dev
           <div class="col-lg-6">
             <div class="box-item">
               <h4>Realisasi Pagu</h4>
-              <h5>Maintance Problems</h5>
+              <h5>@foreach(DB::table('keuangan')->orderBy('id', 'DESC')->get() as $rp) Rp. {{number_format($rp->realisasi_pagu),0,".","."}} @endforeach</h5>
             </div>
           </div>
           <div class="col-lg-12">
@@ -209,7 +209,7 @@ https://templatemo.com/tm-570-chain-app-dev
       </div>
       <div class="col-lg-6">
         <div class="right-image">
-          <div id="container"></div>
+          <div id="Grafik"></div>
         </div>
       </div>
     </div>
@@ -339,8 +339,6 @@ https://templatemo.com/tm-570-chain-app-dev
     </div>
   </div>
 </footer>
-
-
 <!-- Scripts -->
 <script src="{{ asset('landingpage/vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('landingpage/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -368,7 +366,7 @@ https://templatemo.com/tm-570-chain-app-dev
   }
 </script>
 <script>
-  Highcharts.chart('container', {
+  Highcharts.chart('Grafik', {
 
     title: {
       text: 'Grafik Penyerapan Pagu Rutan Kelas I Depok',
@@ -385,20 +383,18 @@ https://templatemo.com/tm-570-chain-app-dev
         text: 'Persentase'
       }
     },
-
     xAxis: {
-      categories: ['Januari', 'Februari', 'Maret']
+      categories: <?php echo json_encode($tanggal) ?>
     },
-
     series: [{
       name: 'Total Belanja',
-      data: [10, 19, 11]
+      data: <?php echo json_encode($total_belanja) ?>
     }, {
       name: 'Target',
-      data: [24, 18, 20]
+      data: <?php echo json_encode($target) ?>
     }, {
       name: 'Deviasi',
-      data: [24, 18, 20]
+      data: <?php echo json_encode($deviasi) ?>
     }],
 
     responsive: {
