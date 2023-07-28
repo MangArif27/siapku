@@ -1249,7 +1249,6 @@ class AdminController extends Controller
       $datetimenow = date('Y-m-d H:i:s');
       DB::table('keuangan')->insert([
         'tanggal' => $request->tanggal,
-        'pagu' => $request->pagu,
         'realisasi_pagu' => $request->realisasi_pagu,
         'total_belanja' => $request->total_belanja,
         'target' => $request->target,
@@ -1268,7 +1267,6 @@ class AdminController extends Controller
       $datetimenow = date('Y-m-d H:i:s');
       DB::table('keuangan')->where('id', $request->id)->update([
         'tanggal' => $request->tanggal,
-        'pagu' => $request->pagu,
         'realisasi_pagu' => $request->realisasi_pagu,
         'total_belanja' => $request->total_belanja,
         'target' => $request->target,

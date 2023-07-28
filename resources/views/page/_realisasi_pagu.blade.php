@@ -40,12 +40,6 @@
                                             </div>
                                             </br>
                                             </br>
-                                            <label class="control-label col-md-4 col-sm-4 col-xs-12">Pagu</label>
-                                            <div class="col-md-5 col-sm-5 col-xs-12">
-                                                <input type="text" class="form-control" id="total_belanja" name="pagu">
-                                            </div>
-                                            </br>
-                                            </br>
                                             <label class="control-label col-md-4 col-sm-4 col-xs-12">Realisasi Pagu</label>
                                             <div class="col-md-5 col-sm-5 col-xs-12">
                                                 <input type="text" class="form-control" id="total_belanja" name="realisasi_pagu">
@@ -89,7 +83,6 @@
                             <tr>
                                 <th>No</th>
                                 <th>Tanggal</th>
-                                <th>Pagu</th>
                                 <th>Realisasi Pagu</th>
                                 <th>Total Belanja</th>
                                 <th>Target</th>
@@ -131,12 +124,6 @@
                                                         <input type="date" name="tanggal" class="form-control" value="{{$p->tanggal}}">
                                                     </div>
                                                     <input type="text" name="id" hidden value="{{$p->id}}">
-                                                    </br>
-                                                    </br>
-                                                    <label class="control-label col-md-4 col-sm-4 col-xs-12">Pagu</label>
-                                                    <div class="col-md-5 col-sm-5 col-xs-12">
-                                                        <input type="text" class="form-control" id="total_belanja" name="pagu" value="{{$p->pagu}}">
-                                                    </div>
                                                     </br>
                                                     </br>
                                                     <label class="control-label col-md-4 col-sm-4 col-xs-12">Realisasi Pagu</label>
