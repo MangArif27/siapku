@@ -189,16 +189,16 @@
                                                     @endforeach
                                                     @if($kunjungan->surat_ijin=="-")
                                                     @else
-                                                    <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="700"></embed>
+                                                    <img src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="700"></embed>
                                                     </br>
                                                     </br>
                                                     @endif
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                                         @if($kunjungan->status !="DIIJINKAN")
-                                                        <button type="submit" class="btn btn-primary">Update</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                                         @else
-                                                        <button type="submit" class="btn btn-primary">Cetak</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
                                                         @endif
                                                 </form>
                                             </div>

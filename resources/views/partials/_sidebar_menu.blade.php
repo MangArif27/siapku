@@ -168,10 +168,6 @@ PEGAWAI" || Session::get('status')=="PEMANGGILAN")
             @if($menu->layanan_pengaduan==1)
             <li><a><i class="fa fa-bullhorn"></i> Layanan Pengaduan<span class="fa fa-chevron-down"></a>
                 <ul class="nav child_menu">
-                    @if($submenu->form_pengaduan==1)
-                    <li><a href="pengaduan">Form Pengaduan</a></li>
-                    @else
-                    @endif
                     @if($submenu->list_pengaduan==1)
                     <li><a href="history_pengaduan"> History Pengaduan</a></li>
                     @else

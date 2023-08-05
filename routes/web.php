@@ -106,6 +106,7 @@ Route::post('Input-Sikawan', 'AdminController@postinputsikawan')->name('input.wa
 Route::get('Update-Sikawan/{id}', 'AdminController@postupdatesikawan');
 Route::post('counter/kunjungan', 'AdminController@postcounterkunjungan')->name('counter.kunjungan');
 Route::post('counter', 'AdminController@postcounteradmin')->name('post.counter.admin');
+Route::post('counter-tamu-dinas', 'AdminController@postupdatetamudinas')->name('post.tamu.dinas');
 /*
 Route Page Pengaduan
 */

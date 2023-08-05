@@ -65,7 +65,7 @@
                     </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-phone"></i>
-                        <input type="number" name="NoHandphone" class="form-control validate-name" type="tel" maxlength="12" id="form1a" placeholder="No Handphone/Whatsapp">
+                        <input type="telp" name="NoHandphone" class="form-control validate-name" type="tel" maxlength="12" id="form1a" placeholder="No Handphone/Whatsapp">
                         <label for="form1a" class="color-highlight">No Hp/Wa </label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-at"></i>
-                        <input type="email" name="Email" class="form-control validate-name" id="form1a" placeholder="No Identitas">
+                        <input type="email" name="Email" class="form-control validate-name" id="form1a" placeholder="E-mail">
                         <label for="form1a" class="color-highlight">Email </label>
                         <i class="fa fa-times disabled invalid color-red-dark"></i>
                         <i class="fa fa-check disabled valid color-green-dark"></i>

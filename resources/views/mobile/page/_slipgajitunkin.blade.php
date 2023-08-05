@@ -12,8 +12,8 @@
                 </div>
                 <p class="text-white" style="padding-left: 6px;">
                     Penerimaan Bulan : {{ $p->penerimaan_bulan }}-{{ $p->penerimaan_tahun}}</br>
-                    Penerimaan Gaji Bersih : Rp. {{number_format($p->gaji_pokok-($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank)),0,".","."}}</br>
-                    Penerimaan Tunkin Bersih : Rp. {{number_format($t->tunker-($t->potongan_dw + $t->potongan_koperasi + $t->dana_sosial + $t-> potongan_absen + $t->sumbangan_olahraga + $t->potongan_bank + $t->potongan_absen + $t->potongan_jurnal)),0,".","."}}</br>
+                    Penerimaan Gaji Bersih : Rp. {{number_format($p->gaji_pokok + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)-($p->iwp + $p->bpjs + $p->sewa_rumah + $p->tunggakan + $p->utang + $p->potongan_lain + $p->taperum + $p->potongan_pph)),0,".","."}}</br>
+                    Penerimaan Tunkin Bersih : Rp. {{number_format($t->tunker-($t->potongan_atribut + $t->potongan_koperasi + $t->potongan_arisan_dwp + $t->potongan_arisan_pipas + $t->potongan_bjb + $t->potongan_simpanan_wajib)),0,".","."}}</br>
                 </p>
                 <div class="card-bottom text-end ">
                     <div class="me-3 color-white">

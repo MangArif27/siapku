@@ -40,7 +40,7 @@
                                                 <h4 class="modal-title" id="myModalLabel">Formulir Tamu Dinas</h4>
                                             </div>
                                             <div class="modal-body">
-                                                <form class="form-horizontal form-label-left" action="" method="POST" enctype="multipart/form-data">
+                                                <form class="form-horizontal form-label-left" action="{{ route('post.tamu.dinas') }}" method="POST" enctype="multipart/form-data">
                                                     {{ csrf_field() }}
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
@@ -104,7 +104,7 @@
                                                     </div>
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Alasan</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
-                                                        <input type="text" id="kode" name="alasan" maxlength="50" class="form-control" value="{{ $tamu->alasan }}">
+                                                        <input type="text" id="kode" name="alasan" class="form-control" value="{{ $tamu->alasan }}">
                                                         </br>
                                                     </div>
                                                     <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$tamu->surat)}}" width="570" height="500"></embed>

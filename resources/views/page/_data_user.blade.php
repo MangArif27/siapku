@@ -107,12 +107,12 @@
                     <div class="col-md-9 col-sm-9 col-xs-12">
                         <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
                             <option>~ Jenis Kelamin ~</option>
-                            @if($p->jenis_kelamin=='LAKI-LAKI')
-                            <option value="LAKI-LAKI" selected>LAKI-LAKI</option>
-                            <option value="PEREMPNUAN">PEREMPUAN</option>
-                            @else($p->jenis_kelamin=='PEREMPUAN')
-                            <option value="LAKI-LAKI">LAKI-LAKI</option>
-                            <option value="PEREMPNUAN" selected>PEREMPUAN</option>
+                            @if($p->jenis_kelamin=='Laki-Laki')
+                            <option value="Laki-Laki" selected>Laki-Laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                            @else( $p->jenis_kelamin=='Perempuan')
+                            <option value="Laki-Laki">Laki-Laki</option>
+                            <option value="Perempuan" selected>Perempuan</option>
                             @endif
                         </select>
                     </div>

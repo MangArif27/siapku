@@ -70,7 +70,7 @@
                     <i class="fa fa-check disabled valid color-green-dark"></i>
                 </div>
                 <div class="file-data input-style has-borders no-icon pb-4">
-                    <input type="file" id="file-upload" name="bukti_pertama" class="upload-file bg-highlight shadow-s rounded-s" accept="image/*">
+                    <input type="file" id="file-upload" name="bukti_pertama" class="upload-file bg-highlight shadow-s rounded-s" accept="image/*" required>
                     <p class="upload-file-text color-white">File Image ~ Bukti </p>
                 </div>
                 <div class="list-group list-large upload-file-data disabled">

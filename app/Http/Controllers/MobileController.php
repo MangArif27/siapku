@@ -145,6 +145,7 @@ class MobileController extends Controller
         'list_pengaduan' => 2,
         'pos_pam' => 2,
         'lap_pam' => 2,
+        'pagu' => 2,
         'gaji' => 2,
         'tunkin' => 2,
         'print_slip' => 2,
@@ -172,7 +173,7 @@ class MobileController extends Controller
         'nik' => $request->nik,
         'id_ruangan' => "0014",
       ]);
-      return redirect('/Apk/login')->with('alert', 'Selamat Kamu Berhasil Registrasi, Selanjutnya Menunggu Persetujuan Admin !!');
+      return redirect('/Apk/login')->with('alert', 'Selamat Kamu Berhasil Registrasi, Silahkan Login Untuk Masuk Ke Si Ratu Cilok 2.0 !!');
     }
   }
   public function registrasi()
@@ -435,7 +436,7 @@ class MobileController extends Controller
       $insert_p->alasan_pembuktian = "-";
       $insert_p->save();
       Session::flash('alert', 'Pengaduan Anda Berhasil Terkirim !!!');
-      return redirect('/Apk/Ticket/Pengaduan/{$acak}');
+      return redirect('/Apk/Ticket/Pengaduan/' . $acak);
     }
   }
   public function ticketpengaduan($kode_pengaduan)

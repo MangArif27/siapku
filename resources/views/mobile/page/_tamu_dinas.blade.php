@@ -47,7 +47,7 @@
                 </p>
                 <input class="form-control" name="NoIdentitas" hidden type="number" value="{{Session::get('nik')}}" readonly>
                 <div class="file-data input-style has-borders no-icon pb-4">
-                    <input type="file" id="file-upload" name="surat" class="upload-file bg-highlight shadow-s rounded-s" accept="image/*">
+                    <input type="file" id="file-upload" name="surat" class="upload-file bg-highlight shadow-s rounded-s" accept="image/*" required>
                     <p class="upload-file-text color-white">File Image ~ Surat Permohonan </p>
                 </div>
                 <div class="list-group list-large upload-file-data disabled">

@@ -1014,7 +1014,7 @@ class AdminController extends Controller
     } else {
       $kunjungan = DB::table('kunjungan')->get();
       $slide = DB::table('slide')->get();
-      return view('/page/_counter', ['kunjungan' => $kunjungan], ['slide' => $slide]);
+      return redirect('/page/_counter', ['kunjungan' => $kunjungan], ['slide' => $slide]);
     }
   }
   public function postcounteradmin(Request $request)
@@ -1104,7 +1104,7 @@ class AdminController extends Controller
       $print->button = $btn;
       $print->save();
 
-      return redirect('/surat_ijin');
+      return redirect('/History-Tamu-Dinas');
     }
   }
   public function postcounterkunjungan(Request $request)
