@@ -189,7 +189,7 @@
                                                     @endforeach
                                                     @if($kunjungan->surat_ijin=="-")
                                                     @else
-                                                    <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="500"></embed>
+                                                    <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="700"></embed>
                                                     </br>
                                                     </br>
                                                     @endif

@@ -284,7 +284,7 @@ class MobileController extends Controller
       if ($tanggal == date('Y-m-d')) {
         return redirect('/Apk/layanan-kunjungan')->with('alert', 'Maksimal Daftar H-1 Sebelum Waktu Kunjungan !!!');
       } else {
-        if (isEmpty($request->file('fileijin'))) {
+        if (empty($request->file('fileijin'))) {
           $nama_suratijin = '-';
         } else {
           $fileijin = $request->file('fileijin');
@@ -292,8 +292,7 @@ class MobileController extends Controller
           $uplode_suratijin = 'backup_restore/restore/surat/';
           $fileijin->move($uplode_suratijin, $nama_suratijin);
         }
-
-        //jumlah panjang karakter angka dan huruf.
+        /*jumlah panjang karakter angka dan huruf.*/
         $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $acak = substr(str_shuffle($permitted_chars), 0, 6);
         $NoIndukWbp = $request->NamaWbp;
