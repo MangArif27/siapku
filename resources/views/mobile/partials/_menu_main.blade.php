@@ -9,8 +9,8 @@
     </div>
     @else
     <div class="card-bottom">
-        <h1 class="color-white ps-3 mb-n1 font-28">SiRatu Cilok</h1>
-        <p class="mb-2 ps-3 font-12 color-white opacity-50">Sistem Informasi Rutan Kelas I Cilodong Depok</p>
+        <h1 class="color-white ps-3 mb-n1 font-28">SiRatu Cilok 2.0</h1>
+        <p class="mb-2 ps-3 font-12 color-white opacity-50">Sistem Informasi Rutan Kelas I Cilodong Depok 2.0</p>
     </div>
     @endif
     <div class="card-overlay bg-gradient"></div>
@@ -60,5 +60,5 @@
     <script>
         new Date().getFullYear() <= 2023 && document.write("-" + new Date().getFullYear());
     </script>
-    </br>IT Team Mitra Digital Persada.
+    </br>IT Team MDP & Rutan Depok.
 </h6>

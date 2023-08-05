@@ -14,7 +14,7 @@
         <div class="boxed-text-xl mt-4">
             <h1 class="mb-3"><i class="fa fa-bullhorn color-red2-dark fa-3x"></i></h1>
             <h2 class="font-700 mb-n1">Notifikasi !</h2>
-            <p class="color-highlight">Sisten Informasi Rutan Kelas I Depok</p>
+            <p class="color-highlight">Sisten Informasi Rutan Kelas I Depok 2.0</p>
             <p>
                 {{$pesan->isi_pesan}}
             </p>
@@ -41,12 +41,12 @@
         <div class="page-title-clear"></div>
         @else
         <div class="header header-fixed header-logo-center header-auto-show">
-            <a href="#" class="header-title">SIRATU CILOK</a>
+            <a href="#" class="header-title">SiRatu Cilok 2.0</a>
             <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
             <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
         </div>
         <div class="page-title page-title-fixed">
-            <h1>SIRATU CILOK</h1>
+            <h1>SiRatu Cilok 2.0</h1>
             <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i class="fa fa-bars"></i></a>
         </div>
         <div class="page-title-clear"></div>
