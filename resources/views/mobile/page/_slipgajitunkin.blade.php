@@ -33,10 +33,11 @@
 @foreach($gaji as $p)
 @foreach($tunkin as $t)
 @if($t->kode == $p->kode)
-<div id="menu-success-2-{{$p->kode}}" class="menu menu-box-modal bg-green-dark rounded-m text-center" data-menu-height="310" data-menu-width="350">
+<div id="menu-success-2-{{$p->kode}}" class="menu menu-box-modal bg-green-dark rounded-m text-center" data-menu-height="325" data-menu-width="350">
     <h4 class=" mt-2 font-700 color-white">Qr Code Slip Gaji & Tunkin </h4>
     <img src="data:image/png;base64,{{DNS2D::getBarcodePNG($p->kode, 'qrcode')}}" style="background-color:rgb(255,255,255); padding:6px;" class="" width="65%">
     <h4 class=" mt-2 font-700 color-white">Bulan {{ $p->penerimaan_bulan }}-{{ $p->penerimaan_tahun}}</h4>
+    <h4 class=" mt-2 font-700 color-white">Kode {{$p->kode}}</h4>
 </div>
 @endif
 @endforeach

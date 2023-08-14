@@ -1046,6 +1046,7 @@ class AdminController extends Controller
             $print->button = "btn-succes";
             $print->save();
           }
+          return redirect('/History-Penitipan-Barang')->with('sukses', 'Data Kunjungan Berhasil Di Update');
         } else if ($request->status == "DIKIRIM") {
           if (isEmpty($request->file('serahterima'))) {
             $fileijin = $request->file('serahterima');
@@ -1069,6 +1070,33 @@ class AdminController extends Controller
             $print->button = "btn-succes";
             $print->save();
           }
+          return redirect('/History-Penitipan-Barang')->with('sukses', 'Data Kunjungan Berhasil Di Update');
+        } else if ($request->status == "SELESAI") {
+          $status = "SELESAI";
+          $kode = $request->kode;
+          if (empty($request->file('serahterima1'))) {
+            $nama_suratijin1 = $request->namafile_1;
+          } else {
+            $fileijin1 = $request->file('serahterima1');
+            $nama_suratijin1 = $fileijin1->getClientOriginalName();
+            $uplode_suratijin1 = 'backup_restore/restore/serhterima/';
+            $fileijin1->move($uplode_suratijin1, $nama_suratijin1);
+          }
+          if (empty($request->file('serahterima'))) {
+            $nama_suratijin = $request->namafile;
+          } else {
+            $fileijin = $request->file('serahterima');
+            $nama_suratijin = $fileijin->getClientOriginalName();
+            $uplode_suratijin = 'backup_restore/restore/serhterima/';
+            $fileijin->move($uplode_suratijin, $nama_suratijin);
+          }
+          $print = pendaftaran::where('kode_booking', $kode)->first();
+          $print->foto_in = $nama_suratijin1;
+          $print->foto = $nama_suratijin;
+          $print->status = $status;
+          $print->button = "btn-succes";
+          $print->save();
+          return redirect('/History-Penitipan-Barang')->with('sukses', 'Data Kunjungan Berhasil Di Update');
         } else {
           return redirect('/History-Penitipan-Barang')->with('sukses', 'Data Kunjungan Berhasil Di Update');
         }
@@ -1080,7 +1108,7 @@ class AdminController extends Controller
         $print->button = "btn-succes";
         $print->save();
       }
-      return redirect('surat_ijin')->with('sukses', 'Data Kunjungan Berhasil Di Update');
+      return redirect('/surat_ijin')->with('sukses', 'Data Kunjungan Berhasil Di Update');
     }
   }
   public function postupdatetamudinas(Request $request)

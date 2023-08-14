@@ -127,12 +127,9 @@
                 @else
                 <h4>Serah Terima Petugas:</h4>
                 <div class="card text-end ">
-                    <a href="#" data-menu="menu-success-1-{{$ku->kode_booking}}" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Sudah Diterima
+                    <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Sudah Diterima
                     </a>
-                </div>
-                <div id="menu-success-1-{{$ku->kode_booking}}" class="menu menu-box-modal bg-orange-dark rounded-m text-center" data-menu-height="350" data-menu-width="350">
-                    </br>
-                    <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto_in )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%">
+                    <center><img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto_in )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%"></center>
                 </div>
                 @endif
                 @if($ku->foto=="-")
@@ -141,10 +138,7 @@
                 <div class="card text-end ">
                     <a href="#" data-menu="menu-success-2-{{$ku->kode_booking}}" class="btn text-uppercase font-900 bg-highlight rounded-sm shadow-xl btn-s ">Barang Sudah Diterima
                     </a>
-                </div>
-                <div id="menu-success-2-{{$ku->kode_booking}}" class="menu menu-box-modal bg-orange-dark rounded-m text-center" data-menu-height="350" data-menu-width="350">
-                    </br>
-                    <img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%">
+                    <center><img src="{{ url('backup_restore/restore/serhterima/'.$ku->foto )}}" style="background-color:rgb(255,255,255); padding:6px;" width="80%"></center>
                 </div>
                 @endif
                 @else

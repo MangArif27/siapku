@@ -177,15 +177,17 @@
                                                     </div>
                                                     </br>
                                                     </br>
+                                                    @endforeach
                                                     @if($kunjungan->keperluan=="Penitipan Barang")
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Serah Terima Petugas :</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                                         <input type="text" id="layanan" name="layanan" value="penitipan barang" hidden>
                                                         @if($kunjungan->foto_in=="-")
-                                                        <input type="file" id="serahterima1" name="serahterima1" class="form-control">
                                                         @else
                                                         <embed type="application/pdf" src="{{url('backup_restore/restore/serhterima/'.$kunjungan->foto_in)}}" width="400" height="400"></embed>
                                                         @endif
+                                                        <input type="file" id="serahterima1" name="serahterima1" class="form-control">
+                                                        <input type="text" name="namafile_1" value="{{$kunjungan->foto_in}}" hidden>
                                                         </br>
                                                     </div>
                                                     </br>
@@ -193,16 +195,16 @@
                                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Foto Serah Terima WBP :</label>
                                                     <div class="col-md-9 col-sm-9 col-xs-12">
                                                         @if($kunjungan->foto=="-")
-                                                        <input type="file" id="serahterima" name="serahterima" class="form-control">
                                                         @else
                                                         <embed type="application/pdf" src="{{url('backup_restore/restore/serhterima/'.$kunjungan->foto)}}" width="400" height="400"></embed>
                                                         @endif
+                                                        <input type="file" id="serahterima" name="serahterima" class="form-control">
+                                                        <input type="text" name="namafile" value="{{$kunjungan->foto}}" hidden>
                                                         </br>
                                                     </div>
                                                     @endif
                                                     </br>
                                                     </br>
-                                                    @endforeach
                                                     @if($kunjungan->surat_ijin=="-")
                                                     @else
                                                     <embed type="application/pdf" src="{{url('/backup_restore/restore/surat/'.$kunjungan->surat_ijin)}}" width="570" height="500"></embed>

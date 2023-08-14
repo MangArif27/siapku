@@ -98,7 +98,6 @@
                             <tr>
                                 <td>{{ $no }}</td>
                                 <td>{{ $p->tanggal}}</td>
-                                <td>{{ $p->pagu}}</td>
                                 <td>{{ $p->realisasi_pagu}}</td>
                                 <td>{{ $p->total_belanja }} %</td>
                                 <td>{{ $p->target}} %</td>
