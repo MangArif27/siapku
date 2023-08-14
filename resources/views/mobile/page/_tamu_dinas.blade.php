@@ -23,13 +23,13 @@
         <div class="content ml-2 mr-2">
             <div class="d-flex">
                 <div>
-                    <img src="images/pictures/15t.jpg" class="rounded-circle" width="80">
+                    <img src="{{url('image/Photo/'.Session::get('photo'))}}" class="rounded-circle" width="80px" height="80px">
                 </div>
                 <div class="flex-grow-1 ml-2">
                     <p class="ps-3 mb-2 ">
-                    <h6>{{Session::get('nama')}}</h6>
-                    No Identitas : {{Session::get('nik')}}<br>
-                    Alamat : {{Session::get('alamat')}}
+                    <h6>&nbsp;&nbsp;&nbsp;&nbsp;{{Session::get('nama')}}</h6>
+                    &nbsp;&nbsp;&nbsp;&nbsp;No Identitas : {{Session::get('nik')}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Alamat : {{Session::get('alamat')}}
                     </p>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <div class="content mb-0">
                 <h3>Form Tamu Dinas Rutan Kelas I Depok</h3>
                 <p>
-                    Sistem Informasi Rutan Kelas I Depok Cilodong
+                    Sistem Informasi Rutan Kelas I Cilodong Depok 2.0
                 </p>
                 <input class="form-control" name="NoIdentitas" hidden type="number" value="{{Session::get('nik')}}" readonly>
                 <div class="file-data input-style has-borders no-icon pb-4">

@@ -17,69 +17,70 @@
 </div>
 @endif
 <div class="page-content">
-    <div class="card card-style bg-orange-light">
+    <div class="card card-style">
         <div class="content ml-2 mr-2">
             <div class="d-flex">
                 <div>
-                    <img src="{{ url('image/Photo/'.Session::get('photo')) }}" class="rounded-circle" width="80">
+                    <img src="{{url('image/Photo/'.Session::get('photo'))}}" class="rounded-circle" width="80px" height="80px">
                 </div>
                 <div class="flex-grow-1 ml-2">
                     <p class="ps-3 mb-2 ">
-                    <h6>{{ Session::get('anama') }}</h6>
-                    No Identitas : {{ Session::get('nik') }}<br>
-                    Alamat : {{ Session::get('alamat') }}
+                    <h6>&nbsp;&nbsp;&nbsp;&nbsp;{{Session::get('nama')}}</h6>
+                    &nbsp;&nbsp;&nbsp;&nbsp;No Identitas : {{Session::get('nik')}}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Alamat : {{Session::get('alamat')}}
                     </p>
                 </div>
             </div>
         </div>
-        @foreach($tamu as $tamu)
-        @if($tamu->nik==Session::get('nik'))
-        @if($user = DB::table('users')->where('nik',Session::get('nik'))->first())
-        <div class="card card-style">
-            <div class="content mb-0">
-                <h1>Tamu Dinas</h1>
-                <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Depok Cilodong</p>
-                <div class="card-top text-end ">
-                    <div class="me-3 color-white">
-                        <a href="#" class="btn text-uppercase font-400 bg-highlight rounded-sm mt-4 shadow-xl btn-m ">{{$tamu->status}}
-                        </a>
-                    </div>
-                </div>
-                <div class="list-group list-custom-large mb-1">
-                    <a href="#">
-                        <i class="far fa-calendar color-blue2-dark"></i>
-                        <span>Tanggal : {{ $tamu->tanggal }}</span>
-                        <strong>Waktu : 09:00 - 14:30 WIB</strong>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-map-marker-alt color-red2-dark"></i>
-                        <span>Lokasi : Sistem Informasi Rutan Kelas I Depok Cilodong</span>
-                        <strong>Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok</strong>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-id-card color-orange-dark"></i>
-                        <span>Nama Tamu : {{ $user->nama }}</span>
-                        <strong>No Identitas : {{ $tamu->nik}}</strong>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-phone color-green1-dark"></i>
-                        <span>No Handohone : {{ $user->no_hp }}</span>
-                    </a>
-                    <a href="#">
-                        <i class="fa fa-universal-access color-brown-dark"></i>
-                        <span>Keperluan : {{ $tamu->keperluan}}</span>
-                        <strong>Alasan : {{ $tamu->alasan}}</strong>
+    </div>
+    @foreach($tamu as $tamu)
+    @if($tamu->nik==Session::get('nik'))
+    @if($user = DB::table('users')->where('nik',Session::get('nik'))->first())
+    <div class="card card-style">
+        <div class="content mb-0">
+            <h1>Tamu Dinas</h1>
+            <p class="font-10 color-highlight mt-n2 mb-0">Sistem Informasi Rutan Kelas I Cilodong Depok 2.0</p>
+            <div class="card-top text-end ">
+                <div class="me-3 color-white">
+                    <a href="#" class="btn text-uppercase font-400 bg-highlight rounded-sm mt-4 shadow-xl btn-m ">{{$tamu->status}}
                     </a>
                 </div>
-                <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mb-3 shadow-xl btn-m btn-full">Kode
-                    Booking : {{$tamu->kode_booking}}
+            </div>
+            <div class="list-group list-custom-large mb-1">
+                <a href="#">
+                    <i class="far fa-calendar color-blue2-dark"></i>
+                    <span>Tanggal : {{ $tamu->tanggal }}</span>
+                    <strong>Waktu : 09:00 - 14:30 WIB</strong>
+                </a>
+                <a href="#">
+                    <i class="fa fa-map-marker-alt color-red2-dark"></i>
+                    <span>Lokasi : Rutan Kelas I Depok Cilodong</span>
+                    <strong>Jl. M. Nasir, Cilodong, Kec. Cilodong, Kota Depok</strong>
+                </a>
+                <a href="#">
+                    <i class="fa fa-id-card color-orange-dark"></i>
+                    <span>Nama Tamu : {{ $user->nama }}</span>
+                    <strong>No Identitas : {{ $tamu->nik}}</strong>
+                </a>
+                <a href="#">
+                    <i class="fa fa-phone color-green1-dark"></i>
+                    <span>No Handohone : {{ $user->no_hp }}</span>
+                </a>
+                <a href="#">
+                    <i class="fa fa-universal-access color-brown-dark"></i>
+                    <span>Keperluan : {{ $tamu->keperluan}}</span>
+                    <strong>Alasan : {{ $tamu->alasan}}</strong>
                 </a>
             </div>
+            <a href="#" class="btn text-uppercase font-900 bg-highlight rounded-sm mb-3 shadow-xl btn-m btn-full">Kode
+                Booking : {{$tamu->kode_booking}}
+            </a>
         </div>
-        @endif
-        @endif
-        @endforeach
     </div>
+    @endif
+    @endif
+    @endforeach
+</div>
 </div>
 <!-- end of page content-->
 @endsection

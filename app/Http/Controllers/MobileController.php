@@ -66,6 +66,7 @@ class MobileController extends Controller
           Session::put('alamat', $data->alamat);
           Session::put('no_hp', $data->no_hp);
           Session::put('email', $data->email);
+          Session::put('password', $request->password);
           Session::put('scan_ktp', $data->scan_ktp);
           Session::put('photo', $data->photo);
           Session::put('status', $data->status);
@@ -249,6 +250,33 @@ class MobileController extends Controller
       return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
     } else {
       return view('mobile.page._profile');
+    }
+  }
+  public function UpdateProfile(Request $request)
+  {
+    if (!Session::get('login')) {
+      return redirect('/Apk/login')->with('alert', 'Mohon Maaf Anda Harus Login Terlebih Dahulu, Silahkan Masukan Nomor Identitas dan Password !');
+    } else {
+      if (empty($request->file('PhotoProfile'))) {
+        $NamaPhoto = $request->Photo;
+      } else {
+        File::delete('image/Photo/' . $request->Photo);
+        $Photo = $request->file('PhotoProfile');
+        $NamaPhoto = $Photo->getClientOriginalName();
+        $FilePhoto = 'image/Photo';
+        $Photo->move($FilePhoto, $NamaPhoto);
+      }
+      DB::table('users')->where('nik', $request->NIKProfile)->update([
+        'nama' => $request->NamaProfile,
+        'jenis_kelamin' => $request->JenisKelaminProfile,
+        'alamat' => $request->AlamatProfile,
+        'no_hp' => $request->NoHpProfile,
+        'email' => $request->EmailProfile,
+        'password' => bcrypt($request->PasswordProfile),
+        'photo' => $NamaPhoto,
+      ]);
+      Session::flush();
+      return redirect('/Apk/login')->with('alert', 'Selamat Update Data Profile Telah Berhasil Silahkan Login Kembali!');
     }
   }
   public function informasi()

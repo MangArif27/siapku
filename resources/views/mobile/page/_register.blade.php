@@ -7,7 +7,7 @@
     <div class="boxed-text-xl mt-4">
         <h1 class="mb-3"><i class="fa fa-bullhorn color-red2-dark fa-3x"></i></h1>
         <h2 class="font-700 mb-n1">Notifikasi !</h2>
-        <p class="color-highlight">Sisten Informasi Rutan Kelas I Depok</p>
+        <p class="color-highlight">Sistem Informasi Rutan Kelas I Cilodong Depok 2.0</p>
         <p>
             {{Session::get('alert')}}
         </p>

@@ -204,6 +204,7 @@ Route::get('Apk/logout', 'MobileController@logout');
 Route::get('Apk/GetNoIndukWbp/{No_Induk}', 'MobileController@GetNoIndukWbp');
 //Proses Navbar
 Route::get('Apk/Profile', 'MobileController@profile');
+Route::post('/Apk/Update-Profile', 'MobileController@UpdateProfile')->name('post.update.profile');
 Route::get('/Apk/Galery', 'MobileController@galery');
 Route::get('/Apk/Settings', 'MobileController@settings');
 Route::get('/Apk/Privacy-Police', 'MobileController@privacy');

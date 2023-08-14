@@ -5,7 +5,7 @@
         <div class="content mb-0">
             <h4 class="font-700">Layanan Informasi </h4>
             <p>
-                Pada halaman ini menampilkan informasi yang tersedia pada Aplikasi Si Ratu Cilok ini.
+                Pada halaman ini menampilkan informasi yang tersedia pada Aplikasi Si Ratu Cilok 2.0 ini.
             </p>
         </div>
     </div>
