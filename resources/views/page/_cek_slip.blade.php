@@ -23,7 +23,7 @@
 	<center>
 		Sistem Slip Gaji Dan Tunjangan Online
 		<br /> Kementerian Hukum dan Hak Asasi Manusia
-		<br /> Kantor Wilayah
+		<br /> Kantor Wilayah Jawa Barat
 		<br /> Rumah Tahanan Kelas I Depok
 		<br />Menyatakan Bahwa:
 		@foreach($gaji as $p)
@@ -60,7 +60,7 @@
 		@endforeach
 		@endforeach
 		Adalah benar dan tercatat dalam database Kami.<br />
-		Untuk memastikan bahwa surat tersebut benar, pastikan bahwa URL pada browser Anda adalah <b>https://silaci.kemenkumham.go.id</b>
+		Untuk memastikan bahwa surat tersebut benar, pastikan bahwa URL pada browser Anda adalah <b>https://siratucilokrutandepok.com</b>
 	</center>
 </body>
 

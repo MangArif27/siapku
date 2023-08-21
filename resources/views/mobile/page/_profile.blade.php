@@ -63,18 +63,7 @@
                     </div>
                     <div class="form-field form-name">
                         <label class="contactNameField color-theme" for="contactNameField">Password:<span>(required)</span></label>
-                        <input type="password" name="PasswordProfile" required value="{{Session::get('password')}}" class="round-small" id="inputPassword" />
-                        <span onclick="myFunction()" class="badge bg-highlight">View/Hide</span>
-                        <script>
-                            function myFunction() {
-                                var x = document.getElementById("inputPassword");
-                                if (x.type === "password") {
-                                    x.type = "text";
-                                } else {
-                                    x.type = "password";
-                                }
-                            }
-                        </script>
+                        <input type="text" name="PasswordProfile" required value="{{Session::get('password')}}" class="round-small" id="inputPassword" />
                     </div>
                     <div class="form-field form-name">
                         <label class="contactNameField color-theme" for="contactNameField">Photo:<span>(required)</span></label>

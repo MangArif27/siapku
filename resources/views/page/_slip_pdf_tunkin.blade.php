@@ -280,7 +280,7 @@
                     <td>
                         </br>
                         </br>
-                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('silaci.kemenkumham.go.id/cek_slip/'.$t->kode, 'qrcode')}}" }} height="150px">
+                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('siratucilokrutandepok.com/cek_slip/'.$t->kode, 'qrcode')}}" }} height="100px">
                     </td>
                 </tr>
             </table>

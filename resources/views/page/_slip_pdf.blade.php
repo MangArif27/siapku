@@ -398,7 +398,7 @@
                 <tr>
                     <td>
                         </br>
-                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('silaci.smart-pas.com/cek_slip/'.$p->kode, 'qrcode')}}" }} height="100">
+                        <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('siratucilokrutandepok.com/cek_slip/'.$p->kode, 'qrcode')}}" }} height="100">
                     </td>
                 </tr>
             </table>

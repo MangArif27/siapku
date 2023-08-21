@@ -169,14 +169,6 @@ header("Refresh:5; $url");
             border-bottom: 1px solid #ccc;**/
         }
     </style>
-    <script language="Javascript1.2">
-        <!--
-        function printpage() {
-            window.print();
-        }
-        //
-        -->
-    </script>
 </head>
 
 <body>
@@ -188,7 +180,7 @@ header("Refresh:5; $url");
             <table style="width:170%; border-spacing:0;">
                 <tr>
                     <td rowspan="4">
-                        <img class="img-responsive avatar-view" src="{{ public_path('assets/images/logo_fix.png') }}" width="40px">
+                        <img class="img-responsive avatar-view" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg/1876px-Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg.png" width="40px">
                     </td>
                     <td style="font-size: 6pt;">
                         <center>
@@ -293,7 +285,7 @@ header("Refresh:5; $url");
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp; 3. JUMLAH TUNJANGAN TAMBAHAN </td>
                     <td>: Rp.
-                        {{number_format($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras),0,".","."}}
+                        {{number_format($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras),0,".","."}}
                     </td>
                 </tr>
                 <tr>
@@ -335,7 +327,7 @@ header("Refresh:5; $url");
                 <tr>
                     <td>&nbsp;&nbsp;&nbsp; 6. GAJI BERSIH </td>
                     <td>: Rp.
-                        {{number_format($p->gaji_pokok + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)-($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank)),0,".","."}}
+                        {{number_format($p->gaji_pokok + ($p->tunjangan_pasangan + $p->tunjangan_anak + $p->tunjangan_umum + $p->tunjangan_ta_umum + $p->tunjangan_papua +$p->tunjangan_terpencil + $p->tunjangan_struktur + $p->tunjangan_lain + $p->tunjangan_beras)-($p->potongan_dw + $p->potongan_bank + $p->potongan_koperasi + $p->dana_sosial + $p->sumbangan_olahraga + $p->rumah_dinas + $p->potongan_bank2 + $p->pmi + $p->harkop + $p->adm_bank)),0,".","."}}
                     </td>
                 </tr>
                 <tr>
@@ -406,7 +398,7 @@ header("Refresh:5; $url");
                 </tr>
                 <tr>
                     </br>
-                    {!! QrCode::size(100)->generate($p->kode);!!}
+                    <img src="data:image/png;base64,{{DNS2D::getBarcodePNG('siratucilokrutandepok.com/cek_slip/'.$p->kode, 'qrcode')}}" }} height="100px">
                     </br>
                     </br>
                 </tr>
