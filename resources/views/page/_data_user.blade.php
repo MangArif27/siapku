@@ -238,7 +238,7 @@
                             @foreach($sm=DB::table('sub_menu')->where('no_identitas',$p->nik)->get() as $submenu)
                             <tbody>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Home </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Home </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="home" id="home">
                                                 @if($menu->home=='1')
@@ -253,7 +253,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Data </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Data </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="data" id="data">
                                                 @if($menu->data=='1')
@@ -266,7 +266,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Data User </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Data User </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="user" id="user">
                                                 @if($submenu->user=='1')
@@ -280,7 +280,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Data WBP </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Data WBP </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="wbp" id="wbp">
                                                 @if($submenu->wbp=='1')
@@ -294,7 +294,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Keluarga Inti</label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Keluarga Inti</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="keluarga" id="keluarga">
                                                 @if($submenu->keluarga=='1')
@@ -309,7 +309,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Informasi </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Informasi </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="informasi" id="informasi">
                                                 @if($menu->informasi=='1')
@@ -322,7 +322,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Ly. Penitipan Barang </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Ly. Penitipan Barang </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="penitipan_barang" id="kunjungan">
                                                 @if($submenu->penitipan_barang=='1')
@@ -337,7 +337,7 @@
                                         </br>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Kunjungan </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Kunjungan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="kunjungan" id="kunjungan">
                                                 @if($submenu->kunjungan=='1')
@@ -351,7 +351,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Video Call </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Video Call </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="video_call" id="kunjungan">
                                                 @if($submenu->video_call=='1')
@@ -365,7 +365,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Tamu Dinas </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Tamu Dinas </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="tamu_dinas" id="kunjungan">
                                                 @if($submenu->tamu_dinas=='1')
@@ -379,7 +379,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Integrasi </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Integrasi </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="integrasi" id="integrasi">
                                                 @if($submenu->integrasi=='1')
@@ -393,7 +393,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Remisi </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Remisi </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="remisi" id="remisi">
                                                 @if($submenu->remisi=='1')
@@ -407,7 +407,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Izin Alasan Penting </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Izin Alasan Penting </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="iap" id="about">
                                                 @if($submenu->izin_alasan_penting=='1')
@@ -422,7 +422,7 @@
                                         </br>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Slip Gaji </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Slip Gaji </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="layanan_slip" id="about">
                                                 @if($submenu->layanan_slip=='1')
@@ -436,7 +436,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Download Slip </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Unduh Slip </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="layanan_download_slip" id="about">
                                                 @if($submenu->layanan_download_slip=='1')
@@ -450,7 +450,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Ly. Kartu Istri/Suami </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Ly. Karis/Karsu </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="karis" id="about">
                                                 @if($submenu->karis=='1')
@@ -464,7 +464,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Visi & Misi </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Visi & Misi </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="visi_misi" id="about">
                                                 @if($submenu->visi_misi=='1')
@@ -478,7 +478,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Struktur Organisasi </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Struktur Jabatan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="struktur_organisasi" id="about">
                                                 @if($submenu->struktur_organisasi=='1')
@@ -492,7 +492,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Hotline </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Hotline </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="hotline" id="about">
                                                 @if($submenu->hotline=='1')
@@ -506,7 +506,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Layanan Pengaduan </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Layanan Pengaduan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="layanan_pengaduan" id="about">
                                                 @if($submenu->layanan_pengaduan=='1')
@@ -521,7 +521,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Kunjungan </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Kunjungan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="layanan_kunjungan" id="layanan_kunjungan">
                                                 @if($menu->layanan_kunjungan=='1')
@@ -534,7 +534,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Tatap Muka </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Tatap Muka </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="surat_ijin" id="surat_ijin">
                                                 @if($submenu->surat=='1')
@@ -548,7 +548,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Penitipan Barang </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Penitipan Barang </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="surat_1" id="surat_1">
                                                 @if($submenu->surat=='1')
@@ -562,7 +562,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Video Call </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Video Call </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="surat_2" id="surat_2">
                                                 @if($submenu->surat=='1')
@@ -576,7 +576,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Tamu Dinas </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Tamu Dinas </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="surat_3" id="surat_3">
                                                 @if($submenu->surat=='1')
@@ -590,7 +590,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <!--<label class="col-md-6 col-sm-6 col-xs-12">Print Surat </label>
+                                        <!--<label class="col-md-8 col-sm-8 col-xs-12">Print Surat </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="print_surat" id="print_surat">
                                                 @if($submenu->print_surat=='1')
@@ -602,7 +602,7 @@
                                                 @endif
                                             </select>
                                         </div>-->
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Sikawan </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Sikawan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="sikawan" id="sikawan">
                                                 @if($submenu->sikawan=='1')
@@ -614,10 +614,22 @@
                                                 @endif
                                             </select>
                                         </div>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Lap. Pengamanan </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="info_pam" id="info_pam">
+                                                @if($submenu->pengamanan=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Pengaduan </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Pengaduan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="layanan_pengaduan" id="layanan_pengaduan">
                                                 @if($menu->layanan_pengaduan=='1')
@@ -630,7 +642,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Form Pengaduan </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Form Pengaduan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="form_pengaduan" id="form_pengaduan">
                                                 @if($submenu->form_pengaduan=='1')
@@ -644,7 +656,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">List Pengaduan </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">List Pengaduan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="list_pengaduan" id="list_pengaduan">
                                                 @if($submenu->list_pengaduan=='1')
@@ -659,7 +671,49 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Keuangan </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Layanan Pengamanan </label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="pengamanan" id="pengamanan">
+                                                @if($menu->pengamanan=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                    </th>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Pos Pengamanan</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="pos_pam" id="pos_pam">
+                                                @if($submenu->pos_pam=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Laporan Pengamanan</label>
+                                        <div class="col-md-3 col-sm-3 col-xs-12">
+                                            <select name="lap_pam" id="lap_pam">
+                                                @if($submenu->lap_pam=='1')
+                                                <option value="1" selected>Tampil</option>
+                                                <option value="2">Tidak</option>
+                                                @else
+                                                <option value="1">Tampil</option>
+                                                <option value="2" selected>Tidak</option>
+                                                @endif
+                                            </select>
+                                        </div>
+                                        </br>
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Keuangan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="gaji_tunkin" id="gaji_tunkin">
                                                 @if($menu->gaji_tunkin=='1')
@@ -672,7 +726,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Realisasi Pagu</label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Realisasi Pagu</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="pagu" id="pagu">
                                                 @if($submenu->pagu=='1')
@@ -686,7 +740,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Riwayat Gaji</label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Riwayat Gaji</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="gaji" id="r_gaji">
                                                 @if($submenu->gaji=='1')
@@ -700,7 +754,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Riwayat Tunkin</label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Riwayat Tunkin</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="tunkin" id="r_tunkin">
                                                 @if($submenu->tunkin=='1')
@@ -714,7 +768,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Print Slip</label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Print Slip</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="print_slip" id="print_slip">
                                                 @if($submenu->print_slip=='1')
@@ -729,7 +783,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Inventory </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Inventory </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="inventory" id="gaji_tunkin">
                                                 @if($menu->inventory=='1')
@@ -742,7 +796,7 @@
                                             </select>
                                         </div>
                                     </th>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Daftar Barang</label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Daftar Barang</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="daftar_barang" id="r_gaji">
                                                 @if($submenu->daftar_barang=='1')
@@ -756,7 +810,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Daftar Ruangan</label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Daftar Ruangan</label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="daftar_ruangan" id="r_tunkin">
                                                 @if($submenu->daftar_ruangan=='1')
@@ -771,7 +825,7 @@
                                     </th>
                                 </tr>
                                 <tr>
-                                    <th><label class="col-md-6 col-sm-6 col-xs-12">Pengaturan </label>
+                                    <th><label class="col-md-8 col-sm-8 col-xs-12">Pengaturan </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="pengaturan" id="slide">
                                                 @if($menu->pengaturan='1')
@@ -785,7 +839,7 @@
                                         </div>
                                     </th>
                                     <th>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Slide </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Slide </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="slide" id="slide">
                                                 @if($submenu->slide=='1')
@@ -799,7 +853,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Galery </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Galery </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="galery" id="slide">
                                                 @if($submenu->galery=='1')
@@ -813,7 +867,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Master Dokumen </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Master Dokumen </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="master_dokumen" id="slide">
                                                 @if($submenu->master_dokumen=='1')
@@ -827,7 +881,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Backup & Restore </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Backup & Restore </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="backup_data" id="backup_restore">
                                                 @if($submenu->backup_data=='1')
@@ -841,7 +895,7 @@
                                         </div>
                                         </br>
                                         </br>
-                                        <label class="col-md-6 col-sm-6 col-xs-12">Profile Aplikasi </label>
+                                        <label class="col-md-8 col-sm-8 col-xs-12">Profile Aplikasi </label>
                                         <div class="col-md-3 col-sm-3 col-xs-12">
                                             <select name="about" id="slide">
                                                 @if($submenu->about=='1')

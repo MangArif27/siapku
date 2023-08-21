@@ -113,9 +113,7 @@
                         <div class="modal-body">
 
                             <form class="form-horizontal form-label-left" action="{{route('post.check.pam')}}" method="POST" enctype="multipart/form-data">
-
                                 {{ csrf_field() }}
-
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Nama Pos Check</label>
 
                                 <div class="col-md-9 col-sm-9 col-xs-12">

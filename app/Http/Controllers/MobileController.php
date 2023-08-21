@@ -773,9 +773,9 @@ class MobileController extends Controller
           'created_at' => $datetime,
           'updated_at' => $datetime,
         ]);
-        return redirect('/Apk/Lap-Pengamanan')->with('alert', 'Laporan Pengamanan Sudah Tersimpan !');
+        return redirect('/Apk/Lap-Pengamanan?reload=1')->with('alert', 'Laporan Pengamanan Sudah Tersimpan !');
       } else {
-        return redirect('/Apk/Lap-Pengamanan')->with('alert', 'Maaf Qr Code Titik Cek Tidak Ditemukan !');
+        return redirect('/Apk/Lap-Pengamanan?reload=1')->with('alert', 'Maaf Qr Code Titik Cek Tidak Ditemukan !');
       }
     }
   }

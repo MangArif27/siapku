@@ -18,6 +18,9 @@
     </div>
 </div>
 @endif
+@if (!isset($_GET['reload']))
+<meta http-equiv=Refresh content="0;url=/Apk/Lap-Pengamanan?reload=1">
+@endif
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 <div class="page-content">
     <div class="card card-style">
@@ -48,7 +51,7 @@
                 </p>
                 <input class="form-control" name="nik" hidden type="number" value="{{Session::get('nik')}}" readonly>
                 <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
-                    <textarea id="form7a" name="isi" placeholder="Isi Laporan"></textarea>
+                    <textarea id="form7a" name="isi" placeholder="Isi Laporan" required></textarea>
                     <label for="form1ac" class="color-theme opacity-50 text-uppercase font-700 font-10">Isi Laporan</label>
                     <i class="fa fa-times disabled invalid color-red-dark"></i>
                     <i class="fa fa-check disabled valid color-green-dark"></i>
@@ -82,9 +85,6 @@
             <div class="row pt-3 mb-3">
                 <div class="col-6 text-start">
                     <button type="submit" form="LaporanPengamanan" class="btn btn-l btn-full mb-0 rounded-xl text-uppercase font-700 shadow-s bg-blue-light">Simpan</button>
-                </div>
-                <div class="col-6 text-end">
-                    <button onClick="document.location.reload(true)" class="btn btn-l btn-full mb-0 rounded-xl text-uppercase font-700 shadow-s bg-blue-light" style="float:right;">Reload</button>
                 </div>
             </div>
         </div>

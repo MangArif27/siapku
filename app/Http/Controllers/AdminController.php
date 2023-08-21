@@ -178,7 +178,7 @@ class AdminController extends Controller
         'layanan_slip' => $request->layanan_slip,
         'layanan_download_slip' => $request->layanan_download_slip,
         'karis' => $request->karis,
-        'pengamanan' => 2,
+        'pengamanan' => $request->info_pam,
         'visi_misi' => $request->visi_misi,
         'struktur_organisasi' => $request->struktur_organisasi,
         'hotline' => $request->hotline,
@@ -191,8 +191,8 @@ class AdminController extends Controller
         'sikawan' => $request->sikawan,
         'form_pengaduan' => $request->form_pengaduan,
         'list_pengaduan' => $request->list_pengaduan,
-        'pos_pam' => 2,
-        'lap_pam' => 2,
+        'pos_pam' => $request->pos_pam,
+        'lap_pam' => $request->lap_pam,
         'pagu' => $request->gaji,
         'gaji' => $request->gaji,
         'tunkin' => $request->tunkin,
@@ -213,7 +213,7 @@ class AdminController extends Controller
         'layanan_kunjungan' => $request->layanan_kunjungan,
         'layanan_pengaduan' => $request->layanan_pengaduan,
         'gaji_tunkin' => $request->gaji_tunkin,
-        'pengamanan' => 2,
+        'pengamanan' => $request->pengamanan,
         'inventory' => $request->inventory,
         'pengaturan' => $request->pengaturan,
       ]);
@@ -1733,8 +1733,8 @@ class AdminController extends Controller
   public function insertpospengamanan(Request $request)
   {
     DB::table('pos_pengamanan')->insert([
-      'nama_pos' => $request->nama_pos,
       'encrypt_pos' => csrf_token($request->nama_pos),
+      'nama_pos' => $request->nama_pos,
       'updated_at' => date('Y-m-d:H:i:s'),
       'created_at' => date('Y-m-d:H:i:s'),
     ]);
