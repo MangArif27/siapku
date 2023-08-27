@@ -36,9 +36,10 @@ class upload_gaji implements ToModel
       'potongan_pph' => $row[19],
       'sewa_rumah' => $row[20],
       'tunggakan' => $row[21],
-      'potongan_lain' => $row[22],
-      'taperum' => $row[23],
-      'kode' => $row[24],
+      'utang' => $row[22],
+      'potongan_lain' => $row[23],
+      'taperum' => $row[24],
+      'kode' => $row[25],
     ]);
   }
 }
