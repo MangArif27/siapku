@@ -321,6 +321,11 @@ class MobileController extends Controller
           $uplode_suratijin = 'backup_restore/restore/surat/';
           $fileijin->move($uplode_suratijin, $nama_suratijin);
         }
+        if ($request->hubungan == "Lain-Lain") {
+          $Hubungan = $request->HubunganLainLain;
+        } else {
+          $Hubungan = $request->hubungan;
+        }
         /*jumlah panjang karakter angka dan huruf.*/
         $permitted_chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $acak = substr(str_shuffle($permitted_chars), 0, 6);
@@ -330,7 +335,7 @@ class MobileController extends Controller
         $insert->nama_wbp = $request->NamaWbp;
         $insert->nik = $nik;
         $insert->surat_ijin = $nama_suratijin;
-        $insert->status_keluarga = $request->hubungan;
+        $insert->status_keluarga = $Hubungan;
         $insert->keperluan = $keperluan;
         $insert->kode_booking = $acak;
         $insert->status = "PROSES";

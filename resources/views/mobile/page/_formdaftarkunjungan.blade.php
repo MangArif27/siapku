@@ -37,6 +37,17 @@
         });
     });
 </script>
+<script type="text/javascript">
+    $(function() {
+        $("#hubungan").change(function() {
+            if ($(this).val() == "Lain-Lain") {
+                $("#HubunganLainLain").show();
+            } else {
+                $("#HubunganLainLain").hide();
+            }
+        });
+    });
+</script>
 <script type='text/javascript'>
     $(window).load(function() {
         $("#jumlahorang").change(function() {
@@ -234,26 +245,26 @@
                     <i class="fa fa-check disabled valid color-green-dark"></i>
                 </div>
                 <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
-                    <select name="hubungan" class="form-control" required>
+                    <select id="hubungan" name="hubungan" class="form-control" required>
                         <option disabled selected>Pilih Jenis Hubungan </option>
-                        <option value="Teman">Teman</option>
-                        <option value="Ayah">Ayah</option>
-                        <option value="Ibu">Ibu</option>
-                        <option value="Kakak">Kakak</option>
+                        <option value="Ayah/Ibu">Ayah/Ibu"</option>
+                        <option value="Kakak/Adik">Kakak/Adik</option>
+                        <option value="Suami/Istri">Suami/Istri</option>
+                        <option value="Kakek/Nenek">Kakek/Nenek</option>
                         <option value="Anak">Anak</option>
-                        <option value="Adik">Adik</option>
-                        <option value="Suami">Suami</option>
-                        <option value="Istri">Istri</option>
-                        <option value="Kakek">Kakek</option>
-                        <option value="Nenek">Nenek</option>
-                        <option value="Paman">Paman</option>
-                        <option value="Bibi">Bibi</option>
-                        <option value="Menantu">Menantu</option>
-                        <option value="Cucu">Cucu</option>
+                        <option value="Teman">Teman</option>
+                        <option value="Saudara">Saudara</option>
+                        <option value="Lain-Lain">Lain-Lain</option>
                     </select>
                     <label for="form1ac" class="color-theme opacity-50 text-uppercase font-700 font-10">Hubungan</label>
                     <i class="fa fa-times disabled invalid color-red-dark"></i>
                     <i class="fa fa-check disabled valid color-green-dark"></i>
+                </div>
+                <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4" id="HubunganLainLain" style="display: none;">
+                    <input class="form-control" type="text" name="HubunganLainLain" class="form-control">
+                    <i class="fa fa-times disabled invalid color-red-dark"></i>
+                    <i class="fa fa-check disabled valid color-green-dark"></i>
+                    <em>(required)</em>
                 </div>
                 <div class="input-style input-style-always-active no-borders no-icon validate-field mb-4">
                     <select name="keperluan" id="keperluan" class="form-control" required>

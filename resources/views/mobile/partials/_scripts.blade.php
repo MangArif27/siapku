@@ -4,10 +4,10 @@
     const picker = document.getElementById('tanggal');
     picker.addEventListener('input', function(e) {
         var day = new Date(this.value).getUTCDay();
-        if ([6, 0].includes(day)) {
+        if ([5, 0].includes(day)) {
             e.preventDefault();
             this.value = '';
-            alert('Silahkan Pilih Senin-Jumat');
+            alert('Silahkan Pilih Senin-Kamis dan Sabtu');
         }
     });
 </script>
