@@ -183,11 +183,11 @@ class MobileController extends Controller
   }
   public function lupapassword()
   {
-    return view('mobile.page._reset');
+    return view('mobile.partials._reset');
   }
   public function reset(Request $request)
   {
-    $cek = ModelUser::where('email', $request->email)->where('nik', $request->nik)->first();
+    $cek = ModelUser::where('email', $request->email)->where('nik', $request->NoIdentitas)->first();
     if ($cek) {
       $link = $cek->remember_token;
       $nama = $cek->nama;

@@ -22,10 +22,10 @@
         <div class="card-center">
             <div class="text-center">
                 <p class="font-600 color-highlight mb-1 font-16"></p>
-                <h1 class="font-40 color-white">Sign In</h1>
+                <h1 class="font-40 color-white">Reset Password</h1>
             </div>
             <div class="content px-4">
-                <form action="{{ route('post.login.mobile') }}" id="FormLogin" method="POST">
+                <form action="{{ route('post.reset') }}" id="FormLogin" method="POST">
                     {{ csrf_field() }}
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-user"></i>
@@ -37,18 +37,18 @@
                     </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-lock"></i>
-                        <input type="password" name="password" class="form-control validate-password" id="form1a" placeholder="Password">
-                        <label for="form1a" class="color-highlight">Password</label>
-                        <i class="fa fa-times disabled invalid color-red-dark"></i>
-                        <i class="fa fa-check disabled valid color-green-dark"></i>
-                        <em>(required)</em>
+                        <input type="text" name="email" class=" form-control validate-password" id="form1a" placeholder="E-mail">
+                        <label for="form1a" class="color-highlight">Email/label>
+                            <i class="fa fa-times disabled invalid color-red-dark"></i>
+                            <i class="fa fa-check disabled valid color-green-dark"></i>
+                            <em>(required)</em>
                     </div>
                 </form>
-                <button type="submit" form="FormLogin" class="btn btn-full btn-l font-600 font-13 gradient-highlight mt-4 rounded-s">Sign In</button>
+                <button type="submit" form="FormLogin" class="btn btn-full btn-l font-600 font-13 gradient-highlight mt-4 rounded-s">Reset</button>
 
                 <div class="row pt-3 mb-3">
                     <div class="col-6 text-start font-11">
-                        <a class="color-white opacity-50" href="/Apk/lupa-password">Lupa Password</a>
+                        <a class="color-white opacity-50" href="/Apk/login">Sudah Punya Akun</a>
                     </div>
                     <div class="col-6 text-end font-11">
                         <a class="color-white opacity-50" href="/Apk/registrasi">Buat Akun</a>

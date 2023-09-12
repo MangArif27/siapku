@@ -5,11 +5,11 @@
 <script type="text/javascript">
     function <?php echo "play" . "$sk->id" . "()" ?> {
         responsiveVoice.speak(
-            "Kunjungan, atas nama,{{$sk->nama_wbp}}, kamar {{$sk->kamar_wbp}}, Sudah Habis, Dipersilahkan Untuk Meninggalkan Ruang Kunjungan, Terima Kasih, Atas Kunjungan Anda",
+            "Kunjungan, atas nama,{{$sk->nama_wbp}}, kamar {{$sk->kamar_wbp}}, {{$sk->zona}}, Sudah Habis, Dipersilahkan Untuk Meninggalkan Ruang Kunjungan, Terima Kasih, Atas Kunjungan Anda",
             "Indonesian Male", {
                 pitch: 1,
                 rate: 1,
-                volume: 100
+                volume: 1000
             }
         );
     }
@@ -34,19 +34,25 @@
         var <?php echo "seconds" . "$sk->id" ?> = Math.floor((<?php echo "distance" . "$sk->id" ?> % (1000 * 60)) / 1000);
 
         // Output the result in an element with id="demo"
-        document.getElementById("demo{{$sk->id}}").innerHTML = <?php echo "hours" . "$sk->id" ?> + "h " +
-            <?php echo "minutes" . "$sk->id" ?> + "m " + <?php echo "seconds" . "$sk->id" ?> + "s ";
+        document.getElementById("demo{{$sk->id}}").innerHTML = <?php echo "minutes" . "$sk->id" ?> + "m " + <?php echo "seconds" . "$sk->id" ?> + "s ";
 
         // If the count down is over, write some text 
-        if (<?php echo "distance" . "$sk->id" ?> < 0) {
+        if (<?php echo "distance" . "$sk->id" ?> < 0 && <?php echo "distance" . "$sk->id" ?> > -2000) {
             clearInterval(<?php echo "x" . "$sk->id" ?>);
             document.getElementById("demo{{$sk->id}}").style.display = "none";
             document.getElementById("Selesaitext{{$sk->id}}").innerHTML = "Selesai";
             document.getElementById("Selesai{{$sk->id}}").style.display = "block";
             document.getElementById("MyDiv{{$sk->id}}").style.display = "block";
-            document.getElementById("Tambah{{$sk->id}}").style.display = "none";
+            document.getElementById("MyDiv{{$sk->id}}").click();
+        } else if (<?php echo "distance" . "$sk->id" ?> < -2) {
+            clearInterval(<?php echo "x" . "$sk->id" ?>);
+            document.getElementById("demo{{$sk->id}}").style.display = "none";
+            document.getElementById("Selesaitext{{$sk->id}}").innerHTML = "Selesai";
+            document.getElementById("Selesai{{$sk->id}}").style.display = "block";
+            document.getElementById("MyDiv{{$sk->id}}").style.display = "block";
         }
-    }, 1000);
+
+    }, 1000)
 </script>
 @endforeach
 <div class="right_col" role="main">
@@ -112,6 +118,7 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Blok/Kamar</th>
+                                <th>Zona</th>
                                 <th>Waktu Kunjungan</th>
                                 <th>Timer Kunjungan</th>
                                 <th>Status</th>
@@ -125,10 +132,11 @@
                                 <td>{{$no}}</td>
                                 <td>{{$sk->nama_wbp}}</td>
                                 <td>{{$sk->kamar_wbp}}</td>
+                                <td>{{$sk->zona}}</td>
                                 <td>{{$sk->waktu}} Menit</td>
                                 <td>
                                     <p style="display:block" id="demo{{$sk->id}}"></p>
-                                    <button id="MyDiv{{$sk->id}}" onclick="<?php echo "play" . "$sk->id" . "();" ?>" style="display:none">Play</button>
+                                    <button type="button" id="MyDiv{{$sk->id}}" onclick="<?php echo "play" . "$sk->id" . "();" ?>" style="display:none">Play</button>
                                 </td>
                                 <td>@if($sk->status=="Belum Dimulai")
                                     <a href="Update-Sikawan/{{$sk->id}}" id="Tambah{{$sk->id}}" class="btn btn-xs btn-primary"><i class="fa fa-edit"> {{$sk->status}}</i></a>
@@ -167,9 +175,23 @@
                         <input type="text" name="nama_wbp" required="required" class="form-control col-md-8 col-sm-8 col-xs-12" placeholder="Nama Warga Binaan Pemasyarakatan">
                         <label class="control-label col-md-4 col-sm-4 col-xs-12">Kamar WBP </label>
                         <input type="text" name="kamar_wbp" required="required" class="form-control col-md-8 col-sm-8 col-xs-12" placeholder="Kamar Warga Binaan Pemasyarakatan">
+                        <label class="control-label col-md-4 col-sm-4 col-xs-12">Zona Kunjungan </label>
+                        <select name="zona" class="form-control col-md-8 col-sm-8 col-xs-12" required>
+                            <option disabled selected> ~ Zona Kunjungan ~</option>
+                            <option value="Zona 1">Zona 1</option>
+                            <option value="Zona 2">Zona 2</option>
+                            <option value="Zona 3">Zona 3</option>
+                            <option value="Zona 4">Zona 4</option>
+                            <option value="Zona 5">Zona 5</option>
+                            <option value="Zona 6">Zona 6</option>
+                            <option value="Zona 7">Zona 7</option>
+                            <option value="Zona 8">Zona 8</option>
+
+                        </select>
                         <label class="control-label col-md-4 col-sm-4 col-xs-12">Waktu Kunjungan </label>
                         <select name="waktu" class="form-control col-md-8 col-sm-8 col-xs-12" required>
                             <option disabled selected> ~ Waktu ~</option>
+                            <option value="1">1 Menit</option>
                             <option value="15">15 Menit</option>
                             <option value="30">30 Menit</option>
                             <option value="45">45 Menit</option>

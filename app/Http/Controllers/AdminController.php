@@ -778,6 +778,7 @@ class AdminController extends Controller
       DB::table('waktu_kujungan')->insert([
         'nama_wbp' => $request->nama_wbp,
         'kamar_wbp' => $request->kamar_wbp,
+        'zona' => $request->zona,
         'waktu' => $request->waktu,
         'tanggal_kunjungan' => $date,
         'status' => "Belum Dimulai"
