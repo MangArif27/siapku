@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://silajulapaskarawang'),
+    'url' => env('APP_URL', 'https://siratucilokrutandepok.com'),
 
     'asset_url' => env('ASSET_URL', null),
 

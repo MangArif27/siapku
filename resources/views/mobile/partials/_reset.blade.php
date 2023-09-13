@@ -37,7 +37,7 @@
                     </div>
                     <div class="input-style input-transparent no-borders has-icon validate-field mb-4">
                         <i class="fa fa-lock"></i>
-                        <input type="text" name="email" class=" form-control validate-password" id="form1a" placeholder="E-mail">
+                        <input type="email" name="email" class=" form-control validate-name" id="form1a" placeholder="E-mail">
                         <label for="form1a" class="color-highlight">Email/label>
                             <i class="fa fa-times disabled invalid color-red-dark"></i>
                             <i class="fa fa-check disabled valid color-green-dark"></i>

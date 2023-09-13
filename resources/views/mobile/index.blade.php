@@ -26,7 +26,7 @@
     @endif
     @endforeach
     <div id="page">
-        @if(Request::path() =="Apk/login" || Request::path() =="Apk/registrasi")
+        @if(Request::path() =="Apk/login" || Request::path() =="Apk/registrasi" || Request::path() =="Apk/lupa-password")
         @else
         @if(Session::get('status')=="PEGAWAI")
         <div class="header header-fixed header-logo-center header-auto-show">

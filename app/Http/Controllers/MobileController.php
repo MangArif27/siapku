@@ -193,11 +193,9 @@ class MobileController extends Controller
       $nama = $cek->nama;
       $email = $request->email;
       $kirim = Mail::to($email)->send(new ResetPassword($link, $nama));
-      Session::flash('gagal', 'Silahkan Cek Link Di Email Anda !!!');
-      return view('/mobile.page._login');
+      return view('/mobile.page._login')->with('alert', 'Silahkan Cek Link Di Email Anda !!!');
     } else {
-      Session::flash('gagal', 'Maaf Nomor Identitas dan Email Anda Tidak Sesuai !!!');
-      return view('/mobile.page._reset');
+      return view('/mobile.partials._reset')->with('alert', 'Maaf Nomor Identitas dan Email Anda Tidak Sesuai !!! !');
     }
   }
   public function logout()

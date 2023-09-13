@@ -10,31 +10,31 @@ use Illuminate\Queue\SerializesModels;
 
 class ResetPassword extends Mailable
 {
-    use Queueable, SerializesModels;
+  use Queueable, SerializesModels;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct($link, $nama)
-    {
-      $this->nama=$nama;
-      $this->link=$link;
-    }
+  /**
+   * Create a new message instance.
+   *
+   * @return void
+   */
+  public function __construct($link, $nama)
+  {
+    $this->nama = $nama;
+    $this->link = $link;
+  }
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-      return $this->from('noreply@silajulapaskarawang.com')
-          ->view('page/isireset')
-          ->with([
-                'nama' => $this->nama,
-                'link' => $this->link,
-            ]);
+  /**
+   * Build the message.
+   *
+   * @return $this
+   */
+  public function build()
+  {
+    return $this->from('noreply_admin@siratucilokrutandepok.com')
+      ->view('page/isireset')
+      ->with([
+        'nama' => $this->nama,
+        'link' => $this->link,
+      ]);
   }
 }

@@ -217,7 +217,7 @@
                 </tr>
                 <tr>
                     <td style="font-size: 11pt;">Baru-baru ini Anda meminta kami untuk melakukan reset password, silakan
-                        <a href="http://silajulapaskarawang/resetpassword/{!!$link!!}">Klik Disini</a> ini untuk
+                        <a href="http://siratucilokrutandepok.com/resetpassword/{!!$link!!}">Klik Disini</a> ini untuk
                         mengisi password baru anda.</br>
                         Jika ada pertanyaan lebih lanjut, silahkan menghubungi:<b> </b></br>
                         Terima kasih telah mengajukan permohonan pembuatan pengguna di Aplikasi Permohonan Pendaftaran
